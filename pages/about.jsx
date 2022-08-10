@@ -1,8 +1,9 @@
+import MainLayout from '../src/components/layout/Main'
 
 export default function About() {
     return (
-        <div>
+        <MainLayout>
             <h1>About</h1>
-        </div>
+        </MainLayout>
     )
 }
