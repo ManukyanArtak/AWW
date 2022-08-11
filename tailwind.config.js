@@ -6,9 +6,28 @@ module.exports = {
 
   ],
   theme: {
+
     extend: {
-      colors: {
-        'navbar-color': '#1F092E',
+
+      colors:{
+        'navbar-text-color': '#1F092E',
+
+      },
+      margin: {
+
+      },
+      padding: {
+
+      },
+
+      height: {
+
+      },
+      width: {
+
+      },
+      inset: {
+
       },
     },
   },
