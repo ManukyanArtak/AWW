@@ -10,6 +10,7 @@ module.exports = {
     extend: {
 
       colors:{
+        'navbar-text-color': '#1F092E',
 
       },
       margin: {
