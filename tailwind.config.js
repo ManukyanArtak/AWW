@@ -6,7 +6,29 @@ module.exports = {
 
   ],
   theme: {
-    extend: {},
+
+    extend: {
+
+      colors:{
+
+      },
+      margin: {
+
+      },
+      padding: {
+
+      },
+
+      height: {
+
+      },
+      width: {
+
+      },
+      inset: {
+
+      },
+    },
   },
   plugins: [],
 }
