@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const Header = () => (
 
-    <header className="bg-white flex justify-center">
+    <header className="bg-white flex justify-center p-4">
         <div className="container grid grid-cols-9">
             <a href="#" className="flex items-center  col-span-2 col-start-1">
                 <Image src="/img/logo.svg" width="144px" height="62px" />
@@ -21,7 +21,7 @@ const Header = () => (
                 </svg>
             </button>
             <div className="hidden w-full md:block md:w-auto col-span-5 col-start-5" id="navbar-default">
-                <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white  ">
                     <li>
                         <a href="#"
                            className="text-navbar-text-color text-base"

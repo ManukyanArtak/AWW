@@ -4,8 +4,7 @@ import Link from "next/link";
 
 const Footer = () => (
     <footer
-        className="fixed bottom-0 left-0 z-20 p-4 w-full bg-white border-t
-        border-gray-200 shadow  md:p-6 dark:bg-gray-800
+        className=" p-4 w-full  md:p-6 dark:bg-gray-800
         flex
         flex-col
         items-center">
