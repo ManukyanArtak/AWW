@@ -1,5 +1,6 @@
 import React from "react";
 import Image from 'next/image'
+import Link from "next/link";
 
 
 const Header = () => (
@@ -23,21 +24,19 @@ const Header = () => (
             <div className="hidden w-full md:block md:w-auto col-span-5 col-start-5" id="navbar-default">
                 <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white  ">
                     <li>
-                        <a href="#"
-                           className="text-navbar-text-color text-base"
-                           aria-current="page">Նախագիծ</a>
+                        <Link href="/about">
+                            <a className="text-navbar-text-color text-base">Նախագիծ</a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#"
-                           className="text-navbar-text-color text-base">
-                            Կանայք և պատմություններ
-                        </a>
+                        <Link href="/women">
+                            <a className="text-navbar-text-color text-base">Կանայք և պատմություններ</a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#"
-                           className=" text-navbar-text-color text-base">
-                            Հետադարձ կապ
-                        </a>
+                        <Link href="/women">
+                            <a className="text-navbar-text-color text-base">Հետադարձ կապ</a>
+                        </Link>
                     </li>
                 </ul>
             </div>
