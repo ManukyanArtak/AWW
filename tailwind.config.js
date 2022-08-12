@@ -8,6 +8,9 @@ module.exports = {
     extend: {
       colors:{
         'navbar-text-color': '#1F092E',
+        'about-project-title-color': '#3C3951',
+        'link-color' : '#2B0D3F'
+
       },
       height: {
         '160': '40rem',
