@@ -1,3 +1,103 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "plugin:prettier/recommended",
+    "next/core-web-vitals"
+  ],
+  "plugins": [
+    "node"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "@next/next/no-img-element": 0,
+    "prettier/prettier": "error",
+    "arrow-body-style": "error",
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/interactive-supports-focus": 0,
+    "react/forbid-prop-types": 0,
+    "import/prefer-default-export": "off",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never",
+        "imports": "always-multiline",
+        "objects": "always-multiline"
+      }
+    ],
+    "semi": [
+      2,
+      "never"
+    ],
+    "no-nested-ternary": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/no-array-index-key": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": [
+      2,
+      {
+        "custom": "ignore"
+      }
+    ],
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": [
+          "block",
+          "block-like",
+          "cjs-export",
+          "class",
+          "export",
+          "import"
+        ],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": [
+          "export",
+          "import"
+        ],
+        "next": [
+          "export",
+          "import"
+        ]
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "node_modules",
+          "."
+        ]
+      }
+    }
+  }
 }
