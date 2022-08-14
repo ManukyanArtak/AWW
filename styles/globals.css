@@ -7,3 +7,10 @@
     font-family: "Montserrat arm", serif;
   }
 }
+
+@font-face {
+  font-family: "Montserrat arm";
+  src: url("/next-assets/fonts/Montserratarm-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}

@@ -9,11 +9,11 @@ const AboutProject = ({ direction, text }) => (
     }
   >
     <div>
-      <div className={'grid grid-cols-12 p-4 w-full '}>
+      <div className={'grid grid-cols-12  w-full '}>
         <p
           className={
             direction === 'left'
-              ? 'col-start-1 col-end-7 text-lg text-about-project-title-color ml-6'
+              ? 'col-start-2 col-span-6 text-lg text-about-project-title-color '
               : 'col-start-6 col-end-12 text-lg text-about-project-title-color'
           }
         >
@@ -22,7 +22,7 @@ const AboutProject = ({ direction, text }) => (
         <div
           className={
             direction === 'left'
-              ? 'col-start-1 col-end-3  mt-6 ml-6'
+              ? 'col-start-2 col-span-6  mt-6'
               : 'col-start-6 col-end-12  mt-6'
           }
         >

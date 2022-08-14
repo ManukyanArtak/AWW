@@ -4,50 +4,48 @@ import Link from 'next/link'
 
 const Footer = () => (
   <footer
-    className=" p-4 w-full  md:p-6 dark:bg-gray-800
+    className="p-4 w-full  md:p-6 dark:bg-violet-950
         flex
         flex-col
         items-center"
   >
-    <div>
-      <Image src="/img/logo-white.svg" width="50px" height="50px" />
+    <div className={`pt-12 pb-16`}>
+      <Image src="/img/logo-white.svg" width="202px" height="88px" />
     </div>
-    <ul className="flex flex-wrap  mt-3">
-      <li>
-        <Link href="/">
+    <ul className="flex flex-wrap mt-2 text-white">
+      <li className={`pl-5 pr-5`}>
+        <Link href="/about">
           <a>Նախագիծ</a>
         </Link>
       </li>
-      <li>
-        <Link href="/">
+      <li className={`pl-5 pr-5`}>
+        <Link href="/women">
           <a>Կանայք և Պատմություններ</a>
         </Link>
       </li>
-      <li>
-        <Link href="/">
+      <li className={`pl-5 pr-5`}>
+        <Link href="/contact">
           <a>Հետադարձ Կապ</a>
         </Link>
       </li>
     </ul>
 
-    <ul className="flex flex-wrap  mt-3">
-      <li>
+    <ul className="flex flex-wrap  mt-3 pt-16">
+      <li className={`pl-4 pr-4`}>
         <Image src="/img/linkdin.svg" width="50px" height="50px" />
       </li>
-      <li>
+      <li className={`pl-4 pr-4`}>
         <Image src="/img/facebook.svg" width="50px" height="50px" />
       </li>
-      <li>
+      <li className={`pl-4 pr-4`}>
         <Image src="/img/instagram.svg" width="50px" height="50px" />
       </li>
     </ul>
-    <div>
+    <div className={`text-white pt-12`}>
       <span>info@armwonderwomens.co</span>
     </div>
-    <div>
-      <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-        Copyright © 2021, All Rights Reserved.
-      </span>
+    <div className={`text-white pt-20`}>
+      <span className="text-xs">Copyright © 2021, All Rights Reserved.</span>
     </div>
   </footer>
 )

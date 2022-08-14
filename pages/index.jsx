@@ -8,35 +8,34 @@ import SectionTitle from '../src/components/shared/SectionTitle'
 export default function Home() {
   return (
     <MainLayout>
-      <HeroBanner text={PageConstants.homePage.heroBannerText} />
-      <SectionTitle
-        className={'pb-14 pt-12'}
-        title={PageConstants.global.aboutProject.title}
-        direction={'left'}
-      />
-      <AboutProject
-        direction={'left'}
-        text={PageConstants.global.aboutProject.text}
-      />
-      <SectionTitle
-        className={'pb-14 pt-12'}
-        title={`Նպատակը առաքինություն է`}
-        direction={'right'}
-      />
+      <div className={`grid`}>
+        <HeroBanner text={PageConstants.homePage.heroBannerText} />
+        <SectionTitle
+          className={'pb-14 mt-12'}
+          title={PageConstants.global.aboutProject.title}
+          direction={'left'}
+        />
+        <AboutProject
+          direction={'left'}
+          text={PageConstants.global.aboutProject.text}
+        />
+        <SectionTitle
+          className={'pb-14 mt-12'}
+          title={PageConstants.global.aboutGoal.title}
+          direction={'right'}
+        />
 
-      <AboutProject
-        direction={'right'}
-        text={
-          ' «Զարմանահրաշ հայ կանայք» սիրո, զայրույթի, հպարտության և հիասթափության արգասիք է:' +
-          'Արդյունք է երկար ու մանրակրկիտ հետազոտության,անվերջ բացահայտումների, կրքի, հետաքրքրասիրության և գնահատանքի:'
-        }
-      />
-      <SectionTitle
-        className={'pb-14 pt-12'}
-        title={`Գրքի մասին`}
-        direction={'left'}
-      />
-      <AboutBook />
+        <AboutProject
+          direction={'right'}
+          text={PageConstants.global.aboutGoal.text}
+        />
+        <SectionTitle
+          className={'pb-14 mt-12'}
+          title={PageConstants.global.aboutBook.title}
+          direction={'left'}
+        />
+        <AboutBook />
+      </div>
     </MainLayout>
   )
 }

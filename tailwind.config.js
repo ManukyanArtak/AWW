@@ -7,6 +7,9 @@ module.exports = {
         'navbar-text-color': '#1F092E',
         'about-project-title-color': '#3C3951',
         'link-color': '#2B0D3F',
+        violet: {
+          950: '#1F092E',
+        },
       },
       height: {
         160: '40rem',

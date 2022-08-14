@@ -1,14 +1,15 @@
 import Image from 'next/image'
 import React from 'react'
-import Link from 'next/link'
+import Button from "../Button";
+import styles from './aboutBook.module.css'
 
 const AboutBook = () => (
-  <div className={`grid grid-cols-12 gap-4`}>
+  <div className={`grid grid-cols-12 gap-20`}>
     <div className={`col-span-5 col-start-2`}>
       <Image src="/img/book.png" width="468px" height="539px" />
     </div>
-    <div className={`col-span-4`}>
-      <div>
+    <div className={`col-span-5 pr-16`}>
+      <div className={`mb-16`}>
         <p className={`text-lg`}>
           Գրքում տեղ գտած պատմություններում կկարդաք այն կանանց մասին, որոնք
           մենք՝ որպես գրքի հեղինակներ, ոգեշնչող ենք համարում: Մենք ձեզ հրավիրում
@@ -26,11 +27,7 @@ const AboutBook = () => (
           Թող այս կանանց ճամփորդությունները ոգեշնչեն ձեզ:
         </p>
       </div>
-      <Link href="/">
-        <a className="bg-transparent bg-amber-300 font-semibold  py-2 px-4 border inline-block">
-          Կարդալ ավելին
-        </a>
-      </Link>
+      <Button label={'Կարդալ ավելին'} className={`text-white mt-2 ${styles.test}`}/>
     </div>
   </div>
 )
