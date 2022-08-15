@@ -6,7 +6,7 @@ const Header = () => (
   <header className="bg-white flex justify-center p-4">
     <div className=" grid grid-cols-12">
       <a href="#" className="flex items-center  col-span-2 col-start-2">
-        <Image src="/img/logo.svg" width="144px" height="62px" />
+        <Image src="/img/logo.svg" width="144px" height="62px" alt={'Logo'} />
       </a>
       <button
         data-collapse-toggle="navbar-default"

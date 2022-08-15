@@ -17,6 +17,16 @@ const PageConstants = {
     aboutBook: {
       title: 'Գրքի մասին',
     },
+    womenCard: {
+      title: 'Կանայք և պատմություններ',
+      name: 'Ասլամազյան քույրեր',
+      address: 'Գյումրի, Հայաստան',
+      lifeDuration: '1907-2006',
+      profession: 'Նկարչուհիներ',
+      className_1: 'col-start-1 col-end-4',
+      className_2: 'col-start-5 col-end-8',
+      className_3: 'col-start-9 col-end-12',
+    },
   },
 }
 

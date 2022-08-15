@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Footer = () => (
   <footer
-    className="p-4 w-full  md:p-6 dark:bg-violet-950
+    className="p-4 w-full  md:p-6 bg-violet-950
         flex
         flex-col
         items-center"
@@ -32,13 +32,28 @@ const Footer = () => (
 
     <ul className="flex flex-wrap  mt-3 pt-16">
       <li className={`pl-4 pr-4`}>
-        <Image src="/img/linkdin.svg" width="50px" height="50px" />
+        <Image
+          src="/img/linkdin.svg"
+          width="50px"
+          height="50px"
+          alt={'Linkedin'}
+        />
       </li>
       <li className={`pl-4 pr-4`}>
-        <Image src="/img/facebook.svg" width="50px" height="50px" />
+        <Image
+          src="/img/facebook.svg"
+          width="50px"
+          height="50px"
+          alt={'Facebook'}
+        />
       </li>
       <li className={`pl-4 pr-4`}>
-        <Image src="/img/instagram.svg" width="50px" height="50px" />
+        <Image
+          src="/img/instagram.svg"
+          width="50px"
+          height="50px"
+          alt={'Instagram'}
+        />
       </li>
     </ul>
     <div className={`text-white pt-12`}>

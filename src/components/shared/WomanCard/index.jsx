@@ -2,11 +2,11 @@ import React from 'react'
 import Image from 'next/image'
 
 const WomanCard = ({ className, name, address, profession, lifeDuration }) => (
-  <div className={`max-w-[370px]`}>
+  <div className={`max-w-[370px] ${className ? ` ${className}` : ''}`}>
     <div
-      className={`grid grid-cols-2 gap-primary pt-10 lg:gap-y-0 lg:grid-cols-1 lg:pt-0 antialiased${
-        className ? ` ${className}` : ''
-      }`}
+    // className={`max-w-[370px] gap-primary pt-10 lg:gap-y-0 antialiased${
+    //   className ? ` ${className}` : ''
+    // }`}
     >
       <Image
         height={1}
@@ -16,14 +16,19 @@ const WomanCard = ({ className, name, address, profession, lifeDuration }) => (
         layout="responsive"
         objectFit="cover"
       />
-      <div className="lg:margin-t-primary-xs">
-        <h4 className="text-gray-280 margin-b-primary-xs lg:margin-y-primary-xs lg:leading-7">
-          fdfdfdfdfd
+      <div className="mt-3 pl-4">
+        <h4 className="text-blue-650 margin-b-primary-xs lg:margin-y-primary-xs lg:leading-7 text-lg font-semibold">
+          {name}
         </h4>
-        <div className="truncate-lines-4 overflow-hidden">
-          <a className="text-xl md:text-2xl text-blue-550 hover:underline">
-            yreyrfh
-          </a>
+        <div className="truncate-lines-4 overflow-hidden mt-2 divide-y-2 divide-yellow-450 ">
+          <p className="text-xs text-blue-550">{address}</p>
+          <hr className={'mt-3 w-[226px]'} />
+        </div>
+        <div className="mt-3">
+          <p className={'text-lg font-semibold text-blue-650'}>
+            {lifeDuration}
+          </p>
+          <p className="text-xs text-blue-550 mt-2">{profession}</p>
         </div>
       </div>
     </div>

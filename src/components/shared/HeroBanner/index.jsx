@@ -21,7 +21,12 @@ const HeroBanner = ({ text }) => (
           <a
             className={` inline-block pt-2 w-16 h-10 rounded-[100px] ${styles.scrollVector}`}
           >
-            <Image src="/img/vector.svg" width="30px" height="15px" />
+            <Image
+              src="/img/vector.svg"
+              width="30px"
+              height="15px"
+              alt={'Vector'}
+            />
           </a>
         </Link>
       </div>
