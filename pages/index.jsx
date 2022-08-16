@@ -42,7 +42,9 @@ export default function Home() {
           title={PageConstants.global.womenCard.title}
           direction={'right'}
         />
-        <WomanCardLayout>
+        <WomanCardLayout
+          className={PageConstants.global.womanCardLayout.className}
+        >
           <WomanCard
             address={PageConstants.global.womenCard.address}
             name={PageConstants.global.womenCard.name}
@@ -55,7 +57,7 @@ export default function Home() {
             name={PageConstants.global.womenCard.name}
             lifeDuration={PageConstants.global.womenCard.lifeDuration}
             profession={PageConstants.global.womenCard.profession}
-            className={'col-start-5 col-end-8'}
+            className={PageConstants.global.womenCard.className_2}
           />
 
           <WomanCard
@@ -63,7 +65,7 @@ export default function Home() {
             name={PageConstants.global.womenCard.name}
             lifeDuration={PageConstants.global.womenCard.lifeDuration}
             profession={PageConstants.global.womenCard.profession}
-            className={'col-start-9 col-end-12'}
+            className={PageConstants.global.womenCard.className_3}
           />
         </WomanCardLayout>
       </div>

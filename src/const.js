@@ -27,6 +27,9 @@ const PageConstants = {
       className_2: 'col-start-5 col-end-8',
       className_3: 'col-start-9 col-end-12',
     },
+    womanCardLayout: {
+      className: 'grid grid-cols-12 grid-rows-2',
+    },
   },
 }
 

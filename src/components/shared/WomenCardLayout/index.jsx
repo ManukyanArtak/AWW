@@ -1,8 +1,8 @@
 import Button from '../Button'
 import styles from './womanLayout.module.css'
 
-const WomenCardLayout = ({ children }) => (
-  <div className={'grid grid-cols-12 grid-rows-2'}>
+const WomenCardLayout = ({ children, className }) => (
+  <div className={`${className}`}>
     {children}
     <div className={'rows-start-2 col-start-6'}>
       <Button
