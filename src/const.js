@@ -17,6 +17,9 @@ const PageConstants = {
     aboutBook: {
       title: 'Գրքի մասին',
     },
+    aboutAuthors: {
+      title:"Հեղինակների մասին",
+    }
   },
 }
 

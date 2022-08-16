@@ -4,6 +4,7 @@ import HeroBanner from '../src/components/shared/HeroBanner'
 import PageConstants from '../src/const'
 import AboutBook from '../src/components/shared/AboutBook'
 import SectionTitle from '../src/components/shared/SectionTitle'
+import AboutAuthors from "../src/components/AboutAuthors";
 
 export default function Home() {
   return (
@@ -35,6 +36,11 @@ export default function Home() {
           direction={'left'}
         />
         <AboutBook />
+
+        <SectionTitle className={'mt-[140px]'} title={PageConstants.global.aboutAuthors.title} direction={'left'}/>
+
+        <AboutAuthors direction={'left'}/>
+        <AboutAuthors direction={'right'}/>
       </div>
     </MainLayout>
   )
