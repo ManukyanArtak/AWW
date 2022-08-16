@@ -18,8 +18,8 @@ const PageConstants = {
       title: 'Գրքի մասին',
     },
     aboutAuthors: {
-      title:"Հեղինակների մասին",
-    }
+      title: 'Հեղինակների մասին',
+    },
   },
 }
 

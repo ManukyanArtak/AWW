@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import Button from "../Button";
+import Button from '../Button'
 import styles from './aboutBook.module.css'
 
 const AboutBook = () => (
@@ -27,7 +27,10 @@ const AboutBook = () => (
           Թող այս կանանց ճամփորդությունները ոգեշնչեն ձեզ:
         </p>
       </div>
-      <Button label={'Կարդալ ավելին'} className={`text-white mt-2 ${styles.test}`}/>
+      <Button
+        label={'Կարդալ ավելին'}
+        className={`text-white mt-2 ${styles.test}`}
+      />
     </div>
   </div>
 )
