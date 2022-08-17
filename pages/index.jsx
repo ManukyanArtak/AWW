@@ -52,9 +52,7 @@ export default function Home() {
           title={PageConstants.global.womenCard.title}
           direction={'right'}
         />
-        <WomanCardLayout
-          className={'grid grid-cols-12 grid-rows-2'}
-        >
+        <WomanCardLayout className={'grid grid-cols-12 grid-rows-2'}>
           <WomanCard
             address={PageConstants.global.womenCard.address}
             name={PageConstants.global.womenCard.name}

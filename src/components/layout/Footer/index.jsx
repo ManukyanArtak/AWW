@@ -10,7 +10,12 @@ const Footer = () => (
         items-center"
   >
     <div className={`pt-12 pb-16`}>
-      <Image src="/img/logo-white.svg" width="202px" height="88px" />
+      <Image
+        src="/img/logo-white.svg"
+        width="202px"
+        height="88px"
+        alt={'white logo'}
+      />
     </div>
     <ul className="flex flex-wrap mt-2 text-white">
       <li className={`pl-5 pr-5`}>
