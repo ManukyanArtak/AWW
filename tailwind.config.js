@@ -5,7 +5,6 @@ module.exports = {
     extend: {
       colors: {
         'navbar-text-color': '#1F092E',
-        'about-project-title-color': '#3C3951',
         'link-color': '#2B0D3F',
         violet: {
           950: '#1F092E',
@@ -16,6 +15,7 @@ module.exports = {
         blue: {
           650: '#1F092E',
           550: '#3C3951',
+          950: '#3C3951',
         },
       },
       height: {

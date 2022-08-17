@@ -13,8 +13,8 @@ const AboutProject = ({ direction, text }) => (
         <p
           className={
             direction === 'left'
-              ? 'col-start-2 col-span-6 text-lg text-about-project-title-color '
-              : 'col-start-6 col-end-12 text-lg text-about-project-title-color'
+              ? 'col-start-2 col-span-6 text-lg text-blue-950 '
+              : 'col-start-6 col-end-12 text-lg text-blue-950'
           }
         >
           {text}
