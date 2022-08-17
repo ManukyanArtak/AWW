@@ -10,6 +10,13 @@ module.exports = {
         violet: {
           950: '#1F092E',
         },
+        yellow: {
+          450: '#E5C02C',
+        },
+        blue: {
+          650: '#1F092E',
+          550: '#3C3951',
+        },
       },
       height: {
         160: '40rem',

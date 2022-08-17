@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
-import Button from "../Button";
+import Button from '../Button'
 import styles from './aboutBook.module.css'
 
 const AboutBook = () => (
   <div className={`grid grid-cols-12 gap-20`}>
     <div className={`col-span-5 col-start-2`}>
-      <Image src="/img/book.png" width="468px" height="539px" />
+      <Image src="/img/book.png" width="468px" height="539px" alt={'Book'} />
     </div>
     <div className={`col-span-5 pr-16`}>
       <div className={`mb-16`}>
@@ -27,7 +27,10 @@ const AboutBook = () => (
           Թող այս կանանց ճամփորդությունները ոգեշնչեն ձեզ:
         </p>
       </div>
-      <Button label={'Կարդալ ավելին'} className={`text-white mt-2 ${styles.test}`}/>
+      <Button
+        label={'Կարդալ ավելին'}
+        className={`text-white mt-2 ${styles.test}`}
+      />
     </div>
   </div>
 )

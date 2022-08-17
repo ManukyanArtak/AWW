@@ -29,7 +29,12 @@ const AboutProject = ({ direction, text }) => (
           <a className={'text-xs  text-link-color'} href={'#'}>
             Կարդալ ավելին
           </a>
-          <Image src="/img/arrow_right.svg" width="16px" height="8px" />
+          <Image
+            src="/img/arrow_right.svg"
+            width="16px"
+            height="8px"
+            alt={'Right arrow'}
+          />
         </div>
       </div>
     </div>
