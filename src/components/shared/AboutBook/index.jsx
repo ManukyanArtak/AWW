@@ -6,7 +6,7 @@ import styles from './aboutBook.module.css'
 const AboutBook = () => (
   <div className={`grid grid-cols-12 gap-20`}>
     <div className={`col-span-5 col-start-2`}>
-      <Image src="/img/book.png" width="468px" height="539px" />
+      <Image src="/img/book.png" width="468px" height="539px" alt={'Book'} />
     </div>
     <div className={`col-span-5 pr-16`}>
       <div className={`mb-16`}>

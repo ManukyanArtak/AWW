@@ -5,6 +5,8 @@ import PageConstants from '../src/const'
 import AboutBook from '../src/components/shared/AboutBook'
 import SectionTitle from '../src/components/shared/SectionTitle'
 import AboutAuthors from '../src/components/AboutAuthors'
+import WomanCard from '../src/components/shared/WomanCard'
+import WomanCardLayout from '../src/components/shared/WomenCardLayout'
 
 export default function Home() {
   return (
@@ -45,6 +47,37 @@ export default function Home() {
 
         <AboutAuthors direction={'left'} />
         <AboutAuthors direction={'right'} />
+        <SectionTitle
+          className={'pb-14 mt-12'}
+          title={PageConstants.global.womenCard.title}
+          direction={'right'}
+        />
+        <WomanCardLayout
+          className={'grid grid-cols-12 grid-rows-2'}
+        >
+          <WomanCard
+            address={PageConstants.global.womenCard.address}
+            name={PageConstants.global.womenCard.name}
+            lifeDuration={PageConstants.global.womenCard.lifeDuration}
+            profession={PageConstants.global.womenCard.profession}
+            className={'col-start-1 col-end-4'}
+          />
+          <WomanCard
+            address={PageConstants.global.womenCard.address}
+            name={PageConstants.global.womenCard.name}
+            lifeDuration={PageConstants.global.womenCard.lifeDuration}
+            profession={PageConstants.global.womenCard.profession}
+            className={'col-start-5 col-end-8'}
+          />
+
+          <WomanCard
+            address={PageConstants.global.womenCard.address}
+            name={PageConstants.global.womenCard.name}
+            lifeDuration={PageConstants.global.womenCard.lifeDuration}
+            profession={PageConstants.global.womenCard.profession}
+            className={'col-start-9 col-end-12'}
+          />
+        </WomanCardLayout>
       </div>
     </MainLayout>
   )

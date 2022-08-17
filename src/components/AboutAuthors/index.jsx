@@ -29,7 +29,7 @@ const AboutAuthors = ({ direction }) => (
             : 'col-start-1 col-end-6'
         }`}
       >
-        <p className={'text-blue-950 text-lg'}>
+        <p className={'text-blue-950 text-lg mt-5'}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus eget
           tristique adipiscing morbi volutpat blandit viverra vestibulum augue.
           Nulla leo, semper massa in consequat diam. Habitasse ornare convallis

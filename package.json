@@ -9,12 +9,11 @@
     "lint": "next lint",
     "lint:fix": "yarn eslint:fix && yarn prettier:fix && yarn stylelint:fix",
     "eslint:fix": "next lint --fix .",
-    "prettier:fix": "prettier --write './**/*.{js,jsx}'",
-    "stylelint:fix": "stylelint './**/*.{css,scss}' --fix"
+    "prettier:fix": "prettier --write ./**/*.{js,jsx}",
+    "stylelint:fix": "stylelint ./**/*.{css,scss} --fix"
   },
   "dependencies": {
     "autoprefixer": "^10.4.8",
-    "eslint-plugin-prettier": "^4.2.1",
     "next": "12.2.4",
     "postcss": "^8.4.16",
     "prettier": "2.7.1",
