@@ -7,7 +7,7 @@ const WomenCardLayout = ({ children, className }) => (
     <div className={'rows-start-2 col-start-6'}>
       <Button
         label={'Տեսնել բոլորին'}
-        className={`${styles.btn} text-white mt-24`}
+        className={`${styles.btn} text-white mt-24 bg-transparent  font-semibold  py-4 px-6 border inline-block `}
       />
     </div>
   </div>

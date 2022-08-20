@@ -7,12 +7,14 @@ import SectionTitle from '../src/components/shared/SectionTitle'
 import AboutAuthors from '../src/components/AboutAuthors'
 import WomanCard from '../src/components/shared/WomanCard'
 import WomanCardLayout from '../src/components/shared/WomenCardLayout'
+import FilterButtons from '../src/components/FilterButtons'
 
 export default function Home() {
   return (
     <MainLayout>
       <div className={`grid`}>
         <HeroBanner text={PageConstants.homePage.heroBannerText} />
+        <FilterButtons />
         <SectionTitle
           className={'pb-14 mt-12'}
           title={PageConstants.global.aboutProject.title}
