@@ -7,6 +7,7 @@ import SectionTitle from '../src/components/shared/SectionTitle'
 import AboutAuthors from '../src/components/AboutAuthors'
 import WomanCard from '../src/components/shared/WomanCard'
 import WomanCardLayout from '../src/components/shared/WomenCardLayout'
+import WomanPageHeroBanner from '../src/components/WomanPageHeroBaner'
 
 export default function Home() {
   return (
@@ -76,6 +77,13 @@ export default function Home() {
             className={'col-start-9 col-end-12'}
           />
         </WomanCardLayout>
+
+        <WomanPageHeroBanner
+          name={PageConstants.womanPage.heroBanner.name}
+          birthPlace={PageConstants.womanPage.heroBanner.birthPlace}
+          lifeDuration={PageConstants.womanPage.heroBanner.lifeDuration}
+          profession={PageConstants.womanPage.heroBanner.profession}
+        />
       </div>
     </MainLayout>
   )
