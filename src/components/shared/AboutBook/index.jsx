@@ -29,7 +29,7 @@ const AboutBook = () => (
       </div>
       <Button
         label={'Կարդալ ավելին'}
-        className={`text-white mt-2 ${styles.test}`}
+        className={`text-white mt-2 bg-transparent  font-semibold  py-4 px-6 border inline-block  ${styles.test}`}
       />
     </div>
   </div>

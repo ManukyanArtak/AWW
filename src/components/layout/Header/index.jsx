@@ -37,19 +37,19 @@ const Header = () => (
         <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white  ">
           <li>
             <Link href="/about">
-              <a className="text-navbar-text-color text-base">Նախագիծ</a>
+              <a className="text-violet-950 text-base">Նախագիծ</a>
             </Link>
           </li>
           <li>
             <Link href="/women">
-              <a className="text-navbar-text-color text-base">
+              <a className="text-violet-950-color text-base">
                 Կանայք և պատմություններ
               </a>
             </Link>
           </li>
           <li>
             <Link href="/women">
-              <a className="text-navbar-text-color text-base">Հետադարձ կապ</a>
+              <a className="text-violet-950 text-base">Հետադարձ կապ</a>
             </Link>
           </li>
         </ul>
