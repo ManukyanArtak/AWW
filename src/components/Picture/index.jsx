@@ -3,7 +3,7 @@ import Image from 'next/image'
 const Picture = ({ className }) => (
   // first div only for test it will be removed
   <div
-    className={`grid grid-cols-4 lg:grid-cols-12 mb-16 lg:gap-x-[50px] lg:gap-y-6`}
+    className={`grid grid-cols-4 px-5 lg:grid-cols-12 mb-16 lg:gap-x-[50px] lg:gap-y-6`}
   >
     {/*title not will be here*/}
     <h4
