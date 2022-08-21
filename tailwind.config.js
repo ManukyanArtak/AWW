@@ -4,7 +4,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'navbar-text-color': '#1F092E',
         'link-color': '#2B0D3F',
         violet: {
           850: '#431860',
@@ -14,8 +13,6 @@ module.exports = {
           450: '#E5C02C',
         },
         blue: {
-          650: '#1F092E',
-          550: '#3C3951',
           950: '#3C3951',
         },
         gray: {
