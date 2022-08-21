@@ -9,7 +9,7 @@ const Footer = () => (
         flex-col
         items-center"
   >
-    <div className={`pt-12 pb-16`}>
+    <div className={`mt-2  w-[80px] h-[38px] lg:mt-6 lg:w-[200px] lg:h-[88px]`}>
       <Image
         src="/img/logo-white.svg"
         width="202px"
@@ -17,18 +17,18 @@ const Footer = () => (
         alt={'white logo'}
       />
     </div>
-    <ul className="flex flex-wrap mt-2 text-white">
-      <li className={`pl-5 pr-5`}>
+    <ul className="lg:flex flex-wrap mt-2 text-white">
+      <li className={`pl-5 pr-5 text-center pt-4`}>
         <Link href="/about">
           <a>Նախագիծ</a>
         </Link>
       </li>
-      <li className={`pl-5 pr-5`}>
+      <li className={`pl-5 pr-5 text-center pt-4`}>
         <Link href="/women">
           <a>Կանայք և Պատմություններ</a>
         </Link>
       </li>
-      <li className={`pl-5 pr-5`}>
+      <li className={`pl-5 pr-5 text-center pt-4`}>
         <Link href="/contact">
           <a>Հետադարձ Կապ</a>
         </Link>
@@ -36,7 +36,7 @@ const Footer = () => (
     </ul>
 
     <ul className="flex flex-wrap  mt-3 pt-16">
-      <li className={`pl-4 pr-4`}>
+      <li className={`pl-4 pr-4 h-[50px]`}>
         <Image
           src="/img/linkdin.svg"
           width="50px"
@@ -44,7 +44,7 @@ const Footer = () => (
           alt={'Linkedin'}
         />
       </li>
-      <li className={`pl-4 pr-4`}>
+      <li className={`pl-4 pr-4 h-[50px]`}>
         <Image
           src="/img/facebook.svg"
           width="50px"
@@ -52,7 +52,7 @@ const Footer = () => (
           alt={'Facebook'}
         />
       </li>
-      <li className={`pl-4 pr-4`}>
+      <li className={`pl-4 pr-4 h-[50px]`}>
         <Image
           src="/img/instagram.svg"
           width="50px"
@@ -61,10 +61,10 @@ const Footer = () => (
         />
       </li>
     </ul>
-    <div className={`text-white pt-12`}>
+    <div className={`text-white pt-12 hidden lg:block`}>
       <span>info@armwonderwomens.co</span>
     </div>
-    <div className={`text-white pt-20`}>
+    <div className={`text-white pt-4 lg:pt-20`}>
       <span className="text-xs">Copyright © 2021, All Rights Reserved.</span>
     </div>
   </footer>

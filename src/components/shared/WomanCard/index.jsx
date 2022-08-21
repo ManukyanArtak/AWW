@@ -13,16 +13,16 @@ const WomanCard = ({ className, name, address, profession, lifeDuration }) => (
         objectFit="cover"
       />
       <div className="mt-3 pl-4">
-        <h4 className="text-blue-650 text-lg font-semibold">{name}</h4>
+        <h4 className="text-violet-950 text-lg font-semibold">{name}</h4>
         <div className="truncate-lines-4 overflow-hidden mt-2 divide-y-2 divide-yellow-450 ">
-          <p className="text-base text-blue-550">{address}</p>
+          <p className="text-base text-blue-950">{address}</p>
           <hr className={'mt-3 w-[226px]'} />
         </div>
         <div className="mt-3">
-          <p className={'text-lg  font-semibold text-blue-650'}>
+          <p className={'text-lg  font-semibold text-violet-950'}>
             {lifeDuration}
           </p>
-          <p className="text-xs text-base text-blue-550 mt-2">{profession}</p>
+          <p className="text-xs text-base text-blue-950 mt-2">{profession}</p>
         </div>
       </div>
     </div>
