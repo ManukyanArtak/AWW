@@ -30,54 +30,54 @@ export default function Home() {
           direction={'right'}
         />
 
-        <AboutProject
-          direction={'right'}
-          text={PageConstants.global.aboutGoal.text}
-        />
-        <SectionTitle
-          className={'pb-14 mt-12'}
-          title={PageConstants.global.aboutBook.title}
-          direction={'left'}
-        />
-        <AboutBook />
+        {/*  <AboutProject*/}
+        {/*    direction={'right'}*/}
+        {/*    text={PageConstants.global.aboutGoal.text}*/}
+        {/*  />*/}
+        {/*  <SectionTitle*/}
+        {/*    className={'pb-14 mt-12'}*/}
+        {/*    title={PageConstants.global.aboutBook.title}*/}
+        {/*    direction={'left'}*/}
+        {/*  />*/}
+        {/*  <AboutBook />*/}
 
-        <SectionTitle
-          className={'mt-[140px]'}
-          title={PageConstants.global.aboutAuthors.title}
-          direction={'left'}
-        />
+        {/*  <SectionTitle*/}
+        {/*    className={'mt-[140px]'}*/}
+        {/*    title={PageConstants.global.aboutAuthors.title}*/}
+        {/*    direction={'left'}*/}
+        {/*  />*/}
 
-        <AboutAuthors direction={'left'} />
-        <AboutAuthors direction={'right'} />
-        <SectionTitle
-          className={'pb-14 mt-12'}
-          title={PageConstants.global.womenCard.title}
-          direction={'right'}
-        />
-        <WomanCardLayout className={'grid grid-cols-12 grid-rows-2'}>
-          <WomanCard
-            address={PageConstants.global.womenCard.address}
-            name={PageConstants.global.womenCard.name}
-            lifeDuration={PageConstants.global.womenCard.lifeDuration}
-            profession={PageConstants.global.womenCard.profession}
-            className={'col-start-1 col-end-4'}
-          />
-          <WomanCard
-            address={PageConstants.global.womenCard.address}
-            name={PageConstants.global.womenCard.name}
-            lifeDuration={PageConstants.global.womenCard.lifeDuration}
-            profession={PageConstants.global.womenCard.profession}
-            className={'col-start-5 col-end-8'}
-          />
+        {/*  <AboutAuthors direction={'left'} />*/}
+        {/*  <AboutAuthors direction={'right'} />*/}
+        {/*  <SectionTitle*/}
+        {/*    className={'pb-14 mt-12'}*/}
+        {/*    title={PageConstants.global.womenCard.title}*/}
+        {/*    direction={'right'}*/}
+        {/*  />*/}
+        {/*  <WomanCardLayout className={'grid grid-cols-12 grid-rows-2'}>*/}
+        {/*    <WomanCard*/}
+        {/*      address={PageConstants.global.womenCard.address}*/}
+        {/*      name={PageConstants.global.womenCard.name}*/}
+        {/*      lifeDuration={PageConstants.global.womenCard.lifeDuration}*/}
+        {/*      profession={PageConstants.global.womenCard.profession}*/}
+        {/*      className={'col-start-1 col-end-4'}*/}
+        {/*    />*/}
+        {/*    <WomanCard*/}
+        {/*      address={PageConstants.global.womenCard.address}*/}
+        {/*      name={PageConstants.global.womenCard.name}*/}
+        {/*      lifeDuration={PageConstants.global.womenCard.lifeDuration}*/}
+        {/*      profession={PageConstants.global.womenCard.profession}*/}
+        {/*      className={'col-start-5 col-end-8'}*/}
+        {/*    />*/}
 
-          <WomanCard
-            address={PageConstants.global.womenCard.address}
-            name={PageConstants.global.womenCard.name}
-            lifeDuration={PageConstants.global.womenCard.lifeDuration}
-            profession={PageConstants.global.womenCard.profession}
-            className={'col-start-9 col-end-12'}
-          />
-        </WomanCardLayout>
+        {/*    <WomanCard*/}
+        {/*      address={PageConstants.global.womenCard.address}*/}
+        {/*      name={PageConstants.global.womenCard.name}*/}
+        {/*      lifeDuration={PageConstants.global.womenCard.lifeDuration}*/}
+        {/*      profession={PageConstants.global.womenCard.profession}*/}
+        {/*      className={'col-start-9 col-end-12'}*/}
+        {/*    />*/}
+        {/*  </WomanCardLayout>*/}
       </div>
     </MainLayout>
   )
