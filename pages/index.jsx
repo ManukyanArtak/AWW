@@ -7,8 +7,8 @@ import SectionTitle from '../src/components/shared/SectionTitle'
 import AboutAuthors from '../src/components/AboutAuthors'
 import WomanCard from '../src/components/shared/WomanCard'
 import WomanCardLayout from '../src/components/shared/WomenCardLayout'
-import Picture from "../src/components/Picture";
-import SelectDownload from "../src/components/SelectDownload";
+import Picture from '../src/components/Picture'
+import SelectDownload from '../src/components/SelectDownload'
 
 export default function Home() {
   return (
@@ -79,7 +79,9 @@ export default function Home() {
           />
         </WomanCardLayout>
 
-        <Picture className={`col-start-1 col-end-5 lg:col-start-5 lg:col-end-8`}/>
+        <Picture
+          className={`col-start-1 col-end-5 lg:col-start-5 lg:col-end-8`}
+        />
         <SelectDownload />
       </div>
     </MainLayout>

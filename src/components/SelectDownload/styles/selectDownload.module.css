@@ -1,5 +1,5 @@
-.btn{
-    background: linear-gradient(180deg, #431860 0%, rgba(67, 24, 96, 0.9) 62.3%, rgba(67, 24, 96, 0.85) 100%);
-    width: 173px;
-    height: 64px;
+.btn {
+  background: linear-gradient(180deg, #431860 0%, rgb(67 24 96 / 90%) 62.3%, rgb(67 24 96 / 85%) 100%);
+  width: 173px;
+  height: 64px;
 }
