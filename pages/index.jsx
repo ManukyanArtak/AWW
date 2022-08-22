@@ -16,22 +16,7 @@ export default function Home() {
   return (
     <MainLayout>
       <div className={`grid`}>
-        {/*<HeroBanner text={PageConstants.homePage.heroBannerText} />*/}
-        {/*<FilterButtons />*/}
-        {/*<SectionTitle*/}
-        {/*  className={'pb-14 mt-12'}*/}
-        {/*  title={PageConstants.global.aboutProject.title}*/}
-        {/*  direction={'left'}*/}
-        {/*/>*/}
-        {/*<AboutProject*/}
-        {/*  direction={'left'}*/}
-        {/*  text={PageConstants.global.aboutProject.text}*/}
-        {/*/>*/}
-        {/*<SectionTitle*/}
-        {/*  className={'pb-14 mt-12'}*/}
-        {/*  title={PageConstants.global.aboutGoal.title}*/}
-        {/*  direction={'right'}*/}
-        {/*/>*/}
+        <HeroBanner text={PageConstants.homePage.heroBannerText} />
 
         {/*  <AboutProject*/}
         {/*    direction={'right'}*/}
@@ -88,7 +73,6 @@ export default function Home() {
           lifeDuration={PageConstants.womanPage.heroBanner.lifeDuration}
           profession={PageConstants.womanPage.heroBanner.profession}
         />
-
         <Picture
           className={`col-start-1 col-end-5 lg:col-start-5 lg:col-end-8`}
         />
