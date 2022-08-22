@@ -15,21 +15,7 @@ export default function Home() {
     <MainLayout>
       <div className={`grid`}>
         <HeroBanner text={PageConstants.homePage.heroBannerText} />
-        <FilterButtons />
-        <SectionTitle
-          className={'pb-14 mt-12'}
-          title={PageConstants.global.aboutProject.title}
-          direction={'left'}
-        />
-        <AboutProject
-          direction={'left'}
-          text={PageConstants.global.aboutProject.text}
-        />
-        <SectionTitle
-          className={'pb-14 mt-12'}
-          title={PageConstants.global.aboutGoal.title}
-          direction={'right'}
-        />
+
 
         {/*  <AboutProject*/}
         {/*    direction={'right'}*/}
@@ -80,12 +66,7 @@ export default function Home() {
         {/*    />*/}
         {/*  </WomanCardLayout>*/}
 
-        <WomanPageHeroBanner
-          name={PageConstants.womanPage.heroBanner.name}
-          birthPlace={PageConstants.womanPage.heroBanner.birthPlace}
-          lifeDuration={PageConstants.womanPage.heroBanner.lifeDuration}
-          profession={PageConstants.womanPage.heroBanner.profession}
-        />
+
       </div>
     </MainLayout>
   )

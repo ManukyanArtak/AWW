@@ -4,19 +4,19 @@ import Image from 'next/image'
 import styles from './HeroBanner.module.css'
 
 const HeroBanner = ({ text }) => (
-  <div className={`h-160 ${styles.heroBanner}`}>
-    <h1 className="text-6xl max-w-5xl text-white m-auto text-center pt-28 pb-28 leading-20">
+  <div className={`h-[380px] lg:h-160 ${styles.heroBanner}`}>
+    <h1 className="text-2xl leading-10 pt-16 pb-12  max-w-5xl text-white m-auto text-center lg:pt-28 lg:pb-28 lg:leading-20 lg:text-6xl">
       {text}
     </h1>
     <div className="text-center">
       <div>
         <Link href="/">
-          <a className="bg-transparent bg-amber-300 font-semibold  py-2 px-4 border inline-block">
+          <a className="bg-transparent bg-amber-300 font-semibold  py-4 px-10 border inline-block">
             Բացահայտել նրանց
           </a>
         </Link>
       </div>
-      <div className="pt-28">
+      <div className="pt-28 hidden lg:block">
         <Link href="/">
           <a
             className={` inline-block pt-2 w-16 h-10 rounded-[100px] ${styles.scrollVector}`}
