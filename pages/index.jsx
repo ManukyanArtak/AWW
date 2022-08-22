@@ -16,7 +16,6 @@ export default function Home() {
       <div className={`grid`}>
         <HeroBanner text={PageConstants.homePage.heroBannerText} />
 
-
         {/*  <AboutProject*/}
         {/*    direction={'right'}*/}
         {/*    text={PageConstants.global.aboutGoal.text}*/}
@@ -65,8 +64,6 @@ export default function Home() {
         {/*      className={'col-start-9 col-end-12'}*/}
         {/*    />*/}
         {/*  </WomanCardLayout>*/}
-
-
       </div>
     </MainLayout>
   )
