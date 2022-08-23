@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         'link-color': '#2B0D3F',
         violet: {
+          850: '#431860',
           950: '#1F092E',
         },
         yellow: {
@@ -13,6 +14,9 @@ module.exports = {
         },
         blue: {
           950: '#3C3951',
+        },
+        gray: {
+          450: 'rgba(31, 9, 46, 0.5)',
         },
       },
       height: {

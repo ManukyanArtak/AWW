@@ -9,6 +9,8 @@ import WomanCard from '../src/components/shared/WomanCard'
 import WomanCardLayout from '../src/components/shared/WomenCardLayout'
 import FilterButtons from '../src/components/FilterButtons'
 import WomanPageHeroBanner from '../src/components/WomanPageHeroBaner'
+import Picture from '../src/components/Picture'
+import SelectDownload from '../src/components/SelectDownload'
 
 export default function Home() {
   return (
@@ -64,6 +66,17 @@ export default function Home() {
         {/*      className={'col-start-9 col-end-12'}*/}
         {/*    />*/}
         {/*  </WomanCardLayout>*/}
+
+        <WomanPageHeroBanner
+          name={PageConstants.womanPage.heroBanner.name}
+          birthPlace={PageConstants.womanPage.heroBanner.birthPlace}
+          lifeDuration={PageConstants.womanPage.heroBanner.lifeDuration}
+          profession={PageConstants.womanPage.heroBanner.profession}
+        />
+        <Picture
+          className={`col-start-1 col-end-5 lg:col-start-5 lg:col-end-8`}
+        />
+        <SelectDownload />
       </div>
     </MainLayout>
   )
