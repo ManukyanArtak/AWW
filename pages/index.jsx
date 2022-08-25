@@ -42,41 +42,41 @@ export default function Home() {
         {/*    title={PageConstants.global.womenCard.title}*/}
         {/*    direction={'right'}*/}
         {/*  />*/}
-        {/*  <WomanCardLayout className={'grid grid-cols-12 grid-rows-2'}>*/}
-        {/*    <WomanCard*/}
-        {/*      address={PageConstants.global.womenCard.address}*/}
-        {/*      name={PageConstants.global.womenCard.name}*/}
-        {/*      lifeDuration={PageConstants.global.womenCard.lifeDuration}*/}
-        {/*      profession={PageConstants.global.womenCard.profession}*/}
-        {/*      className={'col-start-1 col-end-4'}*/}
-        {/*    />*/}
-        {/*    <WomanCard*/}
-        {/*      address={PageConstants.global.womenCard.address}*/}
-        {/*      name={PageConstants.global.womenCard.name}*/}
-        {/*      lifeDuration={PageConstants.global.womenCard.lifeDuration}*/}
-        {/*      profession={PageConstants.global.womenCard.profession}*/}
-        {/*      className={'col-start-5 col-end-8'}*/}
-        {/*    />*/}
+        <WomanCardLayout className={'flex justify-center'}>
+          <WomanCard
+            address={PageConstants.global.womenCard.address}
+            name={PageConstants.global.womenCard.name}
+            lifeDuration={PageConstants.global.womenCard.lifeDuration}
+            profession={PageConstants.global.womenCard.profession}
+            className={'col-start-1 col-end-4'}
+          />
+          <WomanCard
+            address={PageConstants.global.womenCard.address}
+            name={PageConstants.global.womenCard.name}
+            lifeDuration={PageConstants.global.womenCard.lifeDuration}
+            profession={PageConstants.global.womenCard.profession}
+            className={'col-start-5 col-end-8'}
+          />
 
-        {/*    <WomanCard*/}
-        {/*      address={PageConstants.global.womenCard.address}*/}
-        {/*      name={PageConstants.global.womenCard.name}*/}
-        {/*      lifeDuration={PageConstants.global.womenCard.lifeDuration}*/}
-        {/*      profession={PageConstants.global.womenCard.profession}*/}
-        {/*      className={'col-start-9 col-end-12'}*/}
-        {/*    />*/}
-        {/*  </WomanCardLayout>*/}
+          <WomanCard
+            address={PageConstants.global.womenCard.address}
+            name={PageConstants.global.womenCard.name}
+            lifeDuration={PageConstants.global.womenCard.lifeDuration}
+            profession={PageConstants.global.womenCard.profession}
+            className={'col-start-9 col-end-12'}
+          />
+        </WomanCardLayout>
 
-        <WomanPageHeroBanner
-          name={PageConstants.womanPage.heroBanner.name}
-          birthPlace={PageConstants.womanPage.heroBanner.birthPlace}
-          lifeDuration={PageConstants.womanPage.heroBanner.lifeDuration}
-          profession={PageConstants.womanPage.heroBanner.profession}
-        />
-        <Picture
-          className={`col-start-1 col-end-5 lg:col-start-5 lg:col-end-8`}
-        />
-        <SelectDownload />
+        {/*<WomanPageHeroBanner*/}
+        {/*  name={PageConstants.womanPage.heroBanner.name}*/}
+        {/*  birthPlace={PageConstants.womanPage.heroBanner.birthPlace}*/}
+        {/*  lifeDuration={PageConstants.womanPage.heroBanner.lifeDuration}*/}
+        {/*  profession={PageConstants.womanPage.heroBanner.profession}*/}
+        {/*/>*/}
+        {/*<Picture*/}
+        {/*  className={`col-start-1 col-end-5 lg:col-start-5 lg:col-end-8`}*/}
+        {/*/>*/}
+        {/*<SelectDownload />*/}
       </div>
     </MainLayout>
   )

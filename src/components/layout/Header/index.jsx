@@ -13,7 +13,10 @@ const Header = () => {
     <header className="bg-white py-5 pr-[30px] pb-5 pl-6 md:px-[140px] md:pt-[18px] md:pb-[26px]">
       <nav className="bg-white border-gray-200 ">
         <div className="flex flex-wrap justify-between items-center">
-          <a href="https://flowbite.com" className="flex items-center w-[84px] h-[60px] md:w-[144px] h-[62px]">
+          <a
+            href="https://flowbite.com"
+            className="flex items-center w-[84px] h-[60px] md:w-[144px] h-[62px]"
+          >
             <Image
               src="/img/logo.svg"
               width="144px"
@@ -105,7 +108,9 @@ const Header = () => {
               </li>
               <li className={`mt-8`}>
                 <Link href="/women">
-                  <a className="text-white text-xl font-semibold">Հետադարձ կապ</a>
+                  <a className="text-white text-xl font-semibold">
+                    Հետադարձ կապ
+                  </a>
                 </Link>
               </li>
             </ul>
