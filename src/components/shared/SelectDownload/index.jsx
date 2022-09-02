@@ -1,4 +1,4 @@
-import Button from '../shared/Button'
+import Button from '../Button'
 import styles from './styles/selectDownload.module.css'
 
 const SelectDownload = () => (

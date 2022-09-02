@@ -1,5 +1,5 @@
-import Button from '../shared/Button'
-import PageConstants from '../../const'
+import Button from '../Button'
+import PageConstants from '../../../const'
 
 const FilterButtons = () => (
   <div className={'flex justify-center w-full'}>

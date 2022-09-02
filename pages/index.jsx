@@ -4,13 +4,13 @@ import HeroBanner from '../src/components/shared/HeroBanner'
 import PageConstants from '../src/const'
 import AboutBook from '../src/components/shared/AboutBook'
 import SectionTitle from '../src/components/shared/SectionTitle'
-import AboutAuthors from '../src/components/AboutAuthors'
+import AboutAuthors from '../src/components/shared/AboutAuthors'
 import WomanCard from '../src/components/shared/WomanCard'
 import WomanCardLayout from '../src/components/shared/WomenCardLayout'
-import FilterButtons from '../src/components/FilterButtons'
-import WomanPageHeroBanner from '../src/components/WomanPageHeroBaner'
-import Picture from '../src/components/Picture'
-import SelectDownload from '../src/components/SelectDownload'
+import FilterButtons from '../src/components/shared/FilterButtons'
+import WomanPageHeroBanner from '../src/components/shared/WomanPageHeroBaner'
+import Picture from '../src/components/shared/Picture'
+import SelectDownload from '../src/components/shared/SelectDownload'
 
 export default function Home() {
 
