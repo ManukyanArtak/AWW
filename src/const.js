@@ -25,13 +25,6 @@ const PageConstants = {
     aboutBook: {
       title: 'Գրքի մասին',
     },
-    womenCard: {
-      title: 'Կանայք և պատմություններ',
-      name: 'Ասլամազյան քույրեր',
-      address: 'Գյումրի, Հայաստան',
-      lifeDuration: '1907-2006',
-      profession: 'Նկարչուհիներ',
-    },
     aboutAuthors: {
       title: 'Հեղինակների մասին',
     },
@@ -40,6 +33,14 @@ const PageConstants = {
       active_btn: ' bg-violet-950 text-white  ',
       not_active: ' text-violet-950 border  border-[#ADADAD] font-[275]',
     },
+  },
+  womenCard: {
+    title: 'Կանայք և պատմություններ',
+    name: 'Ասլամազյան քույրեր',
+    address: 'Գյումրի, Հայաստան',
+    lifeDuration: '1907-2006',
+    profession: 'Նկարչուհիներ',
+    img: '/img/women.png',
   },
 }
 

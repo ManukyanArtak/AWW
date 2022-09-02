@@ -13,6 +13,9 @@ import Picture from '../src/components/Picture'
 import SelectDownload from '../src/components/SelectDownload'
 
 export default function Home() {
+
+  const womens = [PageConstants.womenCard, PageConstants.womenCard, PageConstants.womenCard]
+
   return (
     <MainLayout>
       <div className={`grid`}>
@@ -42,30 +45,7 @@ export default function Home() {
         {/*    title={PageConstants.global.womenCard.title}*/}
         {/*    direction={'right'}*/}
         {/*  />*/}
-        <WomanCardLayout className={'flex justify-center'}>
-          <WomanCard
-            address={PageConstants.global.womenCard.address}
-            name={PageConstants.global.womenCard.name}
-            lifeDuration={PageConstants.global.womenCard.lifeDuration}
-            profession={PageConstants.global.womenCard.profession}
-            className={'col-start-1 col-end-4'}
-          />
-          <WomanCard
-            address={PageConstants.global.womenCard.address}
-            name={PageConstants.global.womenCard.name}
-            lifeDuration={PageConstants.global.womenCard.lifeDuration}
-            profession={PageConstants.global.womenCard.profession}
-            className={'col-start-5 col-end-8'}
-          />
-
-          <WomanCard
-            address={PageConstants.global.womenCard.address}
-            name={PageConstants.global.womenCard.name}
-            lifeDuration={PageConstants.global.womenCard.lifeDuration}
-            profession={PageConstants.global.womenCard.profession}
-            className={'col-start-9 col-end-12'}
-          />
-        </WomanCardLayout>
+        <WomanCardLayout className={'flex justify-center'} womens={womens}/>
 
         {/*<WomanPageHeroBanner*/}
         {/*  name={PageConstants.womanPage.heroBanner.name}*/}
