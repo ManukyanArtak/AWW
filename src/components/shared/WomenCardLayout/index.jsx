@@ -1,12 +1,12 @@
 import Button from '../Button'
 import styles from './womanLayout.module.css'
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import WomanCard from '../WomanCard'
 import PageConstants from '../../../const'
 import useDeviceDetect from '../../../hooks/useDeviceDetect'
+import Dots from '../Dots'
 
 const WomenCardLayout = ({ className, womens }) => {
-
   const [current, setCurrent] = useState(0)
   const [startClientX, setStartClientX] = useState()
   const count = 3
@@ -19,6 +19,11 @@ const WomenCardLayout = ({ className, womens }) => {
     },
     [setStartClientX]
   )
+
+  const onDotClick = (index) => {
+    if (index === current) return
+    setCurrent(index)
+  }
 
   const onEnd = useCallback(
     (e) => {
@@ -37,36 +42,49 @@ const WomenCardLayout = ({ className, womens }) => {
   const images = ['/img/women.png', '/img/book.png', '/img/women.png']
 
   const mobileView = (
-    <div className={`${className}`}>
-      {womens.map((value, index, array) => (
-        <WomanCard
-          img={PageConstants.womenCard.img}
-          address={PageConstants.womenCard.address}
-          name={PageConstants.womenCard.name}
-          lifeDuration={PageConstants.womenCard.lifeDuration}
-          profession={PageConstants.womenCard.profession}
-          className={'col-start-1 col-end-4'}
-          show={index === current}
-          onStart={onStart}
-          onEnd={onEnd}
-        />
-      ))}
-    </div>
+    <>
+      <div className={`${className} `}>
+        {womens.map((value, index, array) => (
+          <WomanCard
+            img={value}
+            address={PageConstants.womenCard.address}
+            name={PageConstants.womenCard.name}
+            lifeDuration={PageConstants.womenCard.lifeDuration}
+            profession={PageConstants.womenCard.profession}
+            className={'col-start-1 col-end-4'}
+            show={index === current}
+            onStart={onStart}
+            onEnd={onEnd}
+            key={index}
+          />
+        ))}
+      </div>
+      <div className={`flex justify-center mt-9 mb-8`}>
+        {womens.map((value, index) => (
+          <Dots
+            className={`mr-2`}
+            active={index === current}
+            onclick={() => onDotClick(index)}
+            key={index}
+          />
+        ))}
+      </div>
+    </>
   )
-
 
   const desktopView = (
     <div>
       <div className={`flex justify-center`}>
         {womens.map((value, index, array) => (
           <WomanCard
-            img={value.img}
+            img={value}
             address={value.address}
             name={value.name}
             lifeDuration={value.lifeDuration}
             profession={value.profession}
             className={'px-12'}
             show={true}
+            key={index}
           />
         ))}
       </div>

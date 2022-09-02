@@ -13,8 +13,7 @@ import Picture from '../src/components/Picture'
 import SelectDownload from '../src/components/SelectDownload'
 
 export default function Home() {
-
-  const womens = [PageConstants.womenCard, PageConstants.womenCard, PageConstants.womenCard]
+  const womens = ['/img/women.png', '/img/womanPicture.png', '/img/women.png']
 
   return (
     <MainLayout>
@@ -45,7 +44,7 @@ export default function Home() {
         {/*    title={PageConstants.global.womenCard.title}*/}
         {/*    direction={'right'}*/}
         {/*  />*/}
-        <WomanCardLayout className={'flex justify-center'} womens={womens}/>
+        <WomanCardLayout className={'flex justify-center'} womens={womens} />
 
         {/*<WomanPageHeroBanner*/}
         {/*  name={PageConstants.womanPage.heroBanner.name}*/}
