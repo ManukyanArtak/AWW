@@ -17,7 +17,7 @@ module.exports = {
         },
         gray: {
           450: 'rgba(31, 9, 46, 0.5)',
-          550: '#ADADAD'
+          550: '#ADADAD',
         },
       },
       height: {
