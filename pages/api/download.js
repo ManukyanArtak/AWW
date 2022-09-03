@@ -2,13 +2,13 @@ import GoogleSheet from '../../services/backend/GoogleSheet'
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, email, subject, message } = req.body
+    const { email } = req.body
     try {
-      const data = [name, email, subject, message]
+      const data = [email]
 
       const googleSheet = new GoogleSheet()
       await googleSheet.getClient()
-      await googleSheet.append('contactList', data)
+      await googleSheet.append('downloadList', data)
 
       return res.status(201).json({})
     } catch (error) {
