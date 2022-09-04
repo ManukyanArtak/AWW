@@ -55,7 +55,7 @@ export default function Home() {
         {/*<Picture*/}
         {/*  className={`col-start-1 col-end-5 lg:col-start-5 lg:col-end-8`}*/}
         {/*/>*/}
-        {/*<SelectDownload />*/}
+        <SelectDownload />
       </div>
     </MainLayout>
   )
