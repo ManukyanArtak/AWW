@@ -75,7 +75,7 @@ const WomenCardLayout = ({ className, womens }) => {
   const desktopView = (
     <div>
       <div className={`grid grid-cols-12 gap-6 container mx-auto ${className}`}>
-        {womens.map((value, index, array) => (
+        {womens.map((value, index) => (
           <WomanCard
             img={value}
             address={value.address}

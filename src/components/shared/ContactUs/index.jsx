@@ -41,7 +41,7 @@ const ContactUs = () => {
   return (
     <>
       <div
-        className={`grid grid-cols-4 px-6 mb-20 lg:grid-cols-12 lg:gap-x-6 lg:px-[140px] lg:mt-[216px] lg:mb-[140px]`}
+        className={`container mx-auto grid grid-cols-4 mb-20 lg:grid-cols-12 lg:gap-x-6 lg:mt-[216px] lg:mb-[140px]`}
       >
         <div className={`col-start-1 col-end-5  lg:col-end-6`}>
           <h1 className={`text-violet-950 text-4xl lg:text-[56px]`}>
@@ -92,9 +92,7 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div
-          className={`col-start-1 mt-10 col-end-5 lg:col-start-7 lg:col-end-12 lg:mt-0`}
-        >
+        <div className={`col-start-1 mt-10 lg:col-start-7  lg:mt-0`}>
           <form onSubmit={formik.handleSubmit}>
             <div className={`lg:flex lg:w-[572px]`}>
               <Input

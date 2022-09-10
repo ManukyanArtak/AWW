@@ -1,15 +1,13 @@
 import Image from 'next/image'
 
-const AboutAuthors = ({ direction }) => (
+const AboutAuthors = ({ direction, className }) => (
   <div>
-    <div
-      className={'grid grid-flow-row-dense grid-cols-12 grid-rows-1 mt-[90px]'}
-    >
+    <div className={`grid-flow-row-dense ${className}`}>
       <div
         className={`max-w-[470px] max-h-[495px]  ${
           direction === 'left'
-            ? 'col-start-1 col-end-5'
-            : 'col-start-8 col-end-12'
+            ? 'col-start-1 col-span-5'
+            : 'col-start-8 col-span-5 '
         }`}
       >
         <Image
@@ -25,11 +23,11 @@ const AboutAuthors = ({ direction }) => (
       <div
         className={`${
           direction === 'left'
-            ? 'col-start-7 col-end-12'
-            : 'col-start-1 col-end-6'
+            ? 'col-start-7 col-span-6'
+            : 'col-start-1 col-span-6'
         }`}
       >
-        <p className={'text-blue-950 text-lg mt-5'}>
+        <p className={'text-blue-950 text-lg mt-8'}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Risus eget
           tristique adipiscing morbi volutpat blandit viverra vestibulum augue.
           Nulla leo, semper massa in consequat diam. Habitasse ornare convallis

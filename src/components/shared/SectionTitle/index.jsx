@@ -1,7 +1,7 @@
 import styles from './SectionTitle.module.css'
 
 const SectionTitle = ({ title, direction, className }) => {
-  let hrDirection = direction === 'left' ? 'left-0 w-28' : 'right-0 w-1/4'
+  let hrDirection = direction === 'left' ? 'left-0 w-1/6' : 'right-0 w-1/4'
   let titleDirection = direction === 'left' ? 'col-start-1' : 'col-start-6'
 
   return (

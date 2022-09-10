@@ -14,7 +14,10 @@ export default function Home() {
   return (
     <MainLayout>
       <div>
-        <HeroBanner text={PageConstants.homePage.heroBannerText} />
+        <HeroBanner
+          text={PageConstants.homePage.heroBannerText}
+          showScroller={true}
+        />
         <SectionTitle
           className={'pb-14 mt-12 container mx-auto'}
           title={'Նախագծի մասին'}
@@ -46,6 +49,7 @@ export default function Home() {
           direction={'right'}
         />
         <WomanCardLayout className={''} womens={womens} />
+
         <div className={'text-center mb-24 mt-24'}>
           <Button
             label={'Տեսնել բոլորին'}
