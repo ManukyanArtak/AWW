@@ -4,58 +4,54 @@ import HeroBanner from '../src/components/shared/HeroBanner'
 import PageConstants from '../src/const'
 import AboutBook from '../src/components/shared/AboutBook'
 import SectionTitle from '../src/components/shared/SectionTitle'
-import AboutAuthors from '../src/components/shared/AboutAuthors'
-import WomanCard from '../src/components/shared/WomanCard'
 import WomanCardLayout from '../src/components/shared/WomenCardLayout'
-import FilterButtons from '../src/components/shared/FilterButtons'
-import WomanPageHeroBanner from '../src/components/shared/WomanPageHeroBaner'
-import Picture from '../src/components/shared/Picture'
-import SelectDownload from '../src/components/shared/SelectDownload'
+import Button from '../src/components/shared/Button'
+import styles from '../src/components/shared/WomenCardLayout/womanLayout.module.css'
 
 export default function Home() {
   const womens = ['/img/women.png', '/img/womanPicture.png', '/img/women.png']
 
   return (
     <MainLayout>
-      <div className={`grid`}>
+      <div>
         <HeroBanner text={PageConstants.homePage.heroBannerText} />
+        <SectionTitle
+          className={'pb-14 mt-12 container mx-auto'}
+          title={'Նախագծի մասին'}
+          direction={'left'}
+        />
+        <AboutProject
+          direction={'left'}
+          text={PageConstants.global.aboutGoal.text}
+        />
+        <SectionTitle
+          className={'pb-14 mt-12 container mx-auto'}
+          title={'Նպատակը առաքինություն է'}
+          direction={'right'}
+        />
+        <AboutProject
+          direction={'right'}
+          text={PageConstants.global.aboutGoal.text}
+        />
+        <SectionTitle
+          className={'pb-14 mt-12 container mx-auto'}
+          title={PageConstants.global.aboutBook.title}
+          direction={'left'}
+        />
+        <AboutBook />
 
-        {/*  <AboutProject*/}
-        {/*    direction={'right'}*/}
-        {/*    text={PageConstants.global.aboutGoal.text}*/}
-        {/*  />*/}
-        {/*  <SectionTitle*/}
-        {/*    className={'pb-14 mt-12'}*/}
-        {/*    title={PageConstants.global.aboutBook.title}*/}
-        {/*    direction={'left'}*/}
-        {/*  />*/}
-        {/*  <AboutBook />*/}
-
-        {/*  <SectionTitle*/}
-        {/*    className={'mt-[140px]'}*/}
-        {/*    title={PageConstants.global.aboutAuthors.title}*/}
-        {/*    direction={'left'}*/}
-        {/*  />*/}
-
-        {/*  <AboutAuthors direction={'left'} />*/}
-        {/*  <AboutAuthors direction={'right'} />*/}
-        {/*  <SectionTitle*/}
-        {/*    className={'pb-14 mt-12'}*/}
-        {/*    title={PageConstants.global.womenCard.title}*/}
-        {/*    direction={'right'}*/}
-        {/*  />*/}
-        <WomanCardLayout className={'flex justify-center'} womens={womens} />
-
-        {/*<WomanPageHeroBanner*/}
-        {/*  name={PageConstants.womanPage.heroBanner.name}*/}
-        {/*  birthPlace={PageConstants.womanPage.heroBanner.birthPlace}*/}
-        {/*  lifeDuration={PageConstants.womanPage.heroBanner.lifeDuration}*/}
-        {/*  profession={PageConstants.womanPage.heroBanner.profession}*/}
-        {/*/>*/}
-        {/*<Picture*/}
-        {/*  className={`col-start-1 col-end-5 lg:col-start-5 lg:col-end-8`}*/}
-        {/*/>*/}
-        <SelectDownload />
+        <SectionTitle
+          className={'pb-14 mt-12 container mx-auto'}
+          title={PageConstants.womenCard.title}
+          direction={'right'}
+        />
+        <WomanCardLayout className={''} womens={womens} />
+        <div className={'text-center mb-24 mt-24'}>
+          <Button
+            label={'Տեսնել բոլորին'}
+            className={`${styles.btn} text-white  bg-transparent  font-semibold  py-4 px-6 border inline-block `}
+          />
+        </div>
       </div>
     </MainLayout>
   )
