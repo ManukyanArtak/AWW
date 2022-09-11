@@ -6,11 +6,12 @@ import WomanPageHeroBanner from '../../../src/components/shared/WomanPageHeroBan
 import RemarkableStories from '../../../src/components/pages/women/remarkableStories'
 import Images from '../../../src/components/pages/women/Images'
 import Videos from '../../../src/components/pages/women/videos'
+import SideBarMenu from '../../../src/components/shared/sidebarMenu'
 
 export default function PersonalPage() {
   const mankutyun = (
     <>
-      Հյաստանի առաջին կին-ճարտարապետը, ով աշխատել է դեռեւս Ալեքսանդր Թամանյանի
+      Հայաստանի առաջին կին-ճարտարապետը, ով աշխատել է դեռեւս Ալեքսանդր Թամանյանի
       եւ Նիկողայոս Բունիաթյանի արվեստանոցներում ու համագործակցել խորհրդահայ
       ճարտարապետության ամենախոշոր դեմքերի հետ, գրեթե մեկ հարյուրամյակի հասնող իր
       կյանքի ընթացքում անցել է այդ դժվարին ժամանակի բազմաթիվ արհավիրքների ու
@@ -58,49 +59,57 @@ export default function PersonalPage() {
   const images = [{ text: '' }, { text: '' }, { text: '' }, { text: '' }]
 
   return (
-    <MainLayout>
-      <WomanPageHeroBanner
-        name={PageConstants.womanPage.heroBanner.name}
-        birthPlace={PageConstants.womanPage.heroBanner.birthPlace}
-        lifeDuration={PageConstants.womanPage.heroBanner.lifeDuration}
-        profession={PageConstants.womanPage.heroBanner.profession}
-      />
-      <div className={'container mx-auto grid grid-cols-12 gap-6'}>
-        <div className={'col-span-4'}>
-          <ul>
-            <li className={'py-3'}>
-              <a>Կենսագրություն</a>
-            </li>
-            <li className={'py-3'}>
-              <a>Մանկություն</a>
-            </li>
-            <li className={'py-3'}>
-              <a>Պատանեկություն</a>
-            </li>
-            <li className={'py-3'}>
-              <a>Նկարներ</a>
-            </li>
-            <li className={'py-3'}>
-              <a>Տեսանյութեր</a>
-            </li>
-          </ul>
+    <>
+      <SideBarMenu />
+      <MainLayout>
+        <WomanPageHeroBanner
+          name={PageConstants.womanPage.heroBanner.name}
+          birthPlace={PageConstants.womanPage.heroBanner.birthPlace}
+          lifeDuration={PageConstants.womanPage.heroBanner.lifeDuration}
+          profession={PageConstants.womanPage.heroBanner.profession}
+        />
+        <div
+          className={
+            'container mx-auto grid grid-cols-4 lg:grid-cols-12 gap-6 pt-4  '
+          }
+        >
+          <div className={'col-span-4 mt-[100px] hidden lg:block'}>
+            <ul>
+              <li className={'font-semibold text-violet-950 text-xl'}>
+                <a>Կենսագրություն</a>
+              </li>
+              <li className={'mt-6 text-lg text-violet-950 font-medium '}>
+                <a>Մանկություն</a>
+              </li>
+              <li className={'mt-4 text-lg text-violet-950 font-medium '}>
+                <a>Պատանեկություն</a>
+              </li>
+              <li className={'font-semibold text-violet-950 text-xl mt-10 '}>
+                <a>Նկարներ</a>
+              </li>
+              <li className={'font-semibold text-violet-950 text-xl mt-10'}>
+                <a>Տեսանյութեր</a>
+              </li>
+              f
+            </ul>
+          </div>
+          <div className={'col-span-4 lg:col-span-8'}>
+            <Biography title={'Մանկություն'} text={mankutyun} divider={false} />
+            <Biography
+              title={'Պատանեկություն'}
+              text={patanekutyun}
+              divider={true}
+            />
+            <RemarkableStories
+              title={'ՈՒշագրավ Պատմություններ'}
+              stories={stories}
+            />
+            <Images images={images} />
+            <Videos images={images} />
+          </div>
         </div>
-        <div className={'col-span-8 pt-4'}>
-          <Biography title={'Մանկություն'} text={mankutyun} divider={false} />
-          <Biography
-            title={'Պատանեկություն'}
-            text={patanekutyun}
-            divider={true}
-          />
-          <RemarkableStories
-            title={'ՈՒշագրավ Պատմություններ'}
-            stories={stories}
-          />
-          <Images images={images} />
-          <Videos images={images} />
-        </div>
-      </div>
-      <SelectDownload />
-    </MainLayout>
+        <SelectDownload />
+      </MainLayout>
+    </>
   )
 }

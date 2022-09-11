@@ -33,11 +33,13 @@ const FilterMenu = () => {
 
       <div
         className={`${
-          open ? styles.open : styles.close
+          open ? 'visible' : 'invisible'
         } w-full h-screen fixed bg-[#0000004d] z-40  overflow-hidden lg:hidden`}
       >
         <div
-          className={`w-[350px] fixed  h-[462px] bg-white z-50 overflow-auto p-6 top-[112px]`}
+          className={`${
+            open ? styles.open : styles.close
+          } w-[350px] fixed  h-[462px] bg-white z-50 overflow-auto p-6 top-[112px]`}
         >
           <div className={` flex justify-between`}>
             <FilterButtons className={`flex flex-col gap-y-4`} />

@@ -6,10 +6,10 @@ export default function Biography({ title, text, divider }) {
       ) : (
         ''
       )}
-      <h2 className={`mb-12 text-violent-950 text-lg lg:text-3xl font-normal`}>
+      <h2 className={`mb-16 text-violent-950 text-lg lg:text-xl font-semibold`}>
         {title}
       </h2>
-      <p className={'text-lg'}>{text}</p>
+      <p className={'text-lg text-blue-950'}>{text}</p>
     </div>
   )
 }

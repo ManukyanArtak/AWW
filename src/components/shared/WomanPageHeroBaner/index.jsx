@@ -7,10 +7,8 @@ const WomanPageHeroBanner = ({
   lifeDuration,
   profession,
 }) => (
-  <div className={`${styles.banner_container}`}>
-    <div
-      className={` container mx-auto grid lg:grid-cols-12  gap-6 lg:pt-10 lg:pb-[54px]`}
-    >
+  <div className={`${styles.banner_container} pt-6 pb-8 lg:pt-10 lg:pb-[54px]`}>
+    <div className={` container mx-auto grid lg:grid-cols-12  gap-6`}>
       <div className={`col-start-1  col-span-4 `}>
         <Image
           src={'/img/womanPicture.png'}

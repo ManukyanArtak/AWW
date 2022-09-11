@@ -102,7 +102,7 @@ const ContactUs = () => {
                 label={'Full name'}
                 type={'text'}
                 placeholder={`Անուն`}
-                value={formik.values.fullName}
+                value={formik.values.name}
                 onchange={formik.handleChange}
                 id={'name'}
                 error={formik.errors.name}
