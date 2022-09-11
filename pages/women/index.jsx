@@ -16,7 +16,7 @@ export default function Women() {
           className={`container mx-auto grid grid-cols-4 gap-y-8 mt-[72px] lg:grid-cols-12 lg:gap-6 `}
         >
           <div
-            className={`hidden lg:block lg:mb-[98px] lg:mt-[81px] lg:col-start-3 lg:col-end-11 lg:gap-y-6`}
+            className={`hidden lg:block lg:mb-[98px] lg:mt-[81px] lg:col-start-2 lg:col-end-12 lg:gap-y-6`}
           >
             <FilterButtons
               className={`flex justify-center flex-col flex-wrap gap-6 lg:flex-row`}

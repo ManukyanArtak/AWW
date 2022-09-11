@@ -25,11 +25,11 @@ const SelectDownload = () => {
       className={`container mx-auto grid grid-cols-4 gap-6 lg:grid-cols-12 mb-16 mt-10 lg:gap-y-6`}
     >
       <div className={`col-start-5 col-span-4`}>
-        <h4
+        <h2
           className={`mb-12 text-violent-950 text-lg lg:text-3xl font-normal`}
         >
           Ընտրիր և ներբեռնիր
-        </h4>
+        </h2>
 
         <form onSubmit={formik.handleSubmit}>
           <input
