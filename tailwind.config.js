@@ -26,6 +26,13 @@ module.exports = {
       lineHeight: {
         20: '5rem',
       },
+      container: {
+        screens: {
+          sm: '330px',
+          md: '648px',
+          lg: '1140px',
+        },
+      },
     },
   },
   plugins: [],

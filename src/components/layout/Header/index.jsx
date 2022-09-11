@@ -16,13 +16,15 @@ const Header = () => {
         <div className="flex flex-wrap justify-between items-center">
           <Link
             href="/"
-            className="flex items-center w-[84px] h-[60px] lg:w-[144px] h-[62px]"
+            className=" flex items-center w-[84px] h-[60px] lg:w-[144px] h-[62px]"
+            passHref
           >
             <Image
               src="/img/logo.svg"
               width="144px"
               height="62px"
               alt={'Logo'}
+              className={'cursor-pointer'}
             />
           </Link>
           <div className="flex items-center lg:hidden">
@@ -43,19 +45,19 @@ const Header = () => {
           <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
             <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border lg:bg-transparent lg:border-transparent	 lg:flex-row  lg:space-x-8 lg:mt-0 lg:text-sm">
               <li>
-                <Link href="/about">
+                <Link href="/about" passHref>
                   <a className="text-violet-950 text-base">Նախագիծ</a>
                 </Link>
               </li>
               <li>
-                <Link href="/women">
+                <Link href="/women" passHref>
                   <a className="text-violet-950-color text-base">
                     Կանայք և պատմություններ
                   </a>
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
+                <Link href="/contact" passHref>
                   <a className="text-violet-950 text-base">Հետադարձ կապ</a>
                 </Link>
               </li>

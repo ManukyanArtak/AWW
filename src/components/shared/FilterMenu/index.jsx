@@ -18,20 +18,18 @@ const FilterMenu = () => {
 
   return (
     <>
-      <div className={`relative w-[40px] h-[40px] mt-8 lg:hidden `}>
-        <button
-          className={`absolute w-[40px] h-[40px]`}
-          onClick={() => handleOpen(true)}
-        >
-          <Image
-            src={'/img/filter_icon.svg'}
-            width={'40'}
-            height={'40'}
-            alt={'filter'}
-            layout={'responsive'}
-          />
-        </button>
-      </div>
+      <button
+        className={`absolute w-[40px] h-[40px] top-[112px] mb-[50px] lg:hidden`}
+        onClick={() => handleOpen(true)}
+      >
+        <Image
+          src={'/img/filter_icon.svg'}
+          width={'40'}
+          height={'40'}
+          alt={'filter'}
+          layout={'responsive'}
+        />
+      </button>
 
       <div
         className={`${
@@ -39,7 +37,7 @@ const FilterMenu = () => {
         } w-full h-screen fixed bg-[#0000004d] z-40  overflow-hidden lg:hidden`}
       >
         <div
-          className={`w-[350px] fixed  h-[462px] bg-white z-50 overflow-auto p-6 mt-8`}
+          className={`w-[350px] fixed  h-[462px] bg-white z-50 overflow-auto p-6 top-[112px]`}
         >
           <div className={` flex justify-between`}>
             <FilterButtons className={`flex flex-col gap-y-4`} />

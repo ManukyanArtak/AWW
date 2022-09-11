@@ -43,7 +43,7 @@ const WomenCardLayout = ({ className, womens }) => {
 
   const mobileView = (
     <>
-      <div className={`${className} `}>
+      <div className={`flex justify-center ${className}`}>
         {womens.map((value, index, array) => (
           <WomanCard
             img={value}
@@ -74,25 +74,19 @@ const WomenCardLayout = ({ className, womens }) => {
 
   const desktopView = (
     <div>
-      <div className={`flex justify-center`}>
-        {womens.map((value, index, array) => (
+      <div className={`grid grid-cols-12 gap-6 container mx-auto ${className}`}>
+        {womens.map((value, index) => (
           <WomanCard
             img={value}
             address={value.address}
             name={value.name}
             lifeDuration={value.lifeDuration}
             profession={value.profession}
-            className={'px-12'}
+            className={'px-12 col-span-4'}
             show={true}
             key={index}
           />
         ))}
-      </div>
-      <div className={'text-center'}>
-        <Button
-          label={'Տեսնել բոլորին'}
-          className={`${styles.btn} text-white mt-24 bg-transparent  font-semibold  py-4 px-6 border inline-block `}
-        />
       </div>
     </div>
   )

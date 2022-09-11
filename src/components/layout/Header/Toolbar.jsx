@@ -5,7 +5,7 @@ const Toolbar = ({ handleClick }) => (
   <div className={`w-full fixed top-0 left-0 h-screen z-10 bg-violet-850`}>
     <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full h-full lg:items-center items-start  flex flex-col lg:h-auto ">
       <div className="flex  justify-between items-center w-full  pt-5 pr-[40px] pl-6  max-w-screen-xl">
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center" passHref>
           <Image
             src="/img/logo-white.svg"
             width="84px"
@@ -31,19 +31,19 @@ const Toolbar = ({ handleClick }) => (
       </div>
       <ul className=" px-7 w-full  flex flex-col justify-center items-center h-full ">
         <li>
-          <Link href="/about">
+          <Link href="/about" passHref>
             <a className="text-white text-xl font-semibold">Նախագիծ</a>
           </Link>
         </li>
         <li className={`mt-8`}>
-          <Link href="/women">
+          <Link href="/women" passHref>
             <a className="text-white text-xl font-semibold">
               Կանայք և պատմություններ
             </a>
           </Link>
         </li>
         <li className={`mt-8`}>
-          <Link href="/contact">
+          <Link href="/contact" passHref>
             <a className="text-white text-xl font-semibold">Հետադարձ կապ</a>
           </Link>
         </li>
