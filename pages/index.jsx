@@ -9,7 +9,7 @@ import Button from '../src/components/shared/Button'
 import styles from '../src/components/shared/WomenCardLayout/womanLayout.module.css'
 
 export default function Home() {
-  const womens = ['/img/women.png', '/img/womanPicture.png', '/img/women.png']
+  const women = ['/img/women.png', '/img/womanPicture.png', '/img/women.png']
 
   return (
     <MainLayout>
@@ -48,7 +48,7 @@ export default function Home() {
           title={PageConstants.womenCard.title}
           direction={'right'}
         />
-        <WomanCardLayout className={''} womens={womens} />
+        <WomanCardLayout className={''} womens={women} />
 
         <div className={'text-center mb-24 mt-24'}>
           <Button
