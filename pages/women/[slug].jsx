@@ -20,7 +20,6 @@ export default function PersonalPage() {
         profession={PageConstants.womanPage.heroBanner.profession}
       />
       <SelectDownload />
-      <WomanCardLayout className={'flex justify-center'} womens={womens} />
     </MainLayout>
   )
 }

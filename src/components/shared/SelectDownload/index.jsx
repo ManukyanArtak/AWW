@@ -22,9 +22,9 @@ const SelectDownload = () => {
 
   return (
     <div
-      className={`grid grid-cols-4 px-5 gap-x-[30px] mb-16 lg:grid-cols-12 mt-10 lg:gap-y-6 lg:gap-x-[50px]`}
+      className={`container mx-auto grid grid-cols-4 gap-6 lg:grid-cols-12 mb-16 mt-10 lg:gap-y-6`}
     >
-      <div className={`col-start-1 col-end-5 lg:col-start-5 lg:col-end-9`}>
+      <div className={`col-start-5 col-span-4`}>
         <h4
           className={`mb-12 text-violent-950 text-lg lg:text-3xl font-normal`}
         >
@@ -45,7 +45,7 @@ const SelectDownload = () => {
           {formik.errors.email ? (
             <p className={`text-red-400`}>{formik.errors.email}</p>
           ) : null}
-          <div className={`flex justify-center`}>
+          <div className={`flex justify-start`}>
             <Button
               className={`mt-12 text-white font-bold ${styles.btn}`}
               label={'Submit'}
