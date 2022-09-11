@@ -48,7 +48,7 @@ export default function Home() {
           title={PageConstants.womenCard.title}
           direction={'right'}
         />
-        <WomanCardLayout className={''} womens={womens} />
+        <WomanCardLayout className={''} womens={women} />
 
         <div className={'text-center mb-24 mt-24'}>
           <Button
