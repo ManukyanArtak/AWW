@@ -7,6 +7,7 @@ import RemarkableStories from '../../../src/components/pages/women/remarkableSto
 import Images from '../../../src/components/pages/women/Images'
 import Videos from '../../../src/components/pages/women/videos'
 import SideBarMenu from '../../../src/components/shared/sidebarMenu'
+import WomenCardLayout from "../../../src/components/shared/WomenCardLayout";
 
 export default function PersonalPage() {
   const mankutyun = (
@@ -57,8 +58,10 @@ export default function PersonalPage() {
   ]
 
   const images = [{ text: '' }, { text: '' }, { text: '' }, { text: '' }]
+    const women = ['/img/women.png', '/img/womanPicture.png', '/img/women.png']
 
-  return (
+
+    return (
     <>
       <SideBarMenu />
       <MainLayout>
@@ -109,6 +112,11 @@ export default function PersonalPage() {
           </div>
         </div>
         <SelectDownload />
+          <div className={`container mx-auto mt-16  lg:mt-[120px]`}>
+              <h3 className={`text-black text-xl font-bold mb-12 lg:mb-16 lg:font-normal lg:text-3xl lg:mb-16`}>Շարունակիր բացահայտել</h3>
+              <WomenCardLayout className={''} womens={women}/>
+
+          </div>
       </MainLayout>
     </>
   )
