@@ -10,9 +10,10 @@ const WomenCardLayout = ({ className, womens }) => {
   const [current, setCurrent] = useState(0)
   const [startClientX, setStartClientX] = useState()
   const count = 3
-  const { isMobile } = useDeviceDetect()
+  const { isMobile } = useDeviceDetect();
 
-  const onStart = useCallback(
+
+    const onStart = useCallback(
     (e) => {
       const clientX = e?.touches[0]?.clientX
       setStartClientX(clientX)
@@ -43,7 +44,7 @@ const WomenCardLayout = ({ className, womens }) => {
 
   const mobileView = (
     <>
-      <div className={`flex justify-center ${className}`}>
+      <div className={`container ${className}`}>
         {womens.map((value, index, array) => (
           <WomanCard
             img={value}
@@ -51,7 +52,7 @@ const WomenCardLayout = ({ className, womens }) => {
             name={PageConstants.womenCard.name}
             lifeDuration={PageConstants.womenCard.lifeDuration}
             profession={PageConstants.womenCard.profession}
-            className={'col-start-1 col-end-4'}
+            className={'col-span-4'}
             show={index === current}
             onStart={onStart}
             onEnd={onEnd}
@@ -82,7 +83,7 @@ const WomenCardLayout = ({ className, womens }) => {
             name={value.name}
             lifeDuration={value.lifeDuration}
             profession={value.profession}
-            className={'px-12 col-span-4'}
+            className={'col-span-4'}
             show={true}
             key={index}
           />
