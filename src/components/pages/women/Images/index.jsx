@@ -1,8 +1,6 @@
 import Picture from '../../../shared/Picture'
 
 export default function Images({ images }) {
-
-
   return (
     <div>
       <hr className={'border-1 border-solid border-amber-300 my-14'} />

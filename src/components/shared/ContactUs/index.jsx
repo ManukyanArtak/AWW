@@ -41,7 +41,7 @@ const ContactUs = () => {
   return (
     <>
       <div
-        className={`container mx-auto grid grid-cols-4 mb-20 lg:grid-cols-12 lg:gap-x-6 lg:mt-[216px] lg:mb-[140px]`}
+        className={`container mx-auto grid grid-cols-4 mb-20 mt-[41px]  lg:grid-cols-12 lg:gap-x-6 lg:mt-[216px] lg:mb-[140px]`}
       >
         <div className={`col-start-1 col-end-5  lg:col-end-6`}>
           <h1 className={`text-violet-950 text-4xl lg:text-[56px]`}>
@@ -92,7 +92,7 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className={`col-start-1 mt-10 lg:col-start-7  lg:mt-0`}>
+        <div className={`col-span-4 mt-10 lg:col-start-7  lg:mt-0 lg:col-span-6`}>
           <form onSubmit={formik.handleSubmit}>
             <div className={`lg:flex lg:w-[572px]`}>
               <Input
@@ -102,7 +102,7 @@ const ContactUs = () => {
                 label={'Full name'}
                 type={'text'}
                 placeholder={`Անուն`}
-                value={formik.values.fullName}
+                value={formik.values.name}
                 onchange={formik.handleChange}
                 id={'name'}
                 error={formik.errors.name}
