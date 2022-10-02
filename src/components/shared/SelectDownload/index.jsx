@@ -14,10 +14,9 @@ const SelectDownload = () => {
   })
 
   const download = async (values) => {
-    const res = await handleRequest('download', values)
-    if (res) {
+    await handleRequest('download', values).then(() => {
       formik.handleReset()
-    }
+    })
   }
 
   return (

@@ -5,8 +5,14 @@ import styles from './styles/contact.module.css'
 import { useFormik } from 'formik'
 import { handleRequest } from '../../../../services/frontend/request'
 import * as Yup from 'yup'
+import Loader from '../Loader'
+import { useMemo, useState } from 'react'
+import SuccessMessage from '../SuccessMessage'
+import ErrorMessage from '../ErrorMessage'
 
 const ContactUs = () => {
+  const [requestState, setRequestState] = useState('success')
+  const [loader, setLoader] = useState(false)
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -32,10 +38,40 @@ const ContactUs = () => {
   })
 
   const sendMessage = async (values) => {
-    const res = await handleRequest('contact', values)
-    if (res) {
-      formik.handleReset()
-    }
+    const body = document.querySelector('body')
+    body.style.overflow = 'hidden'
+    setLoader(true)
+    await handleRequest('contact', values)
+      .then(() => {
+        setRequestState('success')
+        formik.handleReset()
+      })
+      .catch(() => {
+        setRequestState('error')
+      })
+      .finally(() => {
+        setLoader(false)
+        // setRequestState('')
+        body.style.overflow = 'auto'
+      })
+    // if (res) {
+    //   setRequestState('success')
+    //   formik.handleReset()
+    //   return
+    // } else {
+    //   setRequestState('error')
+    //   setLoader(false)
+    //   return
+    // }
+    // setLoader(false)
+    // setRequestState('')
+    // body.style.overflow = 'auto'
+  }
+
+  const onCancelClick = () => {
+    const body = document.querySelector('body')
+    setRequestState('')
+    body.style.overflow = 'auto'
   }
 
   return (
@@ -92,7 +128,9 @@ const ContactUs = () => {
           </div>
         </div>
 
-        <div className={`col-span-4 mt-10 lg:col-start-7  lg:mt-0 lg:col-span-6`}>
+        <div
+          className={`col-span-4 mt-10 lg:col-start-7  lg:mt-0 lg:col-span-6`}
+        >
           <form onSubmit={formik.handleSubmit}>
             <div className={`lg:flex lg:w-[572px]`}>
               <Input
@@ -170,6 +208,16 @@ const ContactUs = () => {
           </form>
         </div>
       </div>
+
+      {loader ? <Loader /> : null}
+
+      {requestState === 'success' ? <SuccessMessage /> : null}
+      {requestState === 'error' ? (
+        <ErrorMessage
+          onTryClick={() => sendMessage(formik.values)}
+          onCancelClick={() => onCancelClick()}
+        />
+      ) : null}
     </>
   )
 }
