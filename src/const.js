@@ -4,6 +4,7 @@ const PageConstants = {
   },
   aboutPage: {
     heroBannerText: `Ճանապարհ դեպի մեծ բացահայտումներ`,
+    title:'Հեղինակների մասին'
   },
   womanPage: {
     heroBanner: {

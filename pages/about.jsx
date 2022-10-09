@@ -12,36 +12,42 @@ export default function About() {
         text={PageConstants.aboutPage.heroBannerText}
         showScroller={false}
       />
-      <SectionTitle
-        className={'pb-14 mt-12 container mx-auto'}
-        title={'Նախագծի մասին'}
-        direction={'left'}
-      />
+      {/*<SectionTitle*/}
+      {/*  direction={'left'}*/}
+      {/*/>*/}
       <AboutProject
         direction={'left'}
         text={PageConstants.global.aboutGoal.text}
+        title={PageConstants.global.aboutGoal.title}
+        className={`mt-[56px] lg:mt-[90px]`}
       />
-      <SectionTitle
-        className={'pb-14 mt-12 container mx-auto'}
-        title={'Նպատակը առաքինություն է'}
-        direction={'right'}
-      />
+      {/*<SectionTitle*/}
+      {/*  className={'pb-14 mt-12 container mx-auto'}*/}
+      {/*  title={'Նպատակը առաքինություն է'}*/}
+      {/*  direction={'right'}*/}
+      {/*/>*/}
       <AboutProject
         direction={'right'}
         text={PageConstants.global.aboutGoal.text}
+        title={PageConstants.global.aboutGoal.title}
+        className={`mt-[56px] lg:mt-[90px]`}
+
       />
-      <SectionTitle
-        className={'pb-14 mt-12 container mx-auto'}
-        title={'Հեղինակների մասին'}
-        direction={'left'}
-      />
+      {/*<SectionTitle*/}
+      {/*  className={'pb-14 mt-12 container mx-auto'}*/}
+      {/*  title={'Հեղինակների մասին'}*/}
+      {/*  direction={'left'}*/}
+      {/*/>*/}
       <AboutAuthors
         direction={'left'}
-        className={'container grid grid-cols-12 gap-6  mx-auto mt-[90px]'}
+        className={'container grid grid-cols-4 lg:grid-cols-12 gap-6 mt-[56px] mx-auto lg:mt-[90px]'}
+        title={PageConstants.aboutPage.title}
+        section={true}
+
       />
       <AboutAuthors
         direction={'right'}
-        className={'container grid grid-cols-12 mx-auto  mt-[70px] mb-36'}
+        className={'container grid grid-cols-4 mt-10 lg:grid-cols-12 mx-auto  lg:mt-[70px] mb-36'}
       />
     </MainLayout>
   )

@@ -159,7 +159,7 @@ const ContactUs = () => {
                   <p className={`text-red-400`}>{formik.errors.message}</p>
                 ) : null}
               </label>
-              <div className={`flex justify-end mt-8 w-full lg:mt-9 lg:block`}>
+              <div className={`flex justify-end mt-8 w-[320px] lg:w-full lg:mt-9 lg:block`}>
                 <Button
                   label={'Հաստատել'}
                   className={`px-6 py-4 text-white text-center text-lg font-medium w-[160px] h-[60px]  ${styles.submit_btn}`}
