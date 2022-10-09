@@ -4,7 +4,7 @@ export default function RemarkableStories({ title, stories }) {
       <p className={'text-lg py-8'}>{item.text}</p>
       <p
         className={
-          'py-4 text-right text-sm text-violet-850 font-semibold\t lg:text-black lg:font-normal'
+          'py-4 text-right text-sm text-violet-850 font-semibold lg:text-black lg:font-normal'
         }
       >
         {item.author}
