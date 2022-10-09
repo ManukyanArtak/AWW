@@ -11,7 +11,7 @@ import SuccessMessage from '../SuccessMessage'
 import ErrorMessage from '../ErrorMessage'
 
 const ContactUs = () => {
-  const [requestState, setRequestState] = useState('success')
+  const [requestState, setRequestState] = useState('')
   const [loader, setLoader] = useState(false)
   const formik = useFormik({
     initialValues: {
@@ -51,21 +51,7 @@ const ContactUs = () => {
       })
       .finally(() => {
         setLoader(false)
-        // setRequestState('')
-        body.style.overflow = 'auto'
       })
-    // if (res) {
-    //   setRequestState('success')
-    //   formik.handleReset()
-    //   return
-    // } else {
-    //   setRequestState('error')
-    //   setLoader(false)
-    //   return
-    // }
-    // setLoader(false)
-    // setRequestState('')
-    // body.style.overflow = 'auto'
   }
 
   const onCancelClick = () => {
@@ -211,7 +197,7 @@ const ContactUs = () => {
 
       {loader ? <Loader /> : null}
 
-      {requestState === 'success' ? <SuccessMessage /> : null}
+      {requestState === 'success' ? <SuccessMessage onClose={onCancelClick} /> : null}
       {requestState === 'error' ? (
         <ErrorMessage
           onTryClick={() => sendMessage(formik.values)}
