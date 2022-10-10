@@ -11,10 +11,9 @@ const WomenCardLayout = ({ className, womens }) => {
   const [current, setCurrent] = useState(0)
   const [startClientX, setStartClientX] = useState()
   const count = 3
-  const { isMobile } = useDeviceDetect();
+  const { isMobile } = useDeviceDetect()
 
-
-    const onStart = useCallback(
+  const onStart = useCallback(
     (e) => {
       const clientX = e?.touches[0]?.clientX
       setStartClientX(clientX)

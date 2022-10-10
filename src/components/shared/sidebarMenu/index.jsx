@@ -79,6 +79,7 @@ const SideBarMenu = () => {
               height={'48'}
               width={'48'}
               layout={'responsive'}
+              alt={'Close'}
             />
           </button>
         </div>

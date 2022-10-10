@@ -3,8 +3,15 @@ import styles from './styles/selectDownload.module.css'
 import { useFormik } from 'formik'
 import { handleRequest } from '../../../../services/frontend/request'
 import * as Yup from 'yup'
+import {useState} from "react";
+import SuccessMessage from "../SuccessMessage";
+import ErrorMessage from "../ErrorMessage";
+import Loader from "../Loader";
 
 const SelectDownload = () => {
+  const [requestState, setRequestState] = useState('')
+  const [loader, setLoader] = useState(false)
+
   const formik = useFormik({
     initialValues: { email: '' },
     onSubmit: (values) => download(values),
@@ -14,13 +21,29 @@ const SelectDownload = () => {
   })
 
   const download = async (values) => {
-    const res = await handleRequest('download', values)
-    if (res) {
+    const body = document.querySelector('body')
+    body.style.overflow = 'hidden'
+    setLoader(true)
+    await handleRequest('download', values).then(() => {
+      setRequestState('success')
       formik.handleReset()
-    }
+    })
+        .catch(() => {
+          setRequestState('error')
+        })
+        .finally(() => {
+          setLoader(false)
+        })
+  }
+
+  const onCancelClick = () => {
+    const body = document.querySelector('body')
+    setRequestState('')
+    body.style.overflow = 'auto'
   }
 
   return (
+      <>
     <div
       className={`container mx-auto grid grid-cols-4 gap-6 lg:grid-cols-12 mb-16 mt-10 lg:gap-y-6`}
     >
@@ -55,6 +78,15 @@ const SelectDownload = () => {
         </form>
       </div>
     </div>
+        {loader ? <Loader /> : null}
+        {requestState === 'success' ? <SuccessMessage onClose={() =>  setRequestState('')} /> : null}
+        {requestState === 'error' ? (
+            <ErrorMessage
+                onTryClick={() => download(formik.values)}
+                onCancelClick={onCancelClick}
+            />
+        ) : null}
+      </>
   )
 }
 

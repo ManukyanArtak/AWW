@@ -12,12 +12,25 @@ export const handleRequest = async (url, values) => {
   }
   formBody = formBody.join('&')
 
-  const res = await fetch(`${baseUrl}${url}`, {
+ await fetch(`${baseUrl}${url}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
     },
     body: formBody,
   })
-  return res.ok
+     .then(res=>{
+       return res
+     })
+     .then(data=>{
+       if (data.ok) {
+         return  data.json()
+       } else {
+         throw new Error('Something went wrong')
+       }
+     })
+
+
+  // return false
+  // return res.ok
 }
