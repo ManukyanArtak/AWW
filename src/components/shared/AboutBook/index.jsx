@@ -3,6 +3,7 @@ import React from 'react'
 import Button from '../Button'
 import styles from './aboutBook.module.css'
 import SectionTitle from "../SectionTitle";
+import PageConstants from "../../../const";
 
 const AboutBook = ({className}) => (
   <div className={className}>
@@ -17,27 +18,17 @@ const AboutBook = ({className}) => (
       <div className={`col-span-4 mt-6 lg:col-start-7 lg:col-span-6 pr-16 row-start-3 lg:row-start-2 lg:mt-[90px]`}>
         <div className={`mb-8`}>
           <p className={`text-base lg:text-lg`}>
-            Գրքում տեղ գտած պատմություններում կկարդաք այն կանանց մասին, որոնք
-            մենք՝ որպես գրքի հեղինակներ, ոգեշնչող ենք համարում: Մենք ձեզ
-            հրավիրում ենք հայացք նետել այս անհավանական կանանց կյանքին, տեսնել
-            փոքր պատառիկներն այն ամենի, ինչ նրանք արել ու անում են:
+            {PageConstants.global.aboutBook.text_1}
           </p>
-          <br />
-          {/*<p className={`text-lg`}>*/}
-          {/*  «Զարմանահրաշ հայ կանայք» սիրո, զայրույթի, հպարտության և*/}
-          {/*  հիասթափության արգասիք է: Արդյունք է երկար ու մանրակրկիտ*/}
-          {/*  հետազոտության, անվերջ բացահայտումների, կրքի, հետաքրքրասիրության և*/}
-          {/*  գնահատանքի:*/}
-          {/*</p>*/}
-          <br />
-          {/*<p className={`text-lg`}>*/}
-          {/*  Թող այս կանանց ճամփորդությունները ոգեշնչեն ձեզ:*/}
-          {/*</p>*/}
+          <br/>
+          <p className={`text-base lg:text-lg`}>
+            {PageConstants.global.aboutBook.text_2}
+          </p>
+          <br/>
+          <p className={`text-base lg:text-lg`}>
+            {PageConstants.global.aboutBook.text_3}
+          </p>
         </div>
-        <Button
-          label={'Կարդալ ավելին'}
-          className={`text-white  bg-transparent  font-semibold  py-4 px-6 border inline-block  ${styles.test}`}
-        />
       </div>
     </div>
   </div>

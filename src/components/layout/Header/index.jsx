@@ -45,11 +45,6 @@ const Header = () => {
           <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
             <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border lg:bg-transparent lg:border-transparent	 lg:flex-row  lg:space-x-8 lg:mt-0 lg:text-sm">
               <li>
-                <Link href="/about" passHref>
-                  <a className="text-violet-950 text-base">Նախագիծ</a>
-                </Link>
-              </li>
-              <li>
                 <Link href="/women" passHref>
                   <a className="text-violet-950-color text-base">
                     Կանայք և պատմություններ

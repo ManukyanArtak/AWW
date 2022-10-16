@@ -48,7 +48,7 @@ const WomenCardLayout = ({ className, womens }) => {
             direction={'left'}
         />
       <div className={`container mx-auto ${className}`}>
-          <h2 className={`text-xl col-span-4 row-start-1 font-bold`}>Նախագծի մասին</h2>
+          <h2 className={`text-xl col-span-4 row-start-1 font-bold`}>{PageConstants.womenCard.title}</h2>
           {womens.map((value, index, array) => (
           <WomanCard
             img={value}
@@ -83,7 +83,7 @@ const WomenCardLayout = ({ className, womens }) => {
             direction={'right'}
         />
       <div className={`grid grid-cols-12 gap-6 container mx-auto ${className}`}>
-          <h2 className={`text-3xl col-span-6 row-start-1 col-start-7`}>Նախագծի մասին</h2>
+          <h2 className={`text-3xl col-span-6 row-start-1 col-start-7`}>{PageConstants.womenCard.title}</h2>
 
           {womens.map((value, index) => (
           <WomanCard

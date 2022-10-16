@@ -1,7 +1,7 @@
 import styles from './SectionTitle.module.css'
 
 const SectionTitle = ({ direction }) => {
-  let hrDirection = direction === 'left' ? 'lg:left-0 lg:w-[6%]' : 'lg:right-0 lg:w-1/5'
+  let hrDirection = direction === 'left' ? 'lg:left-0 lg:w-[6%]' : 'lg:right-0 lg:w-[15%]'
 
   return (
     <div className={'relative'}>

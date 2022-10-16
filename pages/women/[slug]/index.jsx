@@ -58,6 +58,7 @@ export default function PersonalPage() {
   ]
 
   const images = [{ text: '' }, { text: '' }, { text: '' }, { text: '' }]
+  const videos = ["https://www.youtube.com/embed/7lK9pAeHNCQ", "https://www.youtube.com/embed/bH-TlC0111Q", "https://www.youtube.com/embed/RMo2haIPYBM" ]
   const women = ['/img/women.png', '/img/womanPicture.png', '/img/women.png']
 
   return (
@@ -107,7 +108,7 @@ export default function PersonalPage() {
               stories={stories}
             />
             <Images images={images} />
-            <Videos images={images} />
+            <Videos videos={videos} />
           </div>
         </div>
         <SelectDownload />

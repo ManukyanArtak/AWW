@@ -1,6 +1,7 @@
 import Picture from '../../../shared/Picture'
+import Video from "../../../shared/Video";
 
-export default function Videos({ images }) {
+export default function Videos({ videos }) {
   return (
     <div>
       <hr className={'border-1 border-solid border-amber-300 my-14'} />
@@ -8,8 +9,12 @@ export default function Videos({ images }) {
         Տեսանյութեր
       </h2>
       <div className={'grid grid-cols-8 gap-x-6 gap-y-10'}>
-        {images.map((item, key) => (
-          <Picture key={key} className={'col-span-8 lg:col-span-4'} />
+        {videos.map((item, key) => (
+            <div className={`col-span-8 lg:col-span-4`}>
+            <iframe className={`w-[312px] h-[218px] lg:w-[371px] lg:h-[259px]`} width="371" height="259" src={item} allowFullScreen> </iframe>
+            </div>
+
+            // <Video src={item}/>
         ))}
       </div>
     </div>
