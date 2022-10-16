@@ -18,36 +18,41 @@ export default function Home() {
           text={PageConstants.homePage.heroBannerText}
           showScroller={true}
         />
-        <SectionTitle
-          className={'pb-14 mt-12 container mx-auto'}
-          title={'Նախագծի մասին'}
-          direction={'left'}
-        />
+        {/*<SectionTitle*/}
+        {/*  className={'pb-14 mt-12 container mx-auto'}*/}
+        {/*  title={'Նախագծի մասին'}*/}
+        {/*  direction={'left'}*/}
+        {/*/>*/}
         <AboutProject
           direction={'left'}
           text={PageConstants.global.aboutGoal.text}
+          title={PageConstants.global.aboutGoal.title}
+          className={'mt-[80px] lg:mt-[90px]'}
         />
-        <SectionTitle
-          className={'pb-14 mt-12 container mx-auto'}
-          title={'Նպատակը առաքինություն է'}
-          direction={'right'}
-        />
+        {/*<SectionTitle*/}
+        {/*  className={'pb-14 mt-12 container mx-auto'}*/}
+        {/*  title={'Նպատակը առաքինություն է'}*/}
+        {/*  direction={'right'}*/}
+        {/*/>*/}
         <AboutProject
           direction={'right'}
           text={PageConstants.global.aboutGoal.text}
-        />
-        <SectionTitle
-          className={'pb-14 mt-12 container mx-auto'}
-          title={PageConstants.global.aboutBook.title}
-          direction={'left'}
-        />
-        <AboutBook />
+          title={PageConstants.global.aboutGoal.title}
+          className={'mt-[88px] lg:mt-[95px]'}
 
-        <SectionTitle
-          className={'pb-14 mt-12 container mx-auto'}
-          title={PageConstants.womenCard.title}
-          direction={'right'}
         />
+        {/*<SectionTitle*/}
+        {/*  className={'pb-14 mt-12 container mx-auto'}*/}
+        {/*  title={PageConstants.global.aboutBook.title}*/}
+        {/*  direction={'left'}*/}
+        {/*/>*/}
+        <AboutBook className={`mt-[58px] lg:mt-[140px]`} />
+
+        {/*<SectionTitle*/}
+        {/*  className={'pb-14 mt-12 container mx-auto'}*/}
+        {/*  title={PageConstants.womenCard.title}*/}
+        {/*  direction={'right'}*/}
+        {/*/>*/}
         <WomanCardLayout className={''} womens={women} />
 
         <div className={'text-center mb-24 mt-24'}>
