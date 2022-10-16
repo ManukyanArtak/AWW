@@ -1,6 +1,6 @@
-export default function Biography({ title, text, divider }) {
+export default function Biography({ title, text, divider, id }) {
   return (
-    <div>
+    <div id={id}>
       {divider ? (
         <hr className={'border-1 border-solid border-amber-300 my-14'} />
       ) : (

@@ -39,7 +39,7 @@ export default function Home() {
         <div className={'text-center mb-24 mt-24'}>
           <Button
             label={'Տեսնել բոլորին'}
-            className={`${styles.btn} text-white  bg-transparent  font-semibold  py-4 px-6 border inline-block `}
+            className={`${styles.btn} text-white bg-transparent  font-semibold  py-4 px-6 border inline-block `}
           />
         </div>
       </div>
