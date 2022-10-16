@@ -81,7 +81,7 @@ const SelectDownload = () => {
       </div>
       {loader ? <Loader /> : null}
       {requestState === 'success' ? (
-        <SuccessMessage onClose={() => setRequestState('')} />
+        <SuccessMessage onClose={onCancelClick} />
       ) : null}
       {requestState === 'error' ? (
         <ErrorMessage
