@@ -30,11 +30,6 @@ const Toolbar = ({ handleClick }) => (
         </div>
       </div>
       <ul className=" px-7 w-full  flex flex-col justify-center items-center h-full ">
-        <li>
-          <Link href="/about" passHref>
-            <a className="text-white text-xl font-semibold">Նախագիծ</a>
-          </Link>
-        </li>
         <li className={`mt-8`}>
           <Link href="/women" passHref>
             <a className="text-white text-xl font-semibold">
