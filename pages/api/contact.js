@@ -1,14 +1,17 @@
-import GoogleSheet from '../../services/backend/GoogleSheet'
+import Email from '../../services/backend/Email'
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { name, email, subject, message } = req.body
     try {
-      const data = [name, email, subject, message]
+      const emailService = new Email()
 
-      const googleSheet = new GoogleSheet()
-      await googleSheet.getClient()
-      await googleSheet.append('contactList', data)
+      await emailService.send(subject, email, [
+        {
+          type: 'text/plain',
+          value: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+        },
+      ])
 
       return res.status(201).json({})
     } catch (error) {
