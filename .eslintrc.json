@@ -88,7 +88,8 @@
         "prev": "*",
         "next": "return"
       }
-    ]
+    ],
+    "react/display-name": "off"
   },
   "settings": {
     "import/resolver": {

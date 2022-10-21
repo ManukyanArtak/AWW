@@ -8,6 +8,7 @@ import Images from '../../../src/components/pages/women/Images'
 import Videos from '../../../src/components/pages/women/videos'
 import SideBarMenu from '../../../src/components/shared/sidebarMenu'
 import WomenCardLayout from '../../../src/components/shared/WomenCardLayout'
+import { scrollToElement } from '../../../services/frontend/helpers'
 
 export default function PersonalPage() {
   const mankutyun = (
@@ -58,7 +59,11 @@ export default function PersonalPage() {
   ]
 
   const images = [{ text: '' }, { text: '' }, { text: '' }, { text: '' }]
-  const videos = ["https://www.youtube.com/embed/7lK9pAeHNCQ", "https://www.youtube.com/embed/bH-TlC0111Q", "https://www.youtube.com/embed/RMo2haIPYBM" ]
+  const videos = [
+    'https://www.youtube.com/embed/7lK9pAeHNCQ',
+    'https://www.youtube.com/embed/bH-TlC0111Q',
+    'https://www.youtube.com/embed/RMo2haIPYBM',
+  ]
   const women = ['/img/women.png', '/img/womanPicture.png', '/img/women.png']
 
   return (
@@ -79,29 +84,42 @@ export default function PersonalPage() {
           <div className={'col-span-4 mt-[100px] hidden lg:block'}>
             <ul>
               <li className={'font-semibold text-violet-950 text-xl'}>
-                <a>Կենսագրություն</a>
+                Կենսագրություն
               </li>
               <li className={'mt-6 text-lg text-violet-950 font-medium '}>
-                <a>Մանկություն</a>
+                <button onClick={() => scrollToElement('childhood')}>
+                  Մանկություն
+                </button>
               </li>
               <li className={'mt-4 text-lg text-violet-950 font-medium '}>
-                <a>Պատանեկություն</a>
+                <button onClick={() => scrollToElement('youth')}>
+                  Պատանեկություն
+                </button>
               </li>
               <li className={'font-semibold text-violet-950 text-xl mt-10 '}>
-                <a>Նկարներ</a>
+                <button onClick={() => scrollToElement('images')}>
+                  Նկարներ
+                </button>
               </li>
               <li className={'font-semibold text-violet-950 text-xl mt-10'}>
-                <a>Տեսանյութեր</a>
+                <button onClick={() => scrollToElement('videos')}>
+                  Տեսանյութեր
+                </button>
               </li>
-              f
             </ul>
           </div>
           <div className={'col-span-4 lg:col-span-8'}>
-            <Biography title={'Մանկություն'} text={mankutyun} divider={false} />
+            <Biography
+              title={'Մանկություն'}
+              text={mankutyun}
+              divider={false}
+              id={'childhood'}
+            />
             <Biography
               title={'Պատանեկություն'}
               text={patanekutyun}
               divider={true}
+              id={'youth'}
             />
             <RemarkableStories
               title={'ՈՒշագրավ Պատմություններ'}

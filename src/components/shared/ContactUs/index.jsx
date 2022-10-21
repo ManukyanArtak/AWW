@@ -123,7 +123,7 @@ const ContactUs = () => {
                 labelClassname={`w-[320px] lg:w-[272px] lg:mr-6 block`}
                 inputClassName={`border h-[50px] mt-2 border-solid border-violent-950 focus:outline-0 py-3 pl-4 placeholder:text-gray-550 placeholder:text-base`}
                 spanClassName={`text-base text-violet-850`}
-                label={'Full name'}
+                label={'Անուն'}
                 type={'text'}
                 placeholder={`Անուն`}
                 value={formik.values.name}
@@ -137,7 +137,7 @@ const ContactUs = () => {
                 labelClassname={`w-[320px] mt-4 lg:w-[272px] block lg:mt-0`}
                 inputClassName={`border h-[50px] mt-2  border-solid border-violent-950 focus:outline-0 py-3 pl-4 placeholder:text-gray-550 placeholder:text-base`}
                 spanClassName={`text-base text-violet-850`}
-                label={'Email'}
+                label={'Էլ. հասցե'}
                 type={'email'}
                 placeholder={`Էլ. հասցե`}
                 value={formik.values.email}
@@ -152,7 +152,7 @@ const ContactUs = () => {
               <Input
                 labelClassname={` w-[320px] mt-4 block lg:w-[572px] lg:mt-6`}
                 inputClassName={`border h-[50px] mt-2 border-solid border-violent-950 focus:outline-0 py-3 pl-4 placeholder:text-gray-550 placeholder:text-base`}
-                label={'Subject'}
+                label={'Թեմա'}
                 type={'text'}
                 spanClassName={`text-base text-violet-850`}
                 placeholder={`Թեմա`}
@@ -165,7 +165,7 @@ const ContactUs = () => {
               />
               <label className={`w-[320px] mt-4 block lg:mt-6 lg:w-[570px]`}>
                 <span className={`text-base text-violet-850 block`}>
-                  Message
+                  Հաղորդագրություն
                 </span>
                 <textarea
                   className={`w-full h-[130px] border border-solid border-violent-950 focus:outline-0 py-3 pl-4 placeholder:text-gray-550 mt-2 resize-none placeholder:text-base placeholder:text-gray-550 ${
@@ -183,7 +183,9 @@ const ContactUs = () => {
                   <p className={`text-red-400`}>{formik.errors.message}</p>
                 ) : null}
               </label>
-              <div className={`flex justify-end mt-8 w-[320px] lg:w-full lg:mt-9 lg:block`}>
+              <div
+                className={`flex justify-end mt-8 w-[320px] lg:w-full lg:mt-9 lg:block`}
+              >
                 <Button
                   label={'Հաստատել'}
                   className={`px-6 py-4 text-white text-center text-lg font-medium w-[160px] h-[60px]  ${styles.submit_btn}`}
@@ -197,7 +199,9 @@ const ContactUs = () => {
 
       {loader ? <Loader /> : null}
 
-      {requestState === 'success' ? <SuccessMessage onClose={onCancelClick} /> : null}
+      {requestState === 'success' ? (
+        <SuccessMessage onClose={onCancelClick} />
+      ) : null}
       {requestState === 'error' ? (
         <ErrorMessage
           onTryClick={() => sendMessage(formik.values)}
