@@ -24,6 +24,7 @@ const WomanCard = ({
           width={1}
           alt="Image Alt"
           src={img}
+          loader={({ src }) => `http://localhost:1337${src}`}
           layout="responsive"
           objectFit="cover"
         />
