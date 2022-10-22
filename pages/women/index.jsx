@@ -3,10 +3,21 @@ import FilterButtons from '../../src/components/shared/FilterButtons'
 import WomanCard from '../../src/components/shared/WomanCard'
 import Button from '../../src/components/shared/Button'
 import FilterMenu from '../../src/components/shared/FilterMenu'
-import { useState } from 'react'
-import Image from 'next/image'
+import axios from 'axios'
 
-export default function Women() {
+export async function getServerSideProps({ req, res }) {
+  const { data } = await axios.get(`http://127.0.0.1:1337/api/women?populate=*`)
+
+  return {
+    props: {
+      women: data.data,
+      pagination: data.meta.pagination
+    },
+  }
+}
+
+export default function Women({ women, pagination }) {
+
   return (
     <>
       <FilterMenu />
