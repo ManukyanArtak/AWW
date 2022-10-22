@@ -7,10 +7,22 @@ import RemarkableStories from '../../../src/components/pages/women/remarkableSto
 import Images from '../../../src/components/pages/women/Images'
 import Videos from '../../../src/components/pages/women/videos'
 import SideBarMenu from '../../../src/components/shared/sidebarMenu'
-import WomenCardLayout from '../../../src/components/shared/WomenCardLayout'
 import { scrollToElement } from '../../../services/frontend/helpers'
+import axios from 'axios'
 
-export default function PersonalPage() {
+export async function getServerSideProps({ req, res }) {
+  const { data } = await axios.get(
+    `http://127.0.0.1:1337/api/women/1?populate=*`
+  )
+
+  return {
+    props: {
+      women: data.data,
+    },
+  }
+}
+export default function PersonalPage({ women }) {
+
   const mankutyun = (
     <>
       Հայաստանի առաջին կին-ճարտարապետը, ով աշխատել է դեռեւս Ալեքսանդր Թամանյանի
@@ -64,7 +76,7 @@ export default function PersonalPage() {
     'https://www.youtube.com/embed/bH-TlC0111Q',
     'https://www.youtube.com/embed/RMo2haIPYBM',
   ]
-  const women = ['/img/women.png', '/img/womanPicture.png', '/img/women.png']
+  // const women = ['/img/women.png', '/img/womanPicture.png', '/img/women.png']
 
   return (
     <>
@@ -136,7 +148,7 @@ export default function PersonalPage() {
           >
             Շարունակիր բացահայտել
           </h3>
-          <WomenCardLayout className={''} womens={women} />
+          {/*<WomenCardLayout className={''} womens={women} />*/}
         </div>
       </MainLayout>
     </>
