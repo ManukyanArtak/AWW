@@ -9,16 +9,18 @@ import { lifeDuration } from '../../services/frontend/helpers'
 export async function getServerSideProps({ req, res }) {
   const strapi = new Strapi()
   const { data } = await strapi.getWomen([])
+  const categoriesData = await strapi.getCategories()
 
   return {
     props: {
       women: data.women.data,
       pagination: data.women.meta.pagination,
+      categories: categoriesData.data.categories.data,
     },
   }
 }
 
-export default function Women({ women, pagination }) {
+export default function Women({ women, pagination, categories }) {
   const womenData = women.map((woman) => {
     const {
       first_name,
