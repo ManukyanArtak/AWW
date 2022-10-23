@@ -5,6 +5,7 @@ import Button from '../../src/components/shared/Button'
 import FilterMenu from '../../src/components/shared/FilterMenu'
 import Strapi from '../../services/backend/Strapi'
 import { lifeDuration } from '../../services/frontend/helpers'
+import {useRouter} from "next/router";
 
 export async function getServerSideProps({ req, res, query }) {
 
@@ -22,6 +23,8 @@ export async function getServerSideProps({ req, res, query }) {
 }
 
 export default function Women({ women, pagination, categories }) {
+  console.log(women, 'women')
+  const router = useRouter()
   const womenData = women.map((woman) => {
     const {
       first_name,
@@ -31,25 +34,27 @@ export default function Women({ women, pagination, categories }) {
       birthday,
       death_day,
       avatar,
+        categories
     } = woman.attributes
 
     return (
       <WomanCard
         img={`${avatar.data.attributes.url}`}
         show={true}
-        className={`col-span-4`}
+        className={`col-span-4 cursor-pointer`}
         name={`${first_name} ${last_name}`}
         address={`${country}, ${city}`}
         lifeDuration={lifeDuration(birthday, death_day)}
-        profession={'Նկարչուհիներ'}
+        profession={categories.data[0]?.attributes.name}
         key={woman.id}
+        onClick={()=>router.push(`/women/${woman.id}`)}
       />
     )
   })
 
   return (
     <>
-      <FilterMenu />
+      <FilterMenu categories={categories} />
 
       <MainLayout>
         <div
@@ -60,17 +65,20 @@ export default function Women({ women, pagination, categories }) {
           >
             <FilterButtons
               className={`flex justify-center flex-col flex-wrap gap-6 lg:flex-row`}
+              categories={categories}
             />
           </div>
 
           {womenData}
+    <div className={`col-start-1 col-span-full mb-20 mt-9 lg:mb-[140px] lg:mt-[102px] flex items-center justify-center`}>
+      <Button
+          label={'Տեսնել բոլորին'}
+          className={
+            'text-violet-950 pb-[8px] border-b border-yellow-450 w-[152px] '
+          }
+      />
+    </div>
 
-          <Button
-            label={'Տեսնել բոլորին'}
-            className={
-              'text-violet-950 pb-[8px] border-b border-yellow-450 col-start-2 col-end-3 mb-20 mt-9  lg:col-start-6 lg:col-end-7 lg:mb-[140px] w-[152px] lg:mt-[102px]'
-            }
-          />
         </div>
       </MainLayout>
     </>

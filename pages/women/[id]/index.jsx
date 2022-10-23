@@ -46,7 +46,7 @@ export default function PersonalPage({ woman, suggestWoman }) {
     images,
     videos,
   } = woman?.attributes
-
+  console.log(woman, 'woman')
   return (
     <>
       <SideBarMenu

@@ -14,7 +14,7 @@ export default function Videos({ videos }) {
               className={`w-[312px] h-[218px] lg:w-[371px] lg:h-[259px]`}
               width="371"
               height="259"
-              src={item}
+              src={item.attributes.url}
               allowFullScreen
             >
               {' '}
