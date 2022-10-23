@@ -4,12 +4,11 @@ import WomanCard from '../../src/components/shared/WomanCard'
 import Button from '../../src/components/shared/Button'
 import FilterMenu from '../../src/components/shared/FilterMenu'
 import Strapi from '../../services/backend/Strapi'
-import axios from 'axios'
 import { lifeDuration } from '../../services/frontend/helpers'
 
 export async function getServerSideProps({ req, res }) {
   const strapi = new Strapi()
-  const {data} = await strapi.getWomen()
+  const { data } = await strapi.getWomen([])
 
   return {
     props: {
