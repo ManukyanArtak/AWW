@@ -6,9 +6,10 @@ import FilterMenu from '../../src/components/shared/FilterMenu'
 import Strapi from '../../services/backend/Strapi'
 import { lifeDuration } from '../../services/frontend/helpers'
 
-export async function getServerSideProps({ req, res }) {
+export async function getServerSideProps({ req, res, query }) {
+
   const strapi = new Strapi()
-  const { data } = await strapi.getWomen([])
+  const { data } = await strapi.getWomen(query.category ? query.category : [])
   const categoriesData = await strapi.getCategories()
 
   return {
