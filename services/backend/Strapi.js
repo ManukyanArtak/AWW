@@ -13,6 +13,48 @@ export default class Strapi {
       attributes {
         first_name,
         last_name,
+        birthday,
+        city,
+        death_day,
+        country,
+        avatar{
+          data{
+            attributes{
+              url
+            }
+          }
+        },
+        categories{
+          data{
+            id
+            attributes{
+              name,
+            }
+          }
+        }
+      }
+    },
+    meta{
+      pagination{
+        total,
+        page,
+        pageCount,
+        pageSize
+      }
+    }
+  }
+}
+`)
+  }
+
+  findWoman = async (id) => {
+
+    return await this.request(`query {
+  women(filters:{id:{eq:${id}}}){
+    data {
+      attributes {
+        first_name,
+        last_name,
         childhood,
         boyhood,
         remarkable_stories,
@@ -51,21 +93,10 @@ export default class Strapi {
           }
         }
       }
-    },
-    meta{
-      pagination{
-        total,
-        page,
-        pageCount,
-        pageSize
-      }
     }
   }
-}
-`)
+}`)
   }
-
-  findWoman = async (id) => await this.request(`api/women/${id}?populate=*`)
 
   getCategories = async () =>
     await this.request(`query {
@@ -84,6 +115,7 @@ export default class Strapi {
     }
   }
 }`)
+
   request = async (query) => {
     let myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
