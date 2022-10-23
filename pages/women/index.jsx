@@ -5,7 +5,7 @@ import Button from '../../src/components/shared/Button'
 import FilterMenu from '../../src/components/shared/FilterMenu'
 import Strapi from '../../services/backend/Strapi'
 import { lifeDuration } from '../../services/frontend/helpers'
-import {useEffect, useState} from "react";
+import {useRouter} from "next/router";
 
 export async function getServerSideProps({ req, res, query }) {
 
@@ -23,6 +23,8 @@ export async function getServerSideProps({ req, res, query }) {
 }
 
 export default function Women({ women, pagination, categories }) {
+  console.log(women, 'women')
+  const router = useRouter()
   const womenData = women.map((woman) => {
     const {
       first_name,
@@ -35,17 +37,17 @@ export default function Women({ women, pagination, categories }) {
         categories
     } = woman.attributes
 
-
     return (
       <WomanCard
         img={`${avatar.data.attributes.url}`}
         show={true}
-        className={`col-span-4`}
+        className={`col-span-4 cursor-pointer`}
         name={`${first_name} ${last_name}`}
         address={`${country}, ${city}`}
         lifeDuration={lifeDuration(birthday, death_day)}
         profession={categories.data[0]?.attributes.name}
         key={woman.id}
+        onClick={()=>router.push(`/women/${woman.id}`)}
       />
     )
   })

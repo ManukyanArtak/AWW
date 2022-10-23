@@ -10,6 +10,7 @@ export default class Strapi {
     return await this.request(`query{
   women${filters ? filters : ''}{
     data {
+    id
       attributes {
         first_name,
         last_name,
@@ -52,6 +53,7 @@ export default class Strapi {
     return await this.request(`query {
   women(filters:{id:{eq:${id}}}){
     data {
+    id
       attributes {
         first_name,
         last_name,

@@ -8,7 +8,7 @@ export default function RemarkableStories({ title, stories }) {
         {title}
       </h2>
       {/*<p className={'text-lg py-8'}>{stories}</p>*/}
-      <ReactMarkdown>{stories}</ReactMarkdown>
+      <ReactMarkdown children={stories}/>
     </div>
   )
 }

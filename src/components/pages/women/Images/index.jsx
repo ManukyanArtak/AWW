@@ -9,7 +9,7 @@ export default function Images({ images }) {
       </h2>
       <div className={'grid grid-cols-8 gap-x-6 gap-y-10'}>
         {images.map((item, key) => (
-          <Picture key={key} className={'col-span-8 lg:col-span-4'} />
+          <Picture src={`http://localhost:1337${item.attributes.url}`} key={key} className={'col-span-8 lg:col-span-4'} />
         ))}
       </div>
     </div>
