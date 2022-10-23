@@ -122,7 +122,7 @@ const WomenCardLayout = ({ className, women, womanPage }) => {
 
   const desktopView = (
     <div className={`lg:mt-[120px]`}>
-      {!womanPage ? <SectionTitle direction={'left'} /> : null}
+      {!womanPage ? <SectionTitle direction={'right'} /> : null}
       <div className={`grid grid-cols-12 gap-6 container mx-auto ${className}`}>
         {!womanPage ? (
           <h2 className={`text-3xl col-span-6 row-start-1 col-start-7`}>
