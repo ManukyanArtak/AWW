@@ -65,13 +65,12 @@ const Footer = () => (
     <div className={`text-white pt-12 hidden lg:block`}>
       <span>info@armwonderwomens.co</span>
     </div>
-    <div>
+    <div className={`mt-2`}>
       <Image
-        src={'/next/image.footer_logo.png'}
-        width={'200'}
-        height={'150'}
-        layout={'responsive'}
-        alt={'Close'}
+        src={'/img/footer_logo.png'}
+        width="260"
+        height="80"
+        alt={'Footer logo'}
       />
     </div>
 

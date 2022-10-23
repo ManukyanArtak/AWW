@@ -3,11 +3,11 @@ import AboutProject from '../src/components/shared/AboutProject'
 import HeroBanner from '../src/components/shared/HeroBanner'
 import PageConstants from '../src/const'
 import AboutBook from '../src/components/shared/AboutBook'
-import SectionTitle from '../src/components/shared/SectionTitle'
 import WomanCardLayout from '../src/components/shared/WomenCardLayout'
 import Button from '../src/components/shared/Button'
 import styles from '../src/components/shared/WomenCardLayout/womanLayout.module.css'
 import Strapi from '../services/backend/Strapi'
+import {useRouter} from "next/router";
 
 export async function getServerSideProps({ req, res }) {
   const strapi = new Strapi()
@@ -22,6 +22,11 @@ export async function getServerSideProps({ req, res }) {
 }
 
 export default function Home({ women }) {
+  const router = useRouter()
+  const redirect = () => {
+    console.log(99)
+    router.push('/women')
+  }
   return (
     <MainLayout>
       <div>
@@ -45,12 +50,13 @@ export default function Home({ women }) {
         />
         <AboutBook className={`mt-[58px] lg:mt-[140px]`} />
 
-        <WomanCardLayout className={''} women={women} />
+        <WomanCardLayout women={women.slice(0,3)} />
 
         <div className={'text-center mb-24 mt-24'}>
           <Button
             label={'Տեսնել բոլորին'}
             className={`${styles.btn} text-white bg-transparent  font-semibold  py-4 px-6 border inline-block `}
+            onClick={redirect}
           />
         </div>
       </div>
