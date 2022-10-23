@@ -5,6 +5,7 @@ import Button from '../../src/components/shared/Button'
 import FilterMenu from '../../src/components/shared/FilterMenu'
 import Strapi from '../../services/backend/Strapi'
 import { lifeDuration } from '../../services/frontend/helpers'
+import {useEffect, useState} from "react";
 
 export async function getServerSideProps({ req, res }) {
   const strapi = new Strapi()
@@ -31,6 +32,12 @@ export default function Women({ women, pagination, categories }) {
       death_day,
       avatar,
     } = woman.attributes
+
+    const filterWomenData = async (ids) => {
+      const strapi = new Strapi()
+      const { data } = await strapi.getWomen(ids)
+      console.log('data', data)
+    }
 
     return (
       <WomanCard
@@ -59,6 +66,7 @@ export default function Women({ women, pagination, categories }) {
           >
             <FilterButtons
               className={`flex justify-center flex-col flex-wrap gap-6 lg:flex-row`}
+              categories={categories}
             />
           </div>
 
