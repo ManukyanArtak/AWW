@@ -24,7 +24,6 @@ export async function getServerSideProps({ req, res }) {
 export default function Home({ women }) {
   const router = useRouter()
   const redirect = () => {
-    console.log(99)
     router.push('/women')
   }
   return (

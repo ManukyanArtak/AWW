@@ -32,13 +32,9 @@ export default function Women({ women, pagination, categories }) {
       birthday,
       death_day,
       avatar,
+        categories
     } = woman.attributes
 
-    const filterWomenData = async (ids) => {
-      const strapi = new Strapi()
-      const { data } = await strapi.getWomen(ids)
-      console.log('data', data)
-    }
 
     return (
       <WomanCard
@@ -48,7 +44,7 @@ export default function Women({ women, pagination, categories }) {
         name={`${first_name} ${last_name}`}
         address={`${country}, ${city}`}
         lifeDuration={lifeDuration(birthday, death_day)}
-        profession={'Նկարչուհիներ'}
+        profession={categories.data[0]?.attributes.name}
         key={woman.id}
       />
     )
@@ -56,7 +52,7 @@ export default function Women({ women, pagination, categories }) {
 
   return (
     <>
-      <FilterMenu />
+      <FilterMenu categories={categories} />
 
       <MainLayout>
         <div
@@ -72,13 +68,15 @@ export default function Women({ women, pagination, categories }) {
           </div>
 
           {womenData}
+    <div className={`col-start-1 col-span-full mb-20 mt-9 lg:mb-[140px] lg:mt-[102px] flex items-center justify-center`}>
+      <Button
+          label={'Տեսնել բոլորին'}
+          className={
+            'text-violet-950 pb-[8px] border-b border-yellow-450 w-[152px] '
+          }
+      />
+    </div>
 
-          <Button
-            label={'Տեսնել բոլորին'}
-            className={
-              'text-violet-950 pb-[8px] border-b border-yellow-450 col-start-2 col-end-3 mb-20 mt-9  lg:col-start-6 lg:col-end-7 lg:mb-[140px] w-[152px] lg:mt-[102px]'
-            }
-          />
         </div>
       </MainLayout>
     </>

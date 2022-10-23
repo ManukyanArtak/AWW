@@ -1,17 +1,26 @@
 import Button from '../Button'
 import PageConstants from '../../../const'
 import {useState} from "react";
+import axios from "axios";
+import {useRouter} from "next/router";
 
 const FilterButtons = ({ className, categories }) => {
+    const router = useRouter()
     const [filteredIds, setFilteredIds] = useState([])
 
-    const filterData = (id) => {
+    const filterData = async (id) => {
+        let ids = [...filteredIds]
+        let categories = ''
         if(filteredIds.includes(id)){
-            const removeItem = filteredIds.filter(item=>item!==id)
-            setFilteredIds(removeItem)
+            ids = filteredIds.filter(item=>item!==id)
         } else {
-            setFilteredIds(prev=>[...prev, id])
+            ids.push(id)
         }
+        setFilteredIds(ids)
+        ids.forEach((item, index)=>{
+            index===0?categories+=`category=${item}` : categories+=`&category=${item}`
+        })
+        router.push(`http://localhost:3000/women?${categories}`)
     }
 
     const isActive = (id) => {
@@ -20,7 +29,6 @@ const FilterButtons = ({ className, categories }) => {
         } else {
             return `text-violet-950 border border-[#ADADAD] font-[275]`
         }
-
     }
 
   return (
