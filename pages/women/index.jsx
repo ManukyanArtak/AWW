@@ -4,6 +4,8 @@ import WomanCard from '../../src/components/shared/WomanCard'
 import Button from '../../src/components/shared/Button'
 import FilterMenu from '../../src/components/shared/FilterMenu'
 import Strapi from '../../services/backend/Strapi'
+import axios from 'axios'
+import { lifeDuration } from '../../services/frontend/helpers'
 
 export async function getServerSideProps({ req, res }) {
   const strapi = new Strapi()
@@ -18,21 +20,6 @@ export async function getServerSideProps({ req, res }) {
 }
 
 export default function Women({ women, pagination }) {
-  console.log(women)
-  const lifeDuration = (birthDay, deathDay) => {
-    const birthYear = new Date(birthDay).getFullYear()
-
-    if (deathDay) {
-      const deathYear = new Date(deathDay).getFullYear()
-
-      return `${birthYear}-${deathYear}`
-    }
-
-    return `${birthYear}`
-  }
-
-  console.log(women)
-
   const womenData = women.map((woman) => {
     const {
       first_name,

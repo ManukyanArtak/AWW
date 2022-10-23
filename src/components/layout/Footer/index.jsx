@@ -61,9 +61,20 @@ const Footer = () => (
         />
       </li>
     </ul>
+
     <div className={`text-white pt-12 hidden lg:block`}>
       <span>info@armwonderwomens.co</span>
     </div>
+    <div>
+      <Image
+        src={'/next/image.footer_logo.png'}
+        width={'200'}
+        height={'150'}
+        layout={'responsive'}
+        alt={'Close'}
+      />
+    </div>
+
     <div className={`text-white pt-4 lg:pt-20`}>
       <span className="text-xs">Copyright © 2021, All Rights Reserved.</span>
     </div>
