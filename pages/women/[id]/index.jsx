@@ -19,7 +19,7 @@ export async function getServerSideProps({ req, res, params: { id } }) {
 
   return {
     props: {
-      woman: data,
+      woman: data.women.data[0],
     },
   }
 }
@@ -37,13 +37,13 @@ export default function PersonalPage({ woman }) {
     boyhood,
     remarkable_stories,
     images,
-    video,
+    videos,
   } = woman?.attributes
 
   return (
     <>
       <SideBarMenu
-        data={{ childhood, boyhood, images: images?.data, video: video.data }}
+        data={{ childhood, boyhood, images: images?.data, video: videos.data }}
       />
       <MainLayout>
         <WomanPageHeroBanner
@@ -84,7 +84,7 @@ export default function PersonalPage({ woman }) {
                   </button>
                 </li>
               ) : null}
-              {video.data ? (
+              {videos.data ? (
                 <li className={'font-semibold text-violet-950 text-xl mt-10'}>
                   <button onClick={() => scrollToElement('videos')}>
                     Տեսանյութեր
@@ -121,7 +121,7 @@ export default function PersonalPage({ woman }) {
 
             {images?.data ? <Images images={images.data} /> : null}
 
-            {video?.data ? <Videos videos={video.data} /> : null}
+            {videos?.data ? <Videos videos={videos.data} /> : null}
 
             <SelectDownload />
           </div>
