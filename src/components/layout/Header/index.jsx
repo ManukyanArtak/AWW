@@ -19,13 +19,15 @@ const Header = () => {
             className=" flex items-center w-[84px] h-[60px] lg:w-[144px] h-[62px]"
             passHref
           >
-            <Image
-              src="/img/logo.svg"
-              width="144px"
-              height="62px"
-              alt={'Logo'}
-              className={'cursor-pointer'}
-            />
+            <a>
+              <Image
+                src="/img/logo.svg"
+                width="144px"
+                height="62px"
+                alt={'Logo'}
+                className={'cursor-pointer'}
+              />
+            </a>
           </Link>
           <div className="flex items-center lg:hidden">
             <button

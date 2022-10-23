@@ -9,7 +9,6 @@ const Picture = ({ className, src }) => (
         src={src}
         alt={'Picture'}
         loader={({ src }) => `${src}`}
-
       />
     </div>
 

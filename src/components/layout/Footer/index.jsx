@@ -19,17 +19,17 @@ const Footer = () => (
     </div>
     <ul className="lg:flex flex-wrap mt-2 text-white">
       <li className={`pl-5 pr-5 text-center pt-4`}>
-        <Link href="/about">
+        <Link href="/about" passHref>
           <a>Նախագիծ</a>
         </Link>
       </li>
       <li className={`pl-5 pr-5 text-center pt-4`}>
-        <Link href="/women">
+        <Link href="/women" passHref>
           <a>Կանայք և Պատմություններ</a>
         </Link>
       </li>
       <li className={`pl-5 pr-5 text-center pt-4`}>
-        <Link href="/contact">
+        <Link href="/contact" passHref>
           <a>Հետադարձ Կապ</a>
         </Link>
       </li>

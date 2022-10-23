@@ -11,7 +11,7 @@ export default function Biography({ title, text, divider, id }) {
         {title}
       </h2>
       {/*<p className={'text-lg text-blue-950'}>{text}</p>*/}
-      <ReactMarkdown children={text}/>
+      <ReactMarkdown>{text}</ReactMarkdown>
     </div>
   )
 }

@@ -5,8 +5,10 @@ import useDeviceDetect from '../../../hooks/useDeviceDetect'
 import Dots from '../Dots'
 import SectionTitle from '../SectionTitle'
 import { lifeDuration } from '../../../../services/frontend/helpers'
+import Link from 'next/link'
 
-const WomenCardLayout = ({ className, women }) => {
+const WomenCardLayout = ({ className, women, womanPage }) => {
+  console.log(women, 'women')
   const [current, setCurrent] = useState(0)
   const [startClientX, setStartClientX] = useState()
   const count = 3
@@ -32,6 +34,7 @@ const WomenCardLayout = ({ className, women }) => {
         address={`${country}, ${city}`}
         lifeDuration={lifeDuration(birthday, death_day)}
         profession={'Նկարչուհիներ'}
+        id={woman.id}
         key={woman.id}
       />
     )
@@ -55,14 +58,18 @@ const WomenCardLayout = ({ className, women }) => {
       e.preventDefault()
       const clientX = e.changedTouches[0]?.clientX
       if (clientX - startClientX < 0) {
-        setCurrent((prevState) =>
-          prevState === count - 1 ? prevState : prevState + 1
-        )
+        setCurrent((prevState) => {
+          if (prevState === women.length - 1) {
+            return 0
+          } else {
+            return prevState === count - 1 ? prevState : prevState + 1
+          }
+        })
       } else {
         setCurrent((prevState) => (prevState === 0 ? prevState : prevState - 1))
       }
     },
-    [startClientX, count]
+    [startClientX, count, women.length]
   )
 
   const womenDataMobile = women.map((woman, index) => {
@@ -88,17 +95,20 @@ const WomenCardLayout = ({ className, women }) => {
         show={index === current}
         onStart={onStart}
         onEnd={onEnd}
+        id={woman.id}
       />
     )
   })
 
   const mobileView = (
     <div className={`mt-[56px]`}>
-      <SectionTitle direction={'left'} />
+      {!womanPage ? <SectionTitle direction={'left'} /> : null}
       <div className={`container mx-auto ${className}`}>
-        <h2 className={`text-xl col-span-4 row-start-1 font-bold`}>
-          {PageConstants.womenCard.title}
-        </h2>
+        {!womanPage ? (
+          <h2 className={`text-xl col-span-4 row-start-1 font-bold`}>
+            {PageConstants.womenCard.title}
+          </h2>
+        ) : null}
         {womenDataMobile}
       </div>
       <div className={`flex justify-center mt-9 mb-8`}>
@@ -116,11 +126,13 @@ const WomenCardLayout = ({ className, women }) => {
 
   const desktopView = (
     <div className={`lg:mt-[120px]`}>
-      <SectionTitle direction={'right'} />
+      {!womanPage ? <SectionTitle direction={'right'} /> : null}
       <div className={`grid grid-cols-12 gap-6 container mx-auto ${className}`}>
-        <h2 className={`text-3xl col-span-6 row-start-1 col-start-7`}>
-          {PageConstants.womenCard.title}
-        </h2>
+        {!womanPage ? (
+          <h2 className={`text-3xl col-span-6 row-start-1 col-start-7`}>
+            {PageConstants.womenCard.title}
+          </h2>
+        ) : null}
         {womenDataDesktop}
       </div>
     </div>

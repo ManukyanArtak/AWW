@@ -119,6 +119,7 @@ export default class Strapi {
   getRandomWomen = async () => {
     const response = await fetch(`http://127.0.0.1:1337/api/posts-report`)
     const ids = await response.json()
+    console.log(ids)
 
     return await this.findWoman(ids)
   }

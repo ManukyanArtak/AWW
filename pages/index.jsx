@@ -8,6 +8,7 @@ import Button from '../src/components/shared/Button'
 import styles from '../src/components/shared/WomenCardLayout/womanLayout.module.css'
 import Strapi from '../services/backend/Strapi'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 export async function getServerSideProps({ req, res }) {
   const strapi = new Strapi()
@@ -52,11 +53,14 @@ export default function Home({ women }) {
         <WomanCardLayout women={women} />
 
         <div className={'text-center mb-24 mt-24'}>
-          <Button
-            label={'Տեսնել բոլորին'}
-            className={`${styles.btn} text-white bg-transparent  font-semibold  py-4 px-6 border inline-block `}
-            onClick={redirect}
-          />
+          <Link href={'/women'}>
+            <a
+              className={`${styles.btn} text-white bg-transparent  font-semibold  py-4 px-6 border inline-block `}
+            >
+              {' '}
+              Տեսնել բոլորին
+            </a>
+          </Link>
         </div>
       </div>
     </MainLayout>
