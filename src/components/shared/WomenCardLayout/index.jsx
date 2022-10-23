@@ -5,8 +5,10 @@ import useDeviceDetect from '../../../hooks/useDeviceDetect'
 import Dots from '../Dots'
 import SectionTitle from '../SectionTitle'
 import { lifeDuration } from '../../../../services/frontend/helpers'
+import Link from 'next/link'
 
 const WomenCardLayout = ({ className, women, womanPage }) => {
+  console.log(women, 'women')
   const [current, setCurrent] = useState(0)
   const [startClientX, setStartClientX] = useState()
   const count = 3
@@ -32,6 +34,7 @@ const WomenCardLayout = ({ className, women, womanPage }) => {
         address={`${country}, ${city}`}
         lifeDuration={lifeDuration(birthday, death_day)}
         profession={'Նկարչուհիներ'}
+        id={woman.id}
         key={woman.id}
       />
     )
@@ -92,6 +95,7 @@ const WomenCardLayout = ({ className, women, womanPage }) => {
         show={index === current}
         onStart={onStart}
         onEnd={onEnd}
+        id={woman.id}
       />
     )
   })

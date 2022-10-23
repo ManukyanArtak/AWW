@@ -59,7 +59,7 @@ export default function Women({ women, pagination, categories }) {
         lifeDuration={lifeDuration(birthday, death_day)}
         profession={categories.data[0]?.attributes.name}
         key={woman.id}
-        onClick={() => router.push(`/women/${woman.id}`)}
+        id={woman.id}
       />
     )
   })
