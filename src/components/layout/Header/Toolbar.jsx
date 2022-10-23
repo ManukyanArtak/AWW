@@ -6,12 +6,14 @@ const Toolbar = ({ handleClick }) => (
     <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full h-full lg:items-center items-start  flex flex-col lg:h-auto ">
       <div className="flex  justify-between items-center w-full  pt-5 pr-[40px] pl-6  max-w-screen-xl">
         <Link href="/" className="flex items-center" passHref>
-          <Image
-            src="/img/logo-white.svg"
-            width="84px"
-            height="40px"
-            alt={'Logo'}
-          />
+          <a>
+            <Image
+              src="/img/logo-white.svg"
+              width="84px"
+              height="40px"
+              alt={'Logo'}
+            />
+          </a>
         </Link>
         <div className="flex items-center lg:hidden">
           <button

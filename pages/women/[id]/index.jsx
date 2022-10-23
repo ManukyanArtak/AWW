@@ -12,6 +12,7 @@ import {
   lifeDuration,
   scrollToElement,
 } from '../../../services/frontend/helpers'
+import WomenCardLayout from '../../../src/components/shared/WomenCardLayout'
 
 export async function getServerSideProps({ req, res, params: { id } }) {
   const strapi = new Strapi()
@@ -46,7 +47,7 @@ export default function PersonalPage({ woman, suggestWoman }) {
     images,
     videos,
   } = woman?.attributes
-  console.log(woman, 'woman')
+
   return (
     <>
       <SideBarMenu
@@ -139,7 +140,11 @@ export default function PersonalPage({ woman, suggestWoman }) {
           >
             Շարունակիր բացահայտել
           </h3>
-          {/*<WomenCardLayout className={''} women={women} />*/}
+          <WomenCardLayout
+            womanPage={true}
+            className={''}
+            women={suggestWoman}
+          />
         </div>
       </MainLayout>
     </>

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import FilterButtons from '../FilterButtons'
 import styles from './filterMenu.module.css'
 
-const FilterMenu = ({categories}) => {
+const FilterMenu = ({ categories }) => {
   const [open, setOpen] = useState(false)
 
   const handleOpen = (open) => {
@@ -43,7 +43,10 @@ const FilterMenu = ({categories}) => {
           } w-[350px] fixed  h-[462px] bg-white z-50 overflow-auto p-6 top-[112px]`}
         >
           <div className={` flex justify-between`}>
-            <FilterButtons categories={categories} className={`flex flex-col gap-y-4`} />
+            <FilterButtons
+              categories={categories}
+              className={`flex flex-col gap-y-4`}
+            />
             <div>
               <button
                 className={`w-[14px] h-[14px]`}

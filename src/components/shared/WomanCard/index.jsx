@@ -11,14 +11,14 @@ const WomanCard = ({
   lifeDuration,
   onStart,
   onEnd,
-    onClick
+  onClick,
 }) =>
   show ? (
     <div
       className={`max-w-[370px] ${className}`}
       onTouchStart={onStart}
       onTouchEnd={onEnd}
-      onClick={()=>onClick && onClick()}
+      onClick={() => onClick && onClick()}
     >
       <div>
         <Image

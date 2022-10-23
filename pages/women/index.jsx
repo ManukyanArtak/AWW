@@ -5,10 +5,10 @@ import Button from '../../src/components/shared/Button'
 import FilterMenu from '../../src/components/shared/FilterMenu'
 import Strapi from '../../services/backend/Strapi'
 import { lifeDuration } from '../../services/frontend/helpers'
-import {useRouter} from "next/router";
+import { useRouter } from 'next/router'
+import { useCallback, useMemo, useState } from 'react'
 
 export async function getServerSideProps({ req, res, query }) {
-
   const strapi = new Strapi()
   const { data } = await strapi.getWomen(query.category ? query.category : [])
   const categoriesData = await strapi.getCategories()
@@ -23,9 +23,21 @@ export async function getServerSideProps({ req, res, query }) {
 }
 
 export default function Women({ women, pagination, categories }) {
-  console.log(women, 'women')
+  const { total } = pagination
+  const [showCount, setShowCount] = useState(total < 5 ? total : 5)
   const router = useRouter()
-  const womenData = women.map((woman) => {
+
+  const data = useMemo(() => women.slice(0, showCount), [showCount, women])
+
+  const paginate = useCallback(() => {
+    if (total - showCount > 5) {
+      setShowCount((prev) => prev + 5)
+    } else {
+      setShowCount(total)
+    }
+  }, [total, showCount])
+
+  const womenData = data.map((woman) => {
     const {
       first_name,
       last_name,
@@ -34,7 +46,7 @@ export default function Women({ women, pagination, categories }) {
       birthday,
       death_day,
       avatar,
-        categories
+      categories,
     } = woman.attributes
 
     return (
@@ -47,7 +59,7 @@ export default function Women({ women, pagination, categories }) {
         lifeDuration={lifeDuration(birthday, death_day)}
         profession={categories.data[0]?.attributes.name}
         key={woman.id}
-        onClick={()=>router.push(`/women/${woman.id}`)}
+        onClick={() => router.push(`/women/${woman.id}`)}
       />
     )
   })
@@ -70,15 +82,19 @@ export default function Women({ women, pagination, categories }) {
           </div>
 
           {womenData}
-    <div className={`col-start-1 col-span-full mb-20 mt-9 lg:mb-[140px] lg:mt-[102px] flex items-center justify-center`}>
-      <Button
-          label={'Տեսնել բոլորին'}
-          className={
-            'text-violet-950 pb-[8px] border-b border-yellow-450 w-[152px] '
-          }
-      />
-    </div>
-
+          <div
+            className={`col-start-1 col-span-full mb-20 mt-9 lg:mb-[140px] lg:mt-[102px] flex items-center justify-center`}
+          >
+            {total === showCount ? null : (
+              <Button
+                label={'Տեսնել ավելին'}
+                className={
+                  'text-violet-950 pb-[8px] border-b border-yellow-450 w-[152px] '
+                }
+                onClick={paginate}
+              />
+            )}
+          </div>
         </div>
       </MainLayout>
     </>

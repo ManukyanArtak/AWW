@@ -49,7 +49,6 @@ export default class Strapi {
   }
 
   findWoman = async (id) => {
-
     return await this.request(`query {
   women(filters:{id:{eq:${id}}}){
     data {
