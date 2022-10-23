@@ -1,8 +1,14 @@
 export default class Strapi {
   constructor() {}
-  getWomen = async () =>
-    await this.request(`query {
-  women {
+  getWomen = async (ids) => {
+    let filters
+    if (ids.length) {
+      let filtersString = ids.toString()
+      filters = `(filters:{categories:{id: { in: [${filtersString}] }}})`
+    }
+
+    return await this.request(`query{
+  women${filters ? filters : ''}{
     data {
       attributes {
         first_name,
@@ -30,8 +36,9 @@ export default class Strapi {
         },
         categories{
           data{
+            id
             attributes{
-              name
+              name,
             }
           }
         }
@@ -54,7 +61,9 @@ export default class Strapi {
       }
     }
   }
-}`)
+}
+`)
+  }
 
   findWoman = async (id) => await this.request(`api/women/${id}?populate=*`)
 
