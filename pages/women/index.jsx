@@ -5,8 +5,8 @@ import Button from '../../src/components/shared/Button'
 import FilterMenu from '../../src/components/shared/FilterMenu'
 import Strapi from '../../services/backend/Strapi'
 import { lifeDuration } from '../../services/frontend/helpers'
-import { useRouter } from 'next/router'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useFilters } from '../../src/components/pages/women/useFilters'
 
 export async function getServerSideProps({ req, res, query }) {
   const strapi = new Strapi()
@@ -23,21 +23,35 @@ export async function getServerSideProps({ req, res, query }) {
 }
 
 export default function Women({ women, pagination, categories }) {
-  const { total } = pagination
-  const [showCount, setShowCount] = useState(total < 5 ? total : 5)
-  const router = useRouter()
+  const { total, page } = pagination
+  const [showCount, setShowCount] = useState(page)
+  const [womenData, setWomenData] = useState(women)
+  const [filteredIds, setFilteredIds] = useState([])
 
-  const data = useMemo(() => women.slice(0, showCount), [showCount, women])
+  const strapi = new Strapi()
 
-  const paginate = useCallback(() => {
-    if (total - showCount > 5) {
-      setShowCount((prev) => prev + 5)
-    } else {
-      setShowCount(total)
-    }
-  }, [total, showCount])
+  console.log(filteredIds, 'filteredIds')
 
-  const womenData = data.map((woman) => {
+  useEffect(() => {
+    setWomenData(women)
+  }, [women])
+
+  useEffect(() => {
+    setShowCount(page)
+  }, [page])
+
+  useEffect(() => {
+    setShowCount(1)
+  }, [filteredIds])
+
+  const paginate = useCallback(async () => {
+    setShowCount((prev) => prev + 1)
+    await strapi.getWomen(filteredIds, showCount + 1).then((data) => {
+      setWomenData((prev) => [...prev, ...data.data.women.data])
+    })
+  }, [showCount, filteredIds, strapi])
+
+  const womenDataDrawer = womenData.map((woman) => {
     const {
       first_name,
       last_name,
@@ -66,7 +80,11 @@ export default function Women({ women, pagination, categories }) {
 
   return (
     <>
-      <FilterMenu categories={categories} />
+      <FilterMenu
+        categories={categories}
+        filteredIds={filteredIds}
+        setFilteredIds={setFilteredIds}
+      />
 
       <MainLayout>
         <div
@@ -78,14 +96,16 @@ export default function Women({ women, pagination, categories }) {
             <FilterButtons
               className={`flex justify-center flex-col flex-wrap gap-6 lg:flex-row`}
               categories={categories}
+              filteredIds={filteredIds}
+              setFilteredIds={setFilteredIds}
             />
           </div>
 
-          {womenData}
+          {womenDataDrawer}
           <div
             className={`col-start-1 col-span-full mb-20 mt-9 lg:mb-[140px] lg:mt-[102px] flex items-center justify-center`}
           >
-            {total === showCount ? null : (
+            {womenData.length === total ? null : (
               <Button
                 label={'Տեսնել ավելին'}
                 className={
