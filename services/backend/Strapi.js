@@ -48,10 +48,9 @@ export default class Strapi {
 `)
   }
 
-  findWoman = async (id) => {
-
-    return await this.request(`query {
-  women(filters:{id:{eq:${id}}}){
+  findWoman = async (ids) =>
+    await this.request(`query {
+  women(filters:{id:{in:[${ids.toString()}]}}){
     data {
     id
       attributes {
@@ -98,7 +97,6 @@ export default class Strapi {
     }
   }
 }`)
-  }
 
   getCategories = async () =>
     await this.request(`query {
@@ -117,6 +115,13 @@ export default class Strapi {
     }
   }
 }`)
+
+  getRandomWomen = async () => {
+    const response = await fetch(`http://127.0.0.1:1337/api/posts-report`)
+    const ids = await response.json()
+
+    return await this.findWoman(ids)
+  }
 
   request = async (query) => {
     let myHeaders = new Headers()

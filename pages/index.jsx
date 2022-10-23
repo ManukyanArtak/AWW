@@ -7,16 +7,15 @@ import WomanCardLayout from '../src/components/shared/WomenCardLayout'
 import Button from '../src/components/shared/Button'
 import styles from '../src/components/shared/WomenCardLayout/womanLayout.module.css'
 import Strapi from '../services/backend/Strapi'
-import {useRouter} from "next/router";
+import { useRouter } from 'next/router'
 
 export async function getServerSideProps({ req, res }) {
   const strapi = new Strapi()
-  const data = await strapi.getWomen()
+  const { data } = await strapi.getRandomWomen()
 
   return {
     props: {
-      women: data.data,
-      pagination: data.meta.pagination,
+      women: data.women.data,
     },
   }
 }
@@ -26,6 +25,7 @@ export default function Home({ women }) {
   const redirect = () => {
     router.push('/women')
   }
+
   return (
     <MainLayout>
       <div>
@@ -49,7 +49,7 @@ export default function Home({ women }) {
         />
         <AboutBook className={`mt-[58px] lg:mt-[140px]`} />
 
-        <WomanCardLayout women={women.slice(0,3)} />
+        <WomanCardLayout women={women} />
 
         <div className={'text-center mb-24 mt-24'}>
           <Button
