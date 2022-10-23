@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import styles from './styles/sidebar.module.css'
+import { scrollToElement } from '../../../../services/frontend/helpers'
 
-const SideBarMenu = () => {
+const SideBarMenu = ({ data }) => {
   const [open, setOpen] = useState(false)
 
   const handleOpen = (open) => {
@@ -16,10 +17,15 @@ const SideBarMenu = () => {
     setOpen(open)
   }
 
+  const menuSelect = (element) => {
+    handleOpen(false)
+    scrollToElement(element)
+  }
+
   return (
     <>
       <button
-        className={` w-[48px] h-[48px] bottom-0  right-0 fixed lg:hidden`}
+        className={` w-[48px] h-[48px] bottom-0  right-0 z-40 fixed lg:hidden`}
         onClick={() => handleOpen(true)}
       >
         <Image
@@ -47,31 +53,45 @@ const SideBarMenu = () => {
                 'font-semibold text-violet-950 text-xl border-b border-yellow-450 pb-1'
               }
             >
-              <a>Կենսագրություն</a>
+              Կենսագրություն
             </li>
-            <li className={'mt-6 text-lg text-violet-950 font-medium '}>
-              <a>Մանկություն</a>
-            </li>
-            <li className={'mt-4 text-lg text-violet-950 font-medium '}>
-              <a>Պատանեկություն</a>
-            </li>
-            <li
-              className={
-                'font-semibold text-violet-950 text-xl mt-10 border-b border-yellow-450 pb-1'
-              }
-            >
-              <a>Նկարներ</a>
-            </li>
-            <li
-              className={
-                'font-semibold text-violet-950 text-xl mt-10 border-b border-yellow-450 pb-1'
-              }
-            >
-              <a>Տեսանյութեր</a>
-            </li>
+            {data.childhood ? (
+              <li className={'mt-6 text-lg text-violet-950 font-medium '}>
+                <button onClick={() => menuSelect('childhood')}>
+                  Մանկություն
+                </button>
+              </li>
+            ) : null}
+            {data.boyhood ? (
+              <li className={'mt-4 text-lg text-violet-950 font-medium '}>
+                <button onClick={() => menuSelect('youth')}>
+                  Պատանեկություն
+                </button>
+              </li>
+            ) : null}
+            {data.images ? (
+              <li
+                className={
+                  'font-semibold text-violet-950 text-xl mt-10 border-b border-yellow-450 pb-1'
+                }
+              >
+                <button onClick={() => menuSelect('images')}>Նկարներ</button>
+              </li>
+            ) : null}
+            {data.video ? (
+              <li
+                className={
+                  'font-semibold text-violet-950 text-xl mt-10 border-b border-yellow-450 pb-1'
+                }
+              >
+                <button onClick={() => menuSelect('videos')}>
+                  Տեսանյութեր
+                </button>
+              </li>
+            ) : null}
           </ul>
           <button
-            className={'absolute bottom-0 right-0 h-[48px] w-[48px]'}
+            className={'absolute bottom-0 right-0 h-[48px] w-[48px] z-40'}
             onClick={() => handleOpen(false)}
           >
             <Image

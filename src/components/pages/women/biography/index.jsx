@@ -1,3 +1,4 @@
+import ReactMarkdown from 'react-markdown'
 export default function Biography({ title, text, divider, id }) {
   return (
     <div id={id}>
@@ -9,7 +10,8 @@ export default function Biography({ title, text, divider, id }) {
       <h2 className={`mb-16 text-violent-950 text-lg lg:text-xl font-semibold`}>
         {title}
       </h2>
-      <p className={'text-lg text-blue-950'}>{text}</p>
+      {/*<p className={'text-lg text-blue-950'}>{text}</p>*/}
+      <ReactMarkdown>{text}</ReactMarkdown>
     </div>
   )
 }

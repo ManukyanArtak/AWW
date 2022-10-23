@@ -6,12 +6,14 @@ const WomanPageHeroBanner = ({
   birthPlace,
   lifeDuration,
   profession,
+  img,
 }) => (
   <div className={`${styles.banner_container} pt-6 pb-8 lg:pt-10 lg:pb-[54px]`}>
     <div className={` container mx-auto grid lg:grid-cols-12  gap-6`}>
       <div className={`col-start-1  col-span-4 `}>
         <Image
-          src={'/img/womanPicture.png'}
+          src={img}
+          loader={({ src }) => `http://localhost:1337${src}`}
           width={1}
           height={1.2}
           layout="responsive"

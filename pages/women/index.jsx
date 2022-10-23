@@ -4,6 +4,8 @@ import WomanCard from '../../src/components/shared/WomanCard'
 import Button from '../../src/components/shared/Button'
 import FilterMenu from '../../src/components/shared/FilterMenu'
 import Strapi from '../../services/backend/Strapi'
+import axios from 'axios'
+import { lifeDuration } from '../../services/frontend/helpers'
 
 export async function getServerSideProps({ req, res }) {
   const strapi = new Strapi()
@@ -18,6 +20,30 @@ export async function getServerSideProps({ req, res }) {
 }
 
 export default function Women({ women, pagination }) {
+  const womenData = women.map((woman) => {
+    const {
+      first_name,
+      last_name,
+      country,
+      city,
+      birthday,
+      death_day,
+      avatar,
+    } = woman.attributes
+
+    return (
+      <WomanCard
+        img={`${avatar.data.attributes.url}`}
+        show={true}
+        className={`col-span-4`}
+        name={`${first_name} ${last_name}`}
+        address={`${country}, ${city}`}
+        lifeDuration={lifeDuration(birthday, death_day)}
+        profession={'Նկարչուհիներ'}
+        key={woman.id}
+      />
+    )
+  })
 
   return (
     <>
@@ -35,65 +61,7 @@ export default function Women({ women, pagination }) {
             />
           </div>
 
-          <WomanCard
-            img={'/img/womanPicture.png'}
-            show={true}
-            className={`col-span-4`}
-            name={'Ասլամազյան քույրեր'}
-            address={'Գյումրի, Հայաստան'}
-            lifeDuration={`1907-2006`}
-            profession={'Նկարչուհիներ'}
-          />
-
-          <WomanCard
-            img={'/img/woman_2.png'}
-            show={true}
-            className={`col-span-4`}
-            name={'Ասլամազյան քույրեր'}
-            address={'Գյումրի, Հայաստան'}
-            lifeDuration={`1907-2006`}
-            profession={'Նկարչուհիներ'}
-          />
-
-          <WomanCard
-            img={'/img/women.png'}
-            show={true}
-            className={`col-span-4`}
-            name={'Ասլամազյան քույրեր'}
-            address={'Գյումրի, Հայաստան'}
-            lifeDuration={`1907-2006`}
-            profession={'Նկարչուհիներ'}
-          />
-
-          <WomanCard
-            img={'/img/women.png'}
-            show={true}
-            className={`col-span-4`}
-            name={'Ասլամազյան քույրեր'}
-            address={'Գյումրի, Հայաստան'}
-            lifeDuration={`1907-2006`}
-            profession={'Նկարչուհիներ'}
-          />
-
-          <WomanCard
-            img={'/img/woman_2.png'}
-            show={true}
-            className={`col-span-4`}
-            name={'Ասլամազյան քույրեր'}
-            address={'Գյումրի, Հայաստան'}
-            lifeDuration={`1907-2006`}
-            profession={'Նկարչուհիներ'}
-          />
-
-          <WomanCard
-            img={'/img/womanPicture.png'}
-            show={true}
-            className={`col-span-4`}
-            name={'Ասլամազյան քույրեր'}
-            address={'Գյումրի, Հայաստան'}
-            lifeDuration={`1907-2006`}
-            profession={'Նկարչուհիներ'}
-          />
+          {womenData}
 
           <Button
             label={'Տեսնել բոլորին'}

@@ -6,12 +6,38 @@ import PageConstants from '../../../const'
 import useDeviceDetect from '../../../hooks/useDeviceDetect'
 import Dots from '../Dots'
 import SectionTitle from '../SectionTitle'
+import { lifeDuration } from '../../../../services/frontend/helpers'
 
-const WomenCardLayout = ({ className, womens }) => {
+const WomenCardLayout = ({ className, women }) => {
   const [current, setCurrent] = useState(0)
   const [startClientX, setStartClientX] = useState()
   const count = 3
   const { isMobile } = useDeviceDetect()
+
+  const womenDataDesktop = women.map((woman) => {
+    const {
+      first_name,
+      last_name,
+      country,
+      city,
+      birthday,
+      death_day,
+      avatar,
+    } = woman.attributes
+
+    return (
+      <WomanCard
+        img={`${avatar.data.attributes.url}`}
+        show={true}
+        className={'col-span-4 row-start-2 lg:mt-[76px]'}
+        name={`${first_name} ${last_name}`}
+        address={`${country}, ${city}`}
+        lifeDuration={lifeDuration(birthday, death_day)}
+        profession={'Նկարչուհիներ'}
+        key={woman.id}
+      />
+    )
+  })
 
   const onStart = useCallback(
     (e) => {
@@ -40,7 +66,33 @@ const WomenCardLayout = ({ className, womens }) => {
     },
     [startClientX, count]
   )
-  const images = ['/img/women.png', '/img/book.png', '/img/women.png']
+
+  const womenDataMobile = women.map((woman, index) => {
+    const {
+      first_name,
+      last_name,
+      country,
+      city,
+      birthday,
+      death_day,
+      avatar,
+    } = woman.attributes
+
+    return (
+      <WomanCard
+        img={`${avatar.data.attributes.url}`}
+        name={`${first_name} ${last_name}`}
+        address={`${country}, ${city}`}
+        lifeDuration={lifeDuration(birthday, death_day)}
+        profession={'Նկարչուհիներ'}
+        key={woman.id}
+        className={'col-span-4 mt-12 lg:mt-8'}
+        show={index === current}
+        onStart={onStart}
+        onEnd={onEnd}
+      />
+    )
+  })
 
   const mobileView = (
     <div className={`mt-[56px]`}>
@@ -49,23 +101,24 @@ const WomenCardLayout = ({ className, womens }) => {
         <h2 className={`text-xl col-span-4 row-start-1 font-bold`}>
           {PageConstants.womenCard.title}
         </h2>
-        {womens.map((value, index, array) => (
-          <WomanCard
-            img={value}
-            address={PageConstants.womenCard.address}
-            name={PageConstants.womenCard.name}
-            lifeDuration={PageConstants.womenCard.lifeDuration}
-            profession={PageConstants.womenCard.profession}
-            className={'col-span-4 mt-12 lg:mt-8'}
-            show={index === current}
-            onStart={onStart}
-            onEnd={onEnd}
-            key={index}
-          />
-        ))}
+        {womenDataMobile}
+        {/*{women.map((value, index, array) => (*/}
+        {/*  <WomanCard*/}
+        {/*    img={value}*/}
+        {/*    address={PageConstants.womenCard.address}*/}
+        {/*    name={PageConstants.womenCard.name}*/}
+        {/*    lifeDuration={PageConstants.womenCard.lifeDuration}*/}
+        {/*    profession={PageConstants.womenCard.profession}*/}
+        {/*    className={'col-span-4 mt-12 lg:mt-8'}*/}
+        {/*    show={index === current}*/}
+        {/*    onStart={onStart}*/}
+        {/*    onEnd={onEnd}*/}
+        {/*    key={index}*/}
+        {/*  />*/}
+        {/*))}*/}
       </div>
       <div className={`flex justify-center mt-9 mb-8`}>
-        {womens.map((value, index) => (
+        {women.map((value, index) => (
           <Dots
             className={`mr-2`}
             active={index === current}
@@ -85,18 +138,19 @@ const WomenCardLayout = ({ className, womens }) => {
           {PageConstants.womenCard.title}
         </h2>
 
-        {womens.map((value, index) => (
-          <WomanCard
-            img={value}
-            address={value.address}
-            name={value.name}
-            lifeDuration={value.lifeDuration}
-            profession={value.profession}
-            className={'col-span-4 row-start-2 lg:mt-[76px]'}
-            show={true}
-            key={index}
-          />
-        ))}
+        {/*{women.map((value, index) => (*/}
+        {/*  <WomanCard*/}
+        {/*    img={value}*/}
+        {/*    address={value.address}*/}
+        {/*    name={value.name}*/}
+        {/*    lifeDuration={value.lifeDuration}*/}
+        {/*    profession={value.profession}*/}
+        {/*    className={'col-span-4 row-start-2 lg:mt-[76px]'}*/}
+        {/*    show={true}*/}
+        {/*    key={index}*/}
+        {/*  />*/}
+        {/*))}*/}
+        {womenDataDesktop}
       </div>
     </div>
   )
