@@ -67,6 +67,23 @@ export default class Strapi {
 
   findWoman = async (id) => await this.request(`api/women/${id}?populate=*`)
 
+  getCategories = async () =>
+    await this.request(`query {
+  categories(pagination:{limit:200}){
+    data {
+      id,
+      attributes {
+        name
+      }
+    },
+    meta{
+      pagination{
+        total,
+        pageSize
+      }
+    }
+  }
+}`)
   request = async (query) => {
     let myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
