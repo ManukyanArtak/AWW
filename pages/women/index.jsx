@@ -8,12 +8,12 @@ import { lifeDuration } from '../../services/frontend/helpers'
 
 export async function getServerSideProps({ req, res }) {
   const strapi = new Strapi()
-  const data = await strapi.getWomen()
+  const {data} = await strapi.getWomen()
 
   return {
     props: {
-      women: data.data,
-      pagination: data.meta.pagination,
+      women: data.women.data,
+      pagination: data.women.meta.pagination,
     },
   }
 }
