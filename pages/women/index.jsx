@@ -3,12 +3,11 @@ import FilterButtons from '../../src/components/shared/FilterButtons'
 import WomanCard from '../../src/components/shared/WomanCard'
 import Button from '../../src/components/shared/Button'
 import FilterMenu from '../../src/components/shared/FilterMenu'
-import axios from 'axios'
+import Strapi from '../../services/backend/Strapi'
 
 export async function getServerSideProps({ req, res }) {
-  const { data } = await axios.get(
-    `http://127.0.0.1:1337/api/women?populate=%2A`
-  )
+  const strapi = new Strapi()
+  const data = await strapi.getWomen()
 
   return {
     props: {
@@ -19,6 +18,7 @@ export async function getServerSideProps({ req, res }) {
 }
 
 export default function Women({ women, pagination }) {
+  console.log(women)
   const lifeDuration = (birthDay, deathDay) => {
     const birthYear = new Date(birthDay).getFullYear()
 

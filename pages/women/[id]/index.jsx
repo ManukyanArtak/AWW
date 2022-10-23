@@ -8,21 +8,18 @@ import Images from '../../../src/components/pages/women/Images'
 import Videos from '../../../src/components/pages/women/videos'
 import SideBarMenu from '../../../src/components/shared/sidebarMenu'
 import { scrollToElement } from '../../../services/frontend/helpers'
-import axios from 'axios'
-
-export async function getServerSideProps({ req, res }) {
-  const { data } = await axios.get(
-    `http://127.0.0.1:1337/api/women/1?populate=*`
-  )
+import Strapi from '../../../services/backend/Strapi'
+export async function getServerSideProps({ req, res, params: { id } }) {
+  const strapi = new Strapi()
+  const { data } = await strapi.findWoman(id)
 
   return {
     props: {
-      women: data.data,
+      women: data,
     },
   }
 }
 export default function PersonalPage({ women }) {
-
   const mankutyun = (
     <>
       Հայաստանի առաջին կին-ճարտարապետը, ով աշխատել է դեռեւս Ալեքսանդր Թամանյանի
