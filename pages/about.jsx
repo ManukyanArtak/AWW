@@ -1,7 +1,6 @@
 import MainLayout from '../src/components/layout/Main'
 import HeroBanner from '../src/components/shared/HeroBanner'
 import PageConstants from '../src/const'
-import SectionTitle from '../src/components/shared/SectionTitle'
 import AboutProject from '../src/components/shared/AboutProject'
 import AboutAuthors from '../src/components/shared/AboutAuthors'
 
@@ -12,31 +11,18 @@ export default function About() {
         text={PageConstants.aboutPage.heroBannerText}
         showScroller={false}
       />
-      {/*<SectionTitle*/}
-      {/*  direction={'left'}*/}
-      {/*/>*/}
       <AboutProject
         direction={'left'}
         text={PageConstants.global.aboutGoal.text}
         title={PageConstants.global.aboutGoal.title}
         className={`mt-[56px] lg:mt-[90px]`}
       />
-      {/*<SectionTitle*/}
-      {/*  className={'pb-14 mt-12 container mx-auto'}*/}
-      {/*  title={'Նպատակը առաքինություն է'}*/}
-      {/*  direction={'right'}*/}
-      {/*/>*/}
       <AboutProject
         direction={'right'}
         text={PageConstants.global.aboutGoal.text}
         title={PageConstants.global.aboutGoal.title}
         className={`mt-[56px] lg:mt-[90px]`}
       />
-      {/*<SectionTitle*/}
-      {/*  className={'pb-14 mt-12 container mx-auto'}*/}
-      {/*  title={'Հեղինակների մասին'}*/}
-      {/*  direction={'left'}*/}
-      {/*/>*/}
       <AboutAuthors
         direction={'left'}
         className={
