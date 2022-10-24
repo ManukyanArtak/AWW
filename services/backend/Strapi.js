@@ -1,14 +1,17 @@
 export default class Strapi {
   constructor() {}
-  getWomen = async (ids) => {
-    let filters
+  getWomen = async (ids, pageNumber = 1) => {
+    let all = ''
     if (ids.length) {
       let filtersString = ids.toString()
-      filters = `(filters:{categories:{id: { in: [${filtersString}] }}})`
+      all += `filters:{categories:{id: { in: [${filtersString}] }}}`
     }
-
+    if (pageNumber) {
+      all += `pagination:{page:${pageNumber}, pageSize:3}`
+    }
+    console.log(all, ids, 'all')
     return await this.request(`query{
-  women${filters ? filters : ''}{
+  women${all ? `(${all})` : ''}{
     data {
     id
       attributes {

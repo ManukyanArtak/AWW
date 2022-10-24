@@ -4,9 +4,13 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 
-const FilterButtons = ({ className, categories }) => {
+const FilterButtons = ({
+  className,
+  categories,
+  setFilteredIds,
+  filteredIds,
+}) => {
   const router = useRouter()
-  const [filteredIds, setFilteredIds] = useState([])
 
   const filterData = async (id) => {
     let ids = [...filteredIds]

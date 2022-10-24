@@ -127,23 +127,19 @@ export default function PersonalPage({ woman, suggestWoman }) {
               />
             ) : null}
 
-            {images?.data ? <Images images={images.data} /> : null}
+            {images?.data?.length ? <Images images={images.data} /> : null}
 
-            {videos?.data ? <Videos videos={videos.data} /> : null}
+            {videos?.data?.length ? <Videos videos={videos.data} /> : null}
 
             <SelectDownload />
           </div>
         </div>
-        <div className={`container mx-auto mt-16  lg:mt-[120px]`}>
-          <h3
-            className={`text-black text-xl font-bold mb-12 lg:mb-16 lg:font-normal lg:text-3xl lg:mb-16`}
-          >
-            Շարունակիր բացահայտել
-          </h3>
+        <div className={`container mx-auto mt-16  lg:mt-[120px] mb-[140px]`}>
           <WomenCardLayout
             womanPage={true}
             className={''}
             women={suggestWoman.slice(0, 3)}
+            title={'Շարունակիր բացահայտել'}
           />
         </div>
       </MainLayout>

@@ -11,7 +11,7 @@ const HeroBanner = ({ text }) => (
     </h1>
     <div className="text-center">
       <div>
-        <Link href="/" passHref>
+        <Link href="/women" passHref>
           <a className="bg-transparent text-violet-950 mt-12 w-[251px] px-6 py-4 font-medium text-lg bg-amber-300 border inline-block">
             Բացահայտել պատմությունները
           </a>

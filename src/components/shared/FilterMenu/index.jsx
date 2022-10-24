@@ -3,7 +3,7 @@ import { useState } from 'react'
 import FilterButtons from '../FilterButtons'
 import styles from './filterMenu.module.css'
 
-const FilterMenu = ({ categories }) => {
+const FilterMenu = ({ categories, filteredIds, setFilteredIds }) => {
   const [open, setOpen] = useState(false)
 
   const handleOpen = (open) => {
@@ -46,6 +46,8 @@ const FilterMenu = ({ categories }) => {
             <FilterButtons
               categories={categories}
               className={`flex flex-col gap-y-4`}
+              filteredIds={filteredIds}
+              setFilteredIds={setFilteredIds}
             />
             <div>
               <button
