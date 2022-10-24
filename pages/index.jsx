@@ -50,7 +50,7 @@ export default function Home({ women }) {
         />
         <AboutBook className={`mt-[58px] lg:mt-[140px]`} />
 
-        <WomanCardLayout women={women} />
+        <WomanCardLayout women={women} title={PageConstants.womenCard.title} />
 
         <div className={'text-center mb-24 mt-24'}>
           <Link href={'/women'}>

@@ -7,7 +7,7 @@ import SectionTitle from '../SectionTitle'
 import { lifeDuration } from '../../../../services/frontend/helpers'
 import Link from 'next/link'
 
-const WomenCardLayout = ({ className, women, womanPage }) => {
+const WomenCardLayout = ({ className, women, womanPage, title }) => {
   console.log(women, 'women')
   const [current, setCurrent] = useState(0)
   const [startClientX, setStartClientX] = useState()
@@ -128,11 +128,13 @@ const WomenCardLayout = ({ className, women, womanPage }) => {
     <div className={`lg:mt-[120px]`}>
       {!womanPage ? <SectionTitle direction={'right'} /> : null}
       <div className={`grid grid-cols-12 gap-6 container mx-auto ${className}`}>
-        {!womanPage ? (
-          <h2 className={`text-3xl col-span-6 row-start-1 col-start-7`}>
-            {PageConstants.womenCard.title}
-          </h2>
-        ) : null}
+        <h2
+          className={`text-3xl col-span-6 row-start-1 ${
+            womanPage ? 'col-start-1' : 'col-start-7'
+          }`}
+        >
+          {title}
+        </h2>
         {womenDataDesktop}
       </div>
     </div>
