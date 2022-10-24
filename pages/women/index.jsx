@@ -5,10 +5,9 @@ import Button from '../../src/components/shared/Button'
 import FilterMenu from '../../src/components/shared/FilterMenu'
 import Strapi from '../../services/backend/Strapi'
 import { lifeDuration } from '../../services/frontend/helpers'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 export async function getServerSideProps({ req, res, query }) {
-  const strapi = new Strapi()
   const { data } = await strapi.getWomen(query.category ? query.category : [])
   const categoriesData = await strapi.getCategories()
 
@@ -23,32 +22,35 @@ export async function getServerSideProps({ req, res, query }) {
 
 export default function Women({ women, pagination, categories }) {
   const { total, page } = pagination
-  const [showCount, setShowCount] = useState(page)
+  const [pageNumber, setPageNumber] = useState(page)
   const [womenData, setWomenData] = useState(women)
   const [filteredIds, setFilteredIds] = useState([])
 
   const strapi = new Strapi()
-
-  console.log(filteredIds, 'filteredIds')
 
   useEffect(() => {
     setWomenData(women)
   }, [women])
 
   useEffect(() => {
-    setShowCount(page)
+    setPageNumber(page)
   }, [page])
 
   useEffect(() => {
-    setShowCount(1)
+    setPageNumber(1)
   }, [filteredIds])
 
   const paginate = useCallback(async () => {
-    setShowCount((prev) => prev + 1)
-    await strapi.getWomen(filteredIds, showCount + 1).then((data) => {
-      setWomenData((prev) => [...prev, ...data.data.women.data])
-    })
-  }, [showCount, filteredIds, strapi])
+    const strapi = new Strapi()
+    setPageNumber((prev) => prev + 1)
+    try {
+      await strapi.getWomen(filteredIds, pageNumber + 1).then((data) => {
+        setWomenData((prev) => [...prev, ...data.data.women.data])
+      })
+    } catch (e) {
+      console.log(e)
+    }
+  }, [pageNumber, filteredIds])
 
   const womenDataDrawer = womenData.map((woman) => {
     const {

@@ -8,7 +8,6 @@ import { lifeDuration } from '../../../../services/frontend/helpers'
 import Link from 'next/link'
 
 const WomenCardLayout = ({ className, women, womanPage, title }) => {
-  console.log(women, 'women')
   const [current, setCurrent] = useState(0)
   const [startClientX, setStartClientX] = useState()
   const count = 3
