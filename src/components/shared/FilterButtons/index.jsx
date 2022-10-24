@@ -3,7 +3,6 @@ import PageConstants from '../../../const'
 import { useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
-import { useFilters } from '../../pages/women/useFilters'
 
 const FilterButtons = ({
   className,

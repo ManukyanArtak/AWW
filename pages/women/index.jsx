@@ -6,7 +6,6 @@ import FilterMenu from '../../src/components/shared/FilterMenu'
 import Strapi from '../../services/backend/Strapi'
 import { lifeDuration } from '../../services/frontend/helpers'
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { useFilters } from '../../src/components/pages/women/useFilters'
 
 export async function getServerSideProps({ req, res, query }) {
   const strapi = new Strapi()
