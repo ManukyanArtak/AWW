@@ -13,6 +13,13 @@ import {
   scrollToElement,
 } from '../../../services/frontend/helpers'
 import WomenCardLayout from '../../../src/components/shared/WomenCardLayout'
+import Loader from '../../../src/components/shared/Loader'
+import SuccessMessage from '../../../src/components/shared/SuccessMessage'
+import ErrorMessage from '../../../src/components/shared/ErrorMessage'
+import { useState } from 'react'
+import { handleRequest } from '../../../services/frontend/request'
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
 
 export async function getServerSideProps({ req, res, params: { id } }) {
   const strapi = new Strapi()
@@ -33,6 +40,8 @@ export async function getServerSideProps({ req, res, params: { id } }) {
 }
 
 export default function PersonalPage({ woman, suggestWoman }) {
+  const [requestState, setRequestState] = useState('')
+  const [loader, setLoader] = useState(false)
   const {
     birthday,
     first_name,
@@ -47,6 +56,37 @@ export default function PersonalPage({ woman, suggestWoman }) {
     images,
     videos,
   } = woman?.attributes
+
+  const download = async (values) => {
+    const body = document.querySelector('body')
+    body.style.overflow = 'hidden'
+    setLoader(true)
+    await handleRequest('download', values)
+      .then(() => {
+        setRequestState('success')
+        formik.handleReset()
+      })
+      .catch(() => {
+        setRequestState('error')
+      })
+      .finally(() => {
+        setLoader(false)
+      })
+  }
+
+  const onCancelClick = () => {
+    const body = document.querySelector('body')
+    setRequestState('')
+    body.style.overflow = 'auto'
+  }
+
+  const formik = useFormik({
+    initialValues: { email: '' },
+    onSubmit: (values) => download(values),
+    validationSchema: Yup.object({
+      email: Yup.string().email('Please enter valid email'),
+    }),
+  })
 
   return (
     <>
@@ -131,7 +171,7 @@ export default function PersonalPage({ woman, suggestWoman }) {
 
             {videos?.data?.length ? <Videos videos={videos.data} /> : null}
 
-            <SelectDownload />
+            <SelectDownload formik={formik} download={download} />
           </div>
         </div>
         <div className={`container mx-auto mt-16  lg:mt-[120px] mb-[140px]`}>
@@ -143,6 +183,16 @@ export default function PersonalPage({ woman, suggestWoman }) {
           />
         </div>
       </MainLayout>
+      {loader ? <Loader /> : null}
+      {requestState === 'success' ? (
+        <SuccessMessage onClose={onCancelClick} />
+      ) : null}
+      {requestState === 'error' ? (
+        <ErrorMessage
+          onTryClick={() => download(formik.values)}
+          onCancelClick={onCancelClick}
+        />
+      ) : null}
     </>
   )
 }

@@ -9,7 +9,6 @@ export default class Strapi {
     if (pageNumber) {
       all += `pagination:{page:${pageNumber}, pageSize:3}`
     }
-    console.log(all, ids, 'all')
     return await this.request(`query{
   women${all ? `(${all})` : ''}{
     data {
