@@ -1,7 +1,4 @@
 import Button from '../Button'
-import PageConstants from '../../../const'
-import { useState } from 'react'
-import axios from 'axios'
 import { useRouter } from 'next/router'
 
 const FilterButtons = ({

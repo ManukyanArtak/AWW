@@ -1,13 +1,14 @@
-import MainLayout from '../../src/components/layout/Main'
-import FilterButtons from '../../src/components/shared/FilterButtons'
-import WomanCard from '../../src/components/shared/WomanCard'
-import Button from '../../src/components/shared/Button'
-import FilterMenu from '../../src/components/shared/FilterMenu'
 import Strapi from '../../services/backend/Strapi'
-import { lifeDuration } from '../../services/frontend/helpers'
+import Button from '../../src/components/shared/Button'
 import { useCallback, useEffect, useState } from 'react'
+import MainLayout from '../../src/components/layout/Main'
+import WomanCard from '../../src/components/shared/WomanCard'
+import { lifeDuration } from '../../services/frontend/helpers'
+import FilterMenu from '../../src/components/shared/FilterMenu'
+import FilterButtons from '../../src/components/shared/FilterButtons'
 
 export async function getServerSideProps({ req, res, query }) {
+  const strapi = new Strapi()
   const { data } = await strapi.getWomen(query.category ? query.category : [])
   const categoriesData = await strapi.getCategories()
 
@@ -22,7 +23,7 @@ export async function getServerSideProps({ req, res, query }) {
 
 export default function Women({ women, pagination, categories }) {
   const { total, page } = pagination
-  const [pageNumber, setPageNumber] = useState(page)
+  const [showCount, setShowCount] = useState(page)
   const [womenData, setWomenData] = useState(women)
   const [filteredIds, setFilteredIds] = useState([])
 
@@ -33,24 +34,19 @@ export default function Women({ women, pagination, categories }) {
   }, [women])
 
   useEffect(() => {
-    setPageNumber(page)
+    setShowCount(page)
   }, [page])
 
   useEffect(() => {
-    setPageNumber(1)
+    setShowCount(1)
   }, [filteredIds])
 
   const paginate = useCallback(async () => {
-    const strapi = new Strapi()
-    setPageNumber((prev) => prev + 1)
-    try {
-      await strapi.getWomen(filteredIds, pageNumber + 1).then((data) => {
-        setWomenData((prev) => [...prev, ...data.data.women.data])
-      })
-    } catch (e) {
-      console.log(e)
-    }
-  }, [pageNumber, filteredIds])
+    setShowCount((prev) => prev + 1)
+    await strapi.getWomen(filteredIds, showCount + 1).then((data) => {
+      setWomenData((prev) => [...prev, ...data.data.women.data])
+    })
+  }, [showCount, filteredIds, strapi])
 
   const womenDataDrawer = womenData.map((woman) => {
     const {

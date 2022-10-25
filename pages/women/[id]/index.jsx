@@ -1,25 +1,25 @@
+import * as Yup from 'yup'
+import { useState } from 'react'
+import { useFormik } from 'formik'
 import PageConstants from '../../../src/const'
+import Strapi from '../../../services/backend/Strapi'
 import MainLayout from '../../../src/components/layout/Main'
-import Biography from '../../../src/components/pages/women/biography'
-import SelectDownload from '../../../src/components/shared/SelectDownload'
-import WomanPageHeroBanner from '../../../src/components/shared/WomanPageHeroBaner'
-import RemarkableStories from '../../../src/components/pages/women/remarkableStories'
 import Images from '../../../src/components/pages/women/Images'
 import Videos from '../../../src/components/pages/women/videos'
-import SideBarMenu from '../../../src/components/shared/sidebarMenu'
-import Strapi from '../../../services/backend/Strapi'
 import {
   lifeDuration,
   scrollToElement,
 } from '../../../services/frontend/helpers'
-import WomenCardLayout from '../../../src/components/shared/WomenCardLayout'
 import Loader from '../../../src/components/shared/Loader'
-import SuccessMessage from '../../../src/components/shared/SuccessMessage'
-import ErrorMessage from '../../../src/components/shared/ErrorMessage'
-import { useState } from 'react'
 import { handleRequest } from '../../../services/frontend/request'
-import { useFormik } from 'formik'
-import * as Yup from 'yup'
+import SideBarMenu from '../../../src/components/shared/sidebarMenu'
+import Biography from '../../../src/components/pages/women/biography'
+import ErrorMessage from '../../../src/components/shared/ErrorMessage'
+import SuccessMessage from '../../../src/components/shared/SuccessMessage'
+import SelectDownload from '../../../src/components/shared/SelectDownload'
+import WomenCardLayout from '../../../src/components/shared/WomenCardLayout'
+import WomanPageHeroBanner from '../../../src/components/shared/WomanPageHeroBaner'
+import RemarkableStories from '../../../src/components/pages/women/remarkableStories'
 
 export async function getServerSideProps({ req, res, params: { id } }) {
   const strapi = new Strapi()
