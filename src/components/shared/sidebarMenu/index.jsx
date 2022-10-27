@@ -71,7 +71,7 @@ const SideBarMenu = ({ data }) => {
             ) : null}
             {data.remarkable_stories ? (
                 <li className={'mt-4 text-lg text-violet-950 font-medium '}>
-                  <button onClick={() => menuSelect('youth')}>
+                  <button onClick={() => menuSelect('remarkableStories')}>
                     Ուշագրավ պատմություններ
                   </button>
                 </li>
