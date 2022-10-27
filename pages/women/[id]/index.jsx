@@ -91,7 +91,7 @@ export default function PersonalPage({ woman, suggestWoman }) {
   return (
     <>
       <SideBarMenu
-        data={{ childhood, boyhood, images: images?.data, video: videos.data }}
+        data={{ childhood, boyhood, images: images?.data, video: videos.data, remarkable_stories }}
       />
       <MainLayout>
         <WomanPageHeroBanner
@@ -125,14 +125,21 @@ export default function PersonalPage({ woman, suggestWoman }) {
                   </button>
                 </li>
               ) : null}
-              {images?.data ? (
+              {remarkable_stories ? (
+                <li className={'mt-4 text-lg text-violet-950 font-medium '}>
+                  <button onClick={() => scrollToElement('remarkableStories')}>
+                    Ուշագրավ պատմություններ
+                  </button>
+                </li>
+              ) : null}
+              {images?.data?.length ? (
                 <li className={'font-semibold text-violet-950 text-xl mt-10 '}>
                   <button onClick={() => scrollToElement('images')}>
                     Նկարներ
                   </button>
                 </li>
               ) : null}
-              {videos.data ? (
+              {videos.data?.length ? (
                 <li className={'font-semibold text-violet-950 text-xl mt-10'}>
                   <button onClick={() => scrollToElement('videos')}>
                     Տեսանյութեր
@@ -146,18 +153,12 @@ export default function PersonalPage({ woman, suggestWoman }) {
               <Biography
                 title={'Մանկություն'}
                 text={childhood}
-                divider={false}
                 id={'childhood'}
               />
             ) : null}
 
             {boyhood ? (
-              <Biography
-                title={'Պատանեկություն'}
-                text={boyhood}
-                divider={true}
-                id={'youth'}
-              />
+              <Biography title={'Պատանեկություն'} text={boyhood} id={'youth'} />
             ) : null}
 
             {remarkable_stories ? (

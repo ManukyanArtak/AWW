@@ -42,7 +42,7 @@ const WomenCardLayout = ({ className, women, womanPage, title }) => {
   const onStart = useCallback(
     (e) => {
       const clientX = e?.touches[0]?.clientX
-      setStartClientX(clientX)
+      setStartClientX(clientX);
     },
     [setStartClientX]
   )

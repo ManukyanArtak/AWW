@@ -45,7 +45,7 @@ const SideBarMenu = ({ data }) => {
         <div
           className={`${
             open ? styles.open : styles.close
-          } bottom-0 h-[583px] w-full fixed bg-white pt-8 pl-8 flex`}
+          } bottom-0 h-full w-full fixed bg-white pt-8 pl-8 flex`}
         >
           <ul>
             <li
@@ -69,7 +69,14 @@ const SideBarMenu = ({ data }) => {
                 </button>
               </li>
             ) : null}
-            {data.images ? (
+            {data.remarkable_stories ? (
+                <li className={'mt-4 text-lg text-violet-950 font-medium '}>
+                  <button onClick={() => menuSelect('remarkableStories')}>
+                    Ուշագրավ պատմություններ
+                  </button>
+                </li>
+            ) : null}
+            {data.images?.length ? (
               <li
                 className={
                   'font-semibold text-violet-950 text-xl mt-10 border-b border-yellow-450 pb-1'
@@ -78,7 +85,7 @@ const SideBarMenu = ({ data }) => {
                 <button onClick={() => menuSelect('images')}>Նկարներ</button>
               </li>
             ) : null}
-            {data.video ? (
+            {data.video?.length ? (
               <li
                 className={
                   'font-semibold text-violet-950 text-xl mt-10 border-b border-yellow-450 pb-1'

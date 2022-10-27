@@ -3,7 +3,6 @@ import Picture from '../../../shared/Picture'
 export default function Videos({ videos }) {
   return (
     <div id={'videos'}>
-      <hr className={'border-1 border-solid border-amber-300 my-14'} />
       <h2 className={`mb-12 text-violent-950 text-lg lg:text-3xl font-normal`}>
         Տեսանյութեր
       </h2>
@@ -19,9 +18,19 @@ export default function Videos({ videos }) {
             >
               {' '}
             </iframe>
+            <p
+              className={`mt-3 text-blue-950 text-sm lg:text-lg lg:mt-6 lg:text-violet-950`}
+            >
+              {item.attributes.name}
+            </p>
           </div>
         ))}
       </div>
+      <hr
+        className={
+          'border-1 border-solid border-amber-300 my-14 w-[155px] lg:w-[370px]'
+        }
+      />
     </div>
   )
 }
