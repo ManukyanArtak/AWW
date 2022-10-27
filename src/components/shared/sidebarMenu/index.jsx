@@ -69,6 +69,13 @@ const SideBarMenu = ({ data }) => {
                 </button>
               </li>
             ) : null}
+            {data.remarkable_stories ? (
+                <li className={'mt-4 text-lg text-violet-950 font-medium '}>
+                  <button onClick={() => menuSelect('youth')}>
+                    Ուշագրավ պատմություններ
+                  </button>
+                </li>
+            ) : null}
             {data.images?.length ? (
               <li
                 className={
