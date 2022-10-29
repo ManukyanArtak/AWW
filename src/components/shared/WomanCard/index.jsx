@@ -12,7 +12,6 @@ const WomanCard = ({
   lifeDuration,
   onStart,
   onEnd,
-  onClick,
   id,
 }) =>
   show ? (
@@ -26,13 +25,12 @@ const WomanCard = ({
         <a>
           <div>
             <Image
-              height={1}
-              width={1}
               alt="Image Alt"
               src={img}
               loader={({ src }) => `http://localhost:1337${src}`}
-              layout="responsive"
-              objectFit="cover"
+              width={364}
+              height={484}
+              layout="fixed"
             />
             <div className="mt-3 pl-4">
               <h4 className="text-violet-950 text-lg font-semibold">{name}</h4>

@@ -12,7 +12,7 @@ export default class Email {
 
   async send(subject, from, content) {
     return await this.client.send({
-      to: 'artak.manukyan@mamble.co',
+      to: 'artakmanukyan17@gmail.com',
       subject,
       from: 'artak.manukyan@mamble.co',
       content,

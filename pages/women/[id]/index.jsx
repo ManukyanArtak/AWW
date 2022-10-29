@@ -91,7 +91,13 @@ export default function PersonalPage({ woman, suggestWoman }) {
   return (
     <>
       <SideBarMenu
-        data={{ childhood, boyhood, images: images?.data, video: videos.data, remarkable_stories }}
+        data={{
+          childhood,
+          boyhood,
+          images: images?.data,
+          video: videos.data,
+          remarkable_stories,
+        }}
       />
       <MainLayout>
         <WomanPageHeroBanner

@@ -14,10 +14,9 @@ const WomanPageHeroBanner = ({
         <Image
           src={img}
           loader={({ src }) => `http://localhost:1337${src}`}
-          width={1}
-          height={1.2}
-          layout="responsive"
-          objectFit="cover"
+          width={'364px'}
+          height={'484px'}
+          layout="fixed"
           alt={'woman'}
         />
       </div>

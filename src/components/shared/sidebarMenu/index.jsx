@@ -70,11 +70,11 @@ const SideBarMenu = ({ data }) => {
               </li>
             ) : null}
             {data.remarkable_stories ? (
-                <li className={'mt-4 text-lg text-violet-950 font-medium '}>
-                  <button onClick={() => menuSelect('remarkableStories')}>
-                    Ուշագրավ պատմություններ
-                  </button>
-                </li>
+              <li className={'mt-4 text-lg text-violet-950 font-medium '}>
+                <button onClick={() => menuSelect('remarkableStories')}>
+                  Ուշագրավ պատմություններ
+                </button>
+              </li>
             ) : null}
             {data.images?.length ? (
               <li
