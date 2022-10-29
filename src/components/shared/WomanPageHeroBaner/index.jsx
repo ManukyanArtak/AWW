@@ -8,7 +8,10 @@ const WomanPageHeroBanner = ({
   profession,
   img,
 }) => (
-  <div className={`${styles.banner_container} pt-6 pb-8 lg:pt-10 lg:pb-[54px]`}>
+  <div
+    className={`${styles.banner_container} pt-6 pb-8 lg:pt-10 lg:pb-14`}
+    //watch
+  >
     <div className={` container mx-auto grid lg:grid-cols-12  gap-6`}>
       <div className={`col-start-1  col-span-4 `}>
         <Image
@@ -23,10 +26,10 @@ const WomanPageHeroBanner = ({
 
       <div className={`col-start-1  mt-11 lg:col-start-5 lg:col-span-5`}>
         <div
-          className={`flex flex-col justify-center divide-solid divide-yellow-450 divide-[134px] `}
+          className={`flex flex-col justify-center divide-solid divide-yellow-450 divide-134 `}
         >
           <h4
-            className={`text-white text-lg mb-2 font-normal font-semibold lg:text-[30px] lg:mb-1 `}
+            className={`text-white text-lg mb-2 font-normal font-semibold lg:text-30 lg:mb-1 `}
           >
             {name}
           </h4>
@@ -36,7 +39,8 @@ const WomanPageHeroBanner = ({
           </p>
 
           <p
-            className={`font-normal text-2xl text-white mt-6 mb-2 lg:mt-[54px] lg:mb-3 `}
+            className={`font-normal text-2xl text-white mt-6 mb-2 lg:mt-14 lg:mb-3 `}
+            //watch mt-14
           >
             {lifeDuration}
           </p>

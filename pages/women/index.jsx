@@ -85,10 +85,11 @@ export default function Women({ women, pagination, categories }) {
 
       <MainLayout>
         <div
-          className={`container mx-auto grid grid-cols-4 gap-y-8 mt-[72px] lg:grid-cols-12 lg:gap-6 `}
+          className={`container mx-auto grid grid-cols-4 gap-y-8 mt-17 lg:grid-cols-12 lg:gap-6 `}
         >
           <div
-            className={`hidden lg:block lg:mb-[98px] lg:mt-[81px] lg:col-start-2 lg:col-end-12 lg:gap-y-6`}
+            className={`hidden lg:block lg:mb-24 lg:mt-20 lg:col-start-2 lg:col-end-12 lg:gap-y-6`}
+            //watch
           >
             <FilterButtons
               className={`flex justify-center flex-col flex-wrap gap-6 lg:flex-row`}
@@ -100,13 +101,13 @@ export default function Women({ women, pagination, categories }) {
 
           {womenDataDrawer}
           <div
-            className={`col-start-1 col-span-full mb-20 mt-9 lg:mb-[140px] lg:mt-[102px] flex items-center justify-center`}
+            className={`col-start-1 col-span-full mb-20 mt-9 lg:mb-33 lg:mt-26 flex items-center justify-center`}
           >
             {womenData.length === total ? null : (
               <Button
                 label={'Տեսնել ավելին'}
                 className={
-                  'text-violet-950 pb-[8px] border-b border-yellow-450 w-[152px] '
+                  'text-violet-950 pb-2 border-b border-yellow-450 w-37 '
                 }
                 onClick={paginate}
               />

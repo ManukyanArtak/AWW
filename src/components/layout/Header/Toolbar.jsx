@@ -4,7 +4,7 @@ import Link from 'next/link'
 const Toolbar = ({ handleClick }) => (
   <div className={`w-full fixed top-0 left-0 h-screen z-10 bg-violet-850`}>
     <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full h-full lg:items-center items-start  flex flex-col lg:h-auto ">
-      <div className="flex  justify-between items-center w-full  pt-5 pr-[40px] pl-6  max-w-screen-xl">
+      <div className="flex  justify-between items-center w-full  pt-5 pr-10 pl-6  max-w-screen-xl">
         <Link href="/" className="flex items-center" passHref>
           <a>
             <Image

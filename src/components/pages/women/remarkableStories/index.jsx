@@ -9,9 +9,7 @@ export default function RemarkableStories({ title, stories }) {
       {/*<p className={'text-lg py-8'}>{stories}</p>*/}
       <ReactMarkdown>{stories}</ReactMarkdown>
       <hr
-        className={
-          'border-1 border-solid border-amber-300 my-14 w-[155px] lg:w-[370px]'
-        }
+        className={'border-1 border-solid border-amber-300 my-14 w-38 lg:w-sm'}
       />
     </div>
   )

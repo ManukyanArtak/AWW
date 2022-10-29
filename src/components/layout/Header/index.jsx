@@ -11,12 +11,12 @@ const Header = () => {
   }
 
   return (
-    <header className="bg-white py-5 pr-[30px] pb-5 pl-6 lg:px-[140px] lg:pt-[18px] lg:pb-[26px]">
+    <header className="bg-white py-5 pr-7.5 pb-5 pl-6 lg:px-33 lg:pt-4.5 lg:pb-6.5">
       <nav className="bg-white border-gray-200 ">
         <div className="flex flex-wrap justify-between items-center">
           <Link
             href="/"
-            className=" flex items-center w-[84px] h-[60px] lg:w-[144px] h-[62px]"
+            // className=" flex items-center w-[84px] h-[60px] lg:w-[144px] h-[62px]"
             passHref
           >
             <a>
