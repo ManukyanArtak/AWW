@@ -20,6 +20,8 @@ import SelectDownload from '../../../src/components/shared/SelectDownload'
 import WomanPageHeroBanner from '../../../src/components/shared/WomanPageHeroBaner'
 import RemarkableStories from '../../../src/components/pages/women/remarkableStories'
 import WomenSlider from '../../../src/components/shared/WomenSlider'
+import SideMenuContent from '../../../src/components/shared/sideMenuContent'
+import { data } from 'autoprefixer'
 
 export async function getServerSideProps({ req, res, params: { id } }) {
   const strapi = new Strapi()
@@ -55,6 +57,7 @@ export default function PersonalPage({ woman, suggestWoman }) {
     remarkable_stories,
     images,
     videos,
+    categories,
   } = woman?.attributes
 
   const download = async (values) => {
@@ -88,23 +91,23 @@ export default function PersonalPage({ woman, suggestWoman }) {
     }),
   })
 
+  const data = {
+    childhood,
+    boyhood,
+    images: images?.data,
+    video: videos.data,
+    remarkable_stories,
+  }
+
   return (
     <>
-      <SideBarMenu
-        data={{
-          childhood,
-          boyhood,
-          images: images?.data,
-          video: videos.data,
-          remarkable_stories,
-        }}
-      />
+      <SideBarMenu data={data} />
       <MainLayout>
         <WomanPageHeroBanner
           name={`${first_name} ${last_name}`}
           birthPlace={`${city}, ${country}`}
           img={avatar.data.attributes.url}
-          profession={PageConstants.womanPage.heroBanner.profession}
+          profession={categories.data[0]?.attributes.name}
           lifeDuration={lifeDuration(birthday, death_day)}
         />
         <div
@@ -113,46 +116,11 @@ export default function PersonalPage({ woman, suggestWoman }) {
           }
         >
           <div className={'col-span-4 mt-25 hidden lg:block'}>
-            <ul>
-              <li className={'font-semibold text-violet-950 text-xl'}>
-                Կենսագրություն
-              </li>
-              {childhood ? (
-                <li className={'mt-6 text-lg text-violet-950 font-medium '}>
-                  <button onClick={() => scrollToElement('childhood')}>
-                    Մանկություն
-                  </button>
-                </li>
-              ) : null}
-              {boyhood ? (
-                <li className={'mt-4 text-lg text-violet-950 font-medium '}>
-                  <button onClick={() => scrollToElement('youth')}>
-                    Պատանեկություն
-                  </button>
-                </li>
-              ) : null}
-              {remarkable_stories ? (
-                <li className={'mt-4 text-lg text-violet-950 font-medium '}>
-                  <button onClick={() => scrollToElement('remarkableStories')}>
-                    Ուշագրավ պատմություններ
-                  </button>
-                </li>
-              ) : null}
-              {images?.data?.length ? (
-                <li className={'font-semibold text-violet-950 text-xl mt-10 '}>
-                  <button onClick={() => scrollToElement('images')}>
-                    Նկարներ
-                  </button>
-                </li>
-              ) : null}
-              {videos.data?.length ? (
-                <li className={'font-semibold text-violet-950 text-xl mt-10'}>
-                  <button onClick={() => scrollToElement('videos')}>
-                    Տեսանյութեր
-                  </button>
-                </li>
-              ) : null}
-            </ul>
+            <SideMenuContent
+              data={data}
+              className={''}
+              onClick={scrollToElement}
+            />
           </div>
           <div className={'col-span-4 lg:col-span-8'}>
             {childhood ? (
@@ -185,6 +153,7 @@ export default function PersonalPage({ woman, suggestWoman }) {
           <WomenSlider
             women={suggestWoman.slice(0, 3)}
             title={PageConstants.slider.title}
+            womanPage={true}
           />
         </div>
       </MainLayout>

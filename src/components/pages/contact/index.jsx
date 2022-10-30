@@ -168,7 +168,7 @@ const ContactUs = () => {
                 onBlur={formik.handleBlur}
                 touched={formik.touched.subject}
               />
-              <label className={`w-80 mt-4 block lg:mt-6 lg:w-[570px]`}>
+              <label className={`w-80 mt-4 block lg:mt-6 lg:w-570`}>
                 <span className={`text-base text-violet-850 block`}>
                   Հաղորդագրություն
                 </span>

@@ -14,3 +14,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
+.react-multi-carousel-dot-list {
+  position: unset !important;
+}

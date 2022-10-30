@@ -1,5 +1,5 @@
-.womanCard{
-    -webkit-column-break-inside: avoid;
-    page-break-inside: avoid; /* Firefox is dumb */
-    break-inside: avoid;
+.womanCard {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid; /* Firefox is dumb */
+  break-inside: avoid;
 }

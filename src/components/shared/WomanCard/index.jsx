@@ -16,9 +16,7 @@ const WomanCard = ({
   avatarSize,
 }) =>
   show ? (
-    <div
-      className={`max-w-xs ${className} ${styles.womanCard}`}
-    >
+    <div className={`max-w-xs ${className} ${styles.womanCard}`}>
       <Link href={`/women/${id}`}>
         <a>
           <div>
