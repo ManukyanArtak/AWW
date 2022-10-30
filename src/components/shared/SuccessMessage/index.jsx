@@ -22,9 +22,7 @@ const AlertMessage = ({ onClose }) => (
       width={'63px'}
       height={'43px'}
     />
-    <p className={`text-[#00baab] mt-5`}>
-      Ձեր նամակը հաջողությամբ ուղարկվել է։
-    </p>
+    <p className={`text-teal-550 mt-5`}>Ձեր նամակը հաջողությամբ ուղարկվել է։</p>
   </div>
 )
 

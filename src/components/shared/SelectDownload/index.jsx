@@ -20,7 +20,7 @@ const SelectDownload = ({ formik, download }) => (
 
         <form onSubmit={formik.handleSubmit}>
           <input
-            className={`mt-[30px] block w-full  pb-6 bg-white border-b ${
+            className={`mt-7.5 block w-full  pb-6 bg-white border-b ${
               formik.errors.email ? 'border-red-400' : 'border-violent-950'
             } placeholder-gray-450 text-base focus:outline-0`}
             type="email"

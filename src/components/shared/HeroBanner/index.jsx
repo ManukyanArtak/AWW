@@ -12,14 +12,14 @@ const HeroBanner = ({ text }) => (
     <div className="text-center">
       <div>
         <Link href="/women" passHref>
-          <a className="bg-transparent text-violet-950 mt-12 w-[251px] px-6 py-4 font-medium text-lg bg-amber-300 border inline-block">
+          <a className="bg-transparent text-violet-950 mt-12 w-61 px-6 py-4 font-medium text-lg bg-amber-300 border inline-block">
             Բացահայտել պատմությունները
           </a>
         </Link>
       </div>
       <div className="mt-28 hidden lg:block">
         <button
-          className={` inline-block  pt-2 w-16 h-10 rounded-[100px] ${styles.scrollVector}`}
+          className={` inline-block  pt-2 w-16 h-10 rounded-100 ${styles.scrollVector}`}
           href={'/#'}
           onClick={() => scrollToElement('book')}
         >

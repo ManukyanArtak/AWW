@@ -9,7 +9,10 @@ const Footer = () => (
         flex-col
         items-center"
   >
-    <div className={`mt-2  w-[80px] h-[38px] lg:mt-6 lg:w-[200px] lg:h-[88px]`}>
+    <div
+      className={`mt-2  w-20 h-10 lg:mt-6 lg:w-50 lg:h-22`}
+      //w-10
+    >
       <Image
         src="/img/logo-white.svg"
         width="202px"
@@ -36,7 +39,7 @@ const Footer = () => (
     </ul>
 
     <ul className="flex flex-wrap  mt-3 pt-16">
-      <li className={`pl-4 pr-4 h-[50px]`}>
+      <li className={`pl-4 pr-4 h-15`}>
         <Image
           src="/img/linkdin.svg"
           width="50px"
@@ -44,7 +47,7 @@ const Footer = () => (
           alt={'Linkedin'}
         />
       </li>
-      <li className={`pl-4 pr-4 h-[50px]`}>
+      <li className={`pl-4 pr-4 h-15`}>
         <Image
           src="/img/facebook.svg"
           width="50px"
@@ -52,7 +55,7 @@ const Footer = () => (
           alt={'Facebook'}
         />
       </li>
-      <li className={`pl-4 pr-4 h-[50px]`}>
+      <li className={`pl-4 pr-4 h-15`}>
         <Image
           src="/img/instagram.svg"
           width="50px"

@@ -112,7 +112,7 @@ export default function PersonalPage({ woman, suggestWoman }) {
             'container mx-auto grid grid-cols-4 lg:grid-cols-12 gap-6 pt-4  '
           }
         >
-          <div className={'col-span-4 mt-[100px] hidden lg:block'}>
+          <div className={'col-span-4 mt-25 hidden lg:block'}>
             <ul>
               <li className={'font-semibold text-violet-950 text-xl'}>
                 Կենսագրություն
@@ -181,7 +181,7 @@ export default function PersonalPage({ woman, suggestWoman }) {
             <SelectDownload formik={formik} download={download} />
           </div>
         </div>
-        <div className={`container mx-auto mt-16  lg:mt-[120px] mb-[140px]`}>
+        <div className={`container mx-auto mt-16  lg:mt-30 mb-33`}>
           <WomenCardLayout
             womanPage={true}
             className={''}

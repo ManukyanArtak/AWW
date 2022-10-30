@@ -28,7 +28,7 @@ const WomenCardLayout = ({ className, women, womanPage, title }) => {
       <WomanCard
         img={`${avatar.data.attributes.url}`}
         show={true}
-        className={'col-span-4 row-start-2 lg:mt-[76px]'}
+        className={'col-span-4 row-start-2 lg:mt-18'}
         name={`${first_name} ${last_name}`}
         address={`${country}, ${city}`}
         lifeDuration={lifeDuration(birthday, death_day)}
@@ -100,7 +100,7 @@ const WomenCardLayout = ({ className, women, womanPage, title }) => {
   })
 
   const mobileView = (
-    <div className={`mt-[56px]`}>
+    <div className={`mt-14`}>
       {!womanPage ? <SectionTitle direction={'left'} /> : null}
       <div className={`container mx-auto ${className}`}>
         {!womanPage ? (
@@ -124,7 +124,7 @@ const WomenCardLayout = ({ className, women, womanPage, title }) => {
   )
 
   const desktopView = (
-    <div className={`lg:mt-[120px]`}>
+    <div className={`lg:mt-30`}>
       {!womanPage ? <SectionTitle direction={'right'} /> : null}
       <div className={`grid grid-cols-12 gap-6 container mx-auto ${className}`}>
         <h2
