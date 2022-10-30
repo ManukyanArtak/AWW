@@ -6,7 +6,6 @@ import WomanCard from '../../src/components/shared/WomanCard'
 import { lifeDuration } from '../../services/frontend/helpers'
 import FilterMenu from '../../src/components/shared/FilterMenu'
 import FilterButtons from '../../src/components/shared/FilterButtons'
-import PageConstants from "../../src/const";
 
 export async function getServerSideProps({ req, res, query }) {
   const strapi = new Strapi()
@@ -50,7 +49,6 @@ export default function Women({ women, pagination, categories }) {
     })
   }, [showCount, filteredIds, strapi])
   const womenDataDrawer = womenData.map((woman, index) => {
-    console.log(woman)
     const {
       first_name,
       last_name,
@@ -60,6 +58,7 @@ export default function Women({ women, pagination, categories }) {
       death_day,
       avatar,
       categories,
+      avatarSize,
     } = woman.attributes
 
     return (
@@ -73,7 +72,7 @@ export default function Women({ women, pagination, categories }) {
         profession={categories.data[0]?.attributes.name}
         key={woman.id}
         id={woman.id}
-        height={PageConstants.imgSizes[height]|| 200}
+        avatarSize={avatarSize}
       />
     )
   })
@@ -91,8 +90,7 @@ export default function Women({ women, pagination, categories }) {
           className={`container mx-auto grid grid-cols-4 gap-y-8 mt-17 lg:grid-cols-12 lg:gap-6 `}
         >
           <div
-            className={`hidden lg:block lg:mb-24 lg:mt-20 lg:col-start-2 lg:col-end-12 lg:gap-y-6`}
-            //watch
+            className={`hidden lg:block lg:mb-24 lg:col-start-2 lg:col-end-12 lg:gap-y-6`}
           >
             <FilterButtons
               className={`flex justify-center flex-col flex-wrap gap-6 lg:flex-row`}

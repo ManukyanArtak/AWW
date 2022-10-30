@@ -1,6 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import PageConstants from '../../../const'
+import styles from './womanCard.module.css'
 
 const WomanCard = ({
   img,
@@ -10,16 +12,12 @@ const WomanCard = ({
   address,
   profession,
   lifeDuration,
-  onStart,
-  onEnd,
   id,
+  avatarSize,
 }) =>
   show ? (
     <div
-      className={`max-w-xs ${className}`}
-      onTouchStart={onStart}
-      onTouchEnd={onEnd}
-      // onClick={() => onClick && onClick()}
+      className={`max-w-xs ${className} ${styles.womanCard}`}
     >
       <Link href={`/women/${id}`}>
         <a>
@@ -29,7 +27,7 @@ const WomanCard = ({
               src={img}
               loader={({ src }) => `http://localhost:1337${src}`}
               width={334}
-              height={484}
+              height={PageConstants.imgSizes[avatarSize]}
               layout="fixed"
             />
             <div className="mt-3 pl-4">

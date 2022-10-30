@@ -2,10 +2,8 @@ import Link from 'next/link'
 import PageConstants from '../../../const'
 import AboutBook from '../../shared/AboutBook'
 import HeroBanner from '../../shared/HeroBanner'
-import AboutProject from '../../shared/AboutProject'
-import WomanCardLayout from '../../shared/WomenCardLayout'
-import styles from '../../shared/WomenCardLayout/womanLayout.module.css'
 import WomenSlider from '../../shared/WomenSlider'
+import AboutProject from '../../shared/AboutProject'
 
 export default function Home({ women }) {
   return (
@@ -30,13 +28,12 @@ export default function Home({ women }) {
       />
       <AboutBook className={`mt-[58px] lg:mt-[140px]`} />
 
-      {/*<WomanCardLayout women={women} title={PageConstants.womenCard.title} />*/}
       <WomenSlider women={women} title={PageConstants.womenCard.title} />
 
       <div className={'text-center mb-24 mt-24'}>
         <Link href={'/women'}>
           <a
-            className={`${styles.btn} text-white bg-transparent  font-semibold  py-4 px-6 border inline-block `}
+            className={`text-white bg-transparent font-semibold py-4 px-6 border inline-block `}
           >
             Տեսնել բոլորին
           </a>

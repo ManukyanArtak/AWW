@@ -1,9 +1,7 @@
-import Link from 'next/link'
-import Carousel from 'react-multi-carousel'
-import 'react-multi-carousel/lib/styles.css'
 import WomanCard from '../WomanCard'
 import { lifeDuration } from '../../../../services/frontend/helpers'
-import SectionTitle from '../SectionTitle'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
 
 const womenSlider = ({ women, title, className }) => {
   const womenDataDesktop = women.map((woman) => {
@@ -15,6 +13,7 @@ const womenSlider = ({ women, title, className }) => {
       birthday,
       death_day,
       avatar,
+      avatarSize,
     } = woman.attributes
 
     return (
@@ -28,6 +27,7 @@ const womenSlider = ({ women, title, className }) => {
         profession={'Նկարչուհիներ'}
         id={woman.id}
         key={woman.id}
+        avatarSize={avatarSize}
       />
     )
   })

@@ -54,11 +54,11 @@ const PageConstants = {
     profession: 'Նկարչուհիներ',
     img: '/img/women.png',
   },
-  imgSizes:{
-    height_1:'482',
-    height_2:362,
-    height_3:240,
-  }
+  imgSizes: {
+    L: 482,
+    M: 362,
+    S: 240,
+  },
 }
 
 export default PageConstants

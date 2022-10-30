@@ -17,9 +17,9 @@ import Biography from '../../../src/components/pages/women/biography'
 import ErrorMessage from '../../../src/components/shared/ErrorMessage'
 import SuccessMessage from '../../../src/components/shared/SuccessMessage'
 import SelectDownload from '../../../src/components/shared/SelectDownload'
-import WomenCardLayout from '../../../src/components/shared/WomenCardLayout'
 import WomanPageHeroBanner from '../../../src/components/shared/WomanPageHeroBaner'
 import RemarkableStories from '../../../src/components/pages/women/remarkableStories'
+import WomenSlider from "../../../src/components/shared/WomenSlider";
 
 export async function getServerSideProps({ req, res, params: { id } }) {
   const strapi = new Strapi()
@@ -182,9 +182,7 @@ export default function PersonalPage({ woman, suggestWoman }) {
           </div>
         </div>
         <div className={`container mx-auto mt-16  lg:mt-30 mb-33`}>
-          <WomenCardLayout
-            womanPage={true}
-            className={''}
+          <WomenSlider
             women={suggestWoman.slice(0, 3)}
             title={'Շարունակիր բացահայտել'}
           />

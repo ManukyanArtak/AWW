@@ -20,6 +20,7 @@ export default class Strapi {
         city,
         death_day,
         country,
+        avatarSize,
         avatar{
           data{
             attributes{

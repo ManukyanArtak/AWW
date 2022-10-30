@@ -1,7 +1,6 @@
 import Strapi from '../services/backend/Strapi'
 import HomePage from '../src/components/pages/home'
 import MainLayout from '../src/components/layout/Main'
-import WomenSlider from '../src/components/shared/WomenSlider'
 
 export async function getServerSideProps({ req, res }) {
   let randomWomen
