@@ -28,7 +28,7 @@ const WomanCard = ({
               alt="Image Alt"
               src={img}
               loader={({ src }) => `http://localhost:1337${src}`}
-              width={364}
+              width={334}
               height={484}
               layout="fixed"
             />
