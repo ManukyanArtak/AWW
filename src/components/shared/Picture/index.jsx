@@ -12,7 +12,7 @@ const Picture = ({ className, src, name }) => (
       />
     </div>
 
-    <p className={`font-semibold text-violent-850 text-[10px] mt-2 lg:mt-6`}>
+    <p className={`font-semibold text-violent-850 text-10 mt-2 lg:mt-6`}>
       {name}
     </p>
   </div>

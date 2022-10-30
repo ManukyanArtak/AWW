@@ -25,7 +25,6 @@ import SideMenuContent from '../../../src/components/shared/sideMenuContent'
 export async function getServerSideProps({ req, res, params: { id } }) {
   const strapi = new Strapi()
   const { data } = await strapi.findWoman([id])
-
   const categoryIds = data.women.data[0].attributes.categories.data.map(
     (item) => item.id
   )
@@ -58,6 +57,8 @@ export default function PersonalPage({ woman, suggestWoman }) {
     videos,
     categories,
   } = woman?.attributes
+
+  console.log(woman, 'woman')
 
   const download = async (values) => {
     const body = document.querySelector('body')

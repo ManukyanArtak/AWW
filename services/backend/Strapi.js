@@ -74,10 +74,18 @@ export default class Strapi {
             }
           }
         },
-        images{
+                images{
           data{
+            id
             attributes{
-              url
+              name
+              img{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
             }
           }
         },
