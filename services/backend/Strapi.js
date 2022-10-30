@@ -19,7 +19,6 @@ export default class Strapi {
         birthday,
         city,
         death_day,
-        height,
         country,
         avatar{
           data{

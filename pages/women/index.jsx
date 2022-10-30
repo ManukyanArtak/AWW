@@ -60,14 +60,13 @@ export default function Women({ women, pagination, categories }) {
       death_day,
       avatar,
       categories,
-        height
     } = woman.attributes
 
     return (
       <WomanCard
         img={`${avatar.data.attributes.url}`}
         show={true}
-        className={`col-span-4 cursor-pointer ${height === 'height_1'? 'lg:row-span-2' : 'row-span-1'} `}
+        className={`cursor-pointer`}
         name={`${first_name} ${last_name}`}
         address={`${country}, ${city}`}
         lifeDuration={lifeDuration(birthday, death_day)}

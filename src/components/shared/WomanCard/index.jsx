@@ -13,7 +13,6 @@ const WomanCard = ({
   onStart,
   onEnd,
   id,
-    height
 }) =>
   show ? (
     <div
@@ -29,8 +28,8 @@ const WomanCard = ({
               alt="Image Alt"
               src={img}
               loader={({ src }) => `http://localhost:1337${src}`}
-              width={364}
-              height={height || 482}
+              width={334}
+              height={484}
               layout="fixed"
             />
             <div className="mt-3 pl-4">
