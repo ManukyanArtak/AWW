@@ -3,11 +3,11 @@ import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 import { lifeDuration } from '../../../../services/frontend/helpers'
 import SectionTitle from '../SectionTitle'
-import Dots from "../Dots";
-import useDeviceDetect from "../../../hooks/useDeviceDetect";
+import Dots from '../Dots'
+import useDeviceDetect from '../../../hooks/useDeviceDetect'
 
 const WomenSlider = ({ women, title, className, womanPage }) => {
-  const {isMobile} = useDeviceDetect();
+  const { isMobile } = useDeviceDetect()
 
   const womenDataDesktop = women.map((woman) => {
     const {
@@ -19,8 +19,7 @@ const WomenSlider = ({ women, title, className, womanPage }) => {
       death_day,
       avatar,
       avatarSize,
-        categories
-
+      categories,
     } = woman.attributes
 
     return (
@@ -35,10 +34,7 @@ const WomenSlider = ({ women, title, className, womanPage }) => {
         key={woman.id}
         avatarSize={avatarSize}
         profession={categories.data[0]?.attributes.name}
-
       />
-
-
     )
   })
   const responsive = {
@@ -61,25 +57,31 @@ const WomenSlider = ({ women, title, className, womanPage }) => {
   }
 
   return (
-    <div className={`lg:mt-[120px]`}>
+    <div className={`lg:mt-30`}>
       {!womanPage ? <SectionTitle direction={'right'} /> : null}
-      <div className={'grid grid-cols-4 lg:grid-cols-12 gap-6 w-full container mx-auto row-start-1'}>
+      <div
+        className={
+          'grid grid-cols-4 lg:grid-cols-12 gap-6 w-full container mx-auto row-start-1'
+        }
+      >
         <h2
-            className={` text-xl font-bold col-span-4 lg:text-3xl lg:font-normal lg:col-span-6 row-start-1 col-start-1 ${womanPage?'lg:col-start-1' : 'lg:col-start-6'}`}
+          className={` text-xl font-bold col-span-4 lg:text-3xl lg:font-normal lg:col-span-6 row-start-1 col-start-1 ${
+            womanPage ? 'lg:col-start-1' : 'lg:col-start-6'
+          }`}
         >
           {title}
         </h2>
         <div className={`mt-8 row-start-2 col-span-4 lg:col-span-12`}>
-        <Carousel
-          arrows={false}
-          showDots={isMobile? true : false}
-          customDot={<Dots />}
-          ssr={true}
-          responsive={responsive}
-          renderDotsOutside={true}
-        >
-          {womenDataDesktop}
-        </Carousel>
+          <Carousel
+            arrows={false}
+            showDots={isMobile ? true : false}
+            customDot={<Dots />}
+            ssr={true}
+            responsive={responsive}
+            renderDotsOutside={true}
+          >
+            {womenDataDesktop}
+          </Carousel>
         </div>
       </div>
     </div>

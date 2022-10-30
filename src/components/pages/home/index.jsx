@@ -17,16 +17,16 @@ export default function Home({ women }) {
         direction={'left'}
         text={PageConstants.global.aboutProject.text}
         title={PageConstants.global.aboutProject.title}
-        className={'mt-[80px] lg:mt-[90px]'}
+        className={'mt-22'}
       />
 
       <AboutProject
         direction={'right'}
         text={PageConstants.global.aboutGoal.text}
         title={PageConstants.global.aboutGoal.title}
-        className={'mt-[88px] lg:mt-[95px]'}
+        className={'mt-22 lg:mt-23'}
       />
-      <AboutBook className={`mt-[58px] lg:mt-[140px]`} />
+      <AboutBook className={`mt-15 lg:mt-33`} />
 
       <WomenSlider women={women} title={PageConstants.slider.homeTitle} />
 

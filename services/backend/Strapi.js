@@ -58,6 +58,7 @@ export default class Strapi {
     id
       attributes {
         first_name,
+        avatarSize,
         last_name,
         childhood,
         boyhood,

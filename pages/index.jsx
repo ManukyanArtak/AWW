@@ -7,6 +7,7 @@ export async function getServerSideProps({ req, res }) {
   try {
     const strapi = new Strapi()
     randomWomen = await strapi.getRandomWomen()
+    console.log(randomWomen, 'randomwomen')
   } catch (e) {
     console.log(e)
   }
