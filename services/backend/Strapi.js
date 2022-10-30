@@ -7,7 +7,7 @@ export default class Strapi {
       all += `filters:{categories:{id: { in: [${filtersString}] }}}`
     }
     if (pageNumber) {
-      all += `pagination:{page:${pageNumber}, pageSize:3}`
+      all += `pagination:{page:${pageNumber}, pageSize:10}`
     }
     return await this.request(`query{
   women${all ? `(${all})` : ''}{
@@ -19,6 +19,7 @@ export default class Strapi {
         birthday,
         city,
         death_day,
+        height,
         country,
         avatar{
           data{

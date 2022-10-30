@@ -6,6 +6,7 @@ import WomanCard from '../../src/components/shared/WomanCard'
 import { lifeDuration } from '../../services/frontend/helpers'
 import FilterMenu from '../../src/components/shared/FilterMenu'
 import FilterButtons from '../../src/components/shared/FilterButtons'
+import PageConstants from "../../src/const";
 
 export async function getServerSideProps({ req, res, query }) {
   const strapi = new Strapi()
@@ -30,6 +31,7 @@ export default function Women({ women, pagination, categories }) {
   const strapi = new Strapi()
 
   useEffect(() => {
+    console.log(women)
     setWomenData(women)
   }, [women])
 
@@ -47,8 +49,8 @@ export default function Women({ women, pagination, categories }) {
       setWomenData((prev) => [...prev, ...data.data.women.data])
     })
   }, [showCount, filteredIds, strapi])
-
-  const womenDataDrawer = womenData.map((woman) => {
+  const womenDataDrawer = womenData.map((woman, index) => {
+    console.log(woman)
     const {
       first_name,
       last_name,
@@ -58,19 +60,21 @@ export default function Women({ women, pagination, categories }) {
       death_day,
       avatar,
       categories,
+        height
     } = woman.attributes
 
     return (
       <WomanCard
         img={`${avatar.data.attributes.url}`}
         show={true}
-        className={`col-span-4 cursor-pointer`}
+        className={`col-span-4 cursor-pointer ${height === 'height_1'? 'lg:row-span-2' : 'row-span-1'} `}
         name={`${first_name} ${last_name}`}
         address={`${country}, ${city}`}
         lifeDuration={lifeDuration(birthday, death_day)}
         profession={categories.data[0]?.attributes.name}
         key={woman.id}
         id={woman.id}
+        height={PageConstants.imgSizes[height]|| 200}
       />
     )
   })
