@@ -102,8 +102,9 @@ export default function Women({ women, pagination, categories }) {
               setFilteredIds={setFilteredIds}
             />
           </div>
-
-          {womenDataDrawer}
+          <div className={`col-span-12 lg:gap-8 lg:columns-3`}>
+            {womenDataDrawer}
+          </div>
           <div
             className={`col-start-1 col-span-full mb-20 mt-9 lg:mb-33 lg:mt-26 flex items-center justify-center`}
           >
