@@ -1,5 +1,4 @@
 const SideMenuContent = ({ data, className, onClick }) => {
-
   // border-b border-yellow-450 pb-1
   const titleClassName = `font-semibold text-violet-950 text-xl ${className}`
   const subTitleClassName = `text-lg text-violet-950 font-medium `

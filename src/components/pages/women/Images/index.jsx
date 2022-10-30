@@ -9,7 +9,7 @@ export default function Images({ images }) {
       <div className={'grid grid-cols-8 gap-x-6 gap-y-10'}>
         {images.map((item, key) => (
           <Picture
-            src={`http://localhost:1337${item.attributes.url}`}
+            src={`http://localhost:1337${item.attributes.img.data.attributes.url}`}
             name={item.attributes.name}
             key={key}
             className={'col-span-8 lg:col-span-4'}
