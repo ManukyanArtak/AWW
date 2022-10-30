@@ -7,7 +7,7 @@ export default class Strapi {
       all += `filters:{categories:{id: { in: [${filtersString}] }}}`
     }
     if (pageNumber) {
-      all += `pagination:{page:${pageNumber}, pageSize:10}`
+      all += `pagination:{page:${pageNumber}, pageSize:5}`
     }
     return await this.request(`query{
   women${all ? `(${all})` : ''}{
