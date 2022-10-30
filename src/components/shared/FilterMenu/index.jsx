@@ -20,7 +20,7 @@ const FilterMenu = ({ categories, filteredIds, setFilteredIds }) => {
   return (
     <>
       <button
-        className={`absolute w-[40px] h-[40px] top-[112px] mb-[50px] lg:hidden`}
+        className={`absolute w-10 h-10 top-28 mb-13 lg:hidden`}
         onClick={() => handleOpen(true)}
       >
         <Image
@@ -35,12 +35,12 @@ const FilterMenu = ({ categories, filteredIds, setFilteredIds }) => {
       <div
         className={`${
           open ? 'visible' : 'invisible'
-        } w-full h-screen fixed bg-[#0000004d] z-40  overflow-hidden lg:hidden`}
+        } w-full h-screen fixed bg-gray-350 z-40  overflow-hidden lg:hidden`}
       >
         <div
           className={`${
             open ? styles.open : styles.close
-          } w-[350px] fixed  h-[462px] bg-white z-50 overflow-auto p-6 top-[112px]`}
+          } w-80 fixed  h-100 bg-white z-50 overflow-auto p-6 top-28`}
         >
           <div className={` flex justify-between`}>
             <FilterButtons
@@ -51,7 +51,7 @@ const FilterMenu = ({ categories, filteredIds, setFilteredIds }) => {
             />
             <div>
               <button
-                className={`w-[14px] h-[14px]`}
+                className={`w-3.5 h-3.5`}
                 onClick={() => {
                   handleOpen(false)
                 }}

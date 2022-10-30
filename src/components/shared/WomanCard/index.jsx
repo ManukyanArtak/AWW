@@ -1,6 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import PageConstants from '../../../const'
+import styles from './womanCard.module.css'
 
 const WomanCard = ({
   img,
@@ -10,16 +12,12 @@ const WomanCard = ({
   address,
   profession,
   lifeDuration,
-  onStart,
-  onEnd,
   id,
+  avatarSize,
 }) =>
   show ? (
     <div
-      className={`max-w-[370px] ${className}`}
-      onTouchStart={onStart}
-      onTouchEnd={onEnd}
-      // onClick={() => onClick && onClick()}
+      className={`max-w-xs ${className} ${styles.womanCard}`}
     >
       <Link href={`/women/${id}`}>
         <a>
@@ -29,14 +27,14 @@ const WomanCard = ({
               src={img}
               loader={({ src }) => `http://localhost:1337${src}`}
               width={334}
-              height={484}
+              height={PageConstants.imgSizes[avatarSize]}
               layout="fixed"
             />
             <div className="mt-3 pl-4">
               <h4 className="text-violet-950 text-lg font-semibold">{name}</h4>
               <div className="truncate-lines-4 overflow-hidden mt-2 divide-y-2 divide-yellow-450 ">
                 <p className="text-base text-blue-950">{address}</p>
-                <hr className={'mt-3 w-[226px]'} />
+                <hr className={'mt-3 w-58'} />
               </div>
               <div className="mt-3">
                 <p className={'text-lg  font-semibold text-violet-950'}>

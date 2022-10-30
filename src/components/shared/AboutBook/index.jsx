@@ -14,11 +14,11 @@ const AboutBook = ({ className }) => (
       >
         Գրքի մասին
       </h2>
-      <div className={`col-span-4 mt-8 lg:col-span-5 row-start-2 lg:mt-[90px]`}>
+      <div className={`col-span-4 mt-8 lg:col-span-5 row-start-2 lg:mt-22`}>
         <Image src="/img/book.png" width="468px" height="539px" alt={'Book'} />
       </div>
       <div
-        className={`col-span-4 mt-6 lg:col-start-7 lg:col-span-6 pr-16 row-start-3 lg:row-start-2 lg:mt-[90px]`}
+        className={`col-span-4 mt-6 lg:col-start-7 lg:col-span-6 pr-16 row-start-3 lg:row-start-2 lg:mt-22`}
       >
         <div className={`mb-8`}>
           <p className={`text-base lg:text-lg`}>

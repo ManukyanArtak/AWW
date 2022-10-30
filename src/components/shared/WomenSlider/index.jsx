@@ -1,6 +1,6 @@
+import WomanCard from '../WomanCard'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
-import WomanCard from '../WomanCard'
 import { lifeDuration } from '../../../../services/frontend/helpers'
 import SectionTitle from '../SectionTitle'
 import Dots from "../Dots";
@@ -18,6 +18,7 @@ const WomenSlider = ({ women, title, className, womanPage }) => {
       birthday,
       death_day,
       avatar,
+      avatarSize,
         categories
 
     } = woman.attributes
@@ -31,10 +32,13 @@ const WomenSlider = ({ women, title, className, womanPage }) => {
         address={`${country}, ${city}`}
         lifeDuration={lifeDuration(birthday, death_day)}
         id={woman.id}
-        key={woman.id }
+        key={woman.id}
+        avatarSize={avatarSize}
         profession={categories.data[0]?.attributes.name}
 
-          />
+      />
+
+
     )
   })
   const responsive = {

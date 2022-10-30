@@ -1,10 +1,10 @@
 const BackdropLayout = (Component) => (props) =>
   (
     <div
-      className={`bg-[#0000004d] fixed h-screen w-full z-40 top-0 overflow-hidden`}
+      className={`bg-gray-350 fixed h-full w-full z-40 top-0 overflow-hidden`}
     >
       <div
-        className={`fixed z-50 top-[50%] right-[50%] translate-x-[50%] translate-y-[-50%]`}
+        className={`fixed z-50 top-2/4 right-2/4 translate-x-1/2 translate-y-50`}
       >
         <Component {...props} />
       </div>

@@ -30,6 +30,7 @@ export default function Women({ women, pagination, categories }) {
   const strapi = new Strapi()
 
   useEffect(() => {
+    console.log(women)
     setWomenData(women)
   }, [women])
 
@@ -47,8 +48,7 @@ export default function Women({ women, pagination, categories }) {
       setWomenData((prev) => [...prev, ...data.data.women.data])
     })
   }, [showCount, filteredIds, strapi])
-
-  const womenDataDrawer = womenData.map((woman) => {
+  const womenDataDrawer = womenData.map((woman, index) => {
     const {
       first_name,
       last_name,
@@ -58,19 +58,21 @@ export default function Women({ women, pagination, categories }) {
       death_day,
       avatar,
       categories,
+      avatarSize,
     } = woman.attributes
 
     return (
       <WomanCard
         img={`${avatar.data.attributes.url}`}
         show={true}
-        className={`col-span-4 cursor-pointer`}
+        className={`cursor-pointer`}
         name={`${first_name} ${last_name}`}
         address={`${country}, ${city}`}
         lifeDuration={lifeDuration(birthday, death_day)}
         profession={categories.data[0]?.attributes.name}
         key={woman.id}
         id={woman.id}
+        avatarSize={avatarSize}
       />
     )
   })
@@ -85,10 +87,10 @@ export default function Women({ women, pagination, categories }) {
 
       <MainLayout>
         <div
-          className={`container mx-auto grid grid-cols-4 gap-y-8 mt-[72px] lg:grid-cols-12 lg:gap-6 `}
+          className={`container mx-auto grid grid-cols-4 gap-y-8 mt-17 lg:grid-cols-12 lg:gap-6 `}
         >
           <div
-            className={`hidden lg:block lg:mb-[98px] lg:mt-[81px] lg:col-start-2 lg:col-end-12 lg:gap-y-6`}
+            className={`hidden lg:block lg:mb-24 lg:col-start-2 lg:col-end-12 lg:gap-y-6`}
           >
             <FilterButtons
               className={`flex justify-center flex-col flex-wrap gap-6 lg:flex-row`}
@@ -97,16 +99,17 @@ export default function Women({ women, pagination, categories }) {
               setFilteredIds={setFilteredIds}
             />
           </div>
-
-          {womenDataDrawer}
+          <div className={`col-span-12 lg:gap-8 lg:columns-3`}>
+            {womenDataDrawer}
+          </div>
           <div
-            className={`col-start-1 col-span-full mb-20 mt-9 lg:mb-[140px] lg:mt-[102px] flex items-center justify-center`}
+            className={`col-start-1 col-span-full mb-20 mt-9 lg:mb-33 lg:mt-26 flex items-center justify-center`}
           >
             {womenData.length === total ? null : (
               <Button
                 label={'Տեսնել ավելին'}
                 className={
-                  'text-violet-950 pb-[8px] border-b border-yellow-450 w-[152px] '
+                  'text-violet-950 pb-2 border-b border-yellow-450 w-37 '
                 }
                 onClick={paginate}
               />

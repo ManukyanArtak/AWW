@@ -25,7 +25,7 @@ const SideBarMenu = ({ data }) => {
   return (
     <>
       <button
-        className={` w-[48px] h-[48px] bottom-0  right-0 z-40 fixed lg:hidden`}
+        className={` w-12 h-12 bottom-0  right-0 z-40 fixed lg:hidden`}
         onClick={() => handleOpen(true)}
       >
         <Image
@@ -40,7 +40,7 @@ const SideBarMenu = ({ data }) => {
       <div
         className={`${
           open ? 'visible' : 'invisible'
-        } w-full h-screen fixed bg-[#0000004d] z-40  overflow-hidden lg:hidden`}
+        } w-full h-screen fixed bg-gray-350 z-40  overflow-hidden lg:hidden`}
       >
         <div
           className={`${
@@ -98,7 +98,7 @@ const SideBarMenu = ({ data }) => {
             ) : null}
           </ul>
           <button
-            className={'absolute bottom-0 right-0 h-[48px] w-[48px] z-40'}
+            className={'absolute bottom-0 right-0 h-12 w-12 z-40'}
             onClick={() => handleOpen(false)}
           >
             <Image

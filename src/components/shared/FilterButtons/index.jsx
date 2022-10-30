@@ -31,7 +31,7 @@ const FilterButtons = ({
     if (filteredIds.includes(id)) {
       return `bg-violet-950 text-white `
     } else {
-      return `text-violet-950 border border-[#ADADAD] font-[275]`
+      return `text-violet-950 border border-gray-550 font-[275]`
     }
   }
 
@@ -41,7 +41,7 @@ const FilterButtons = ({
         <Button
           label={item.attributes.name}
           key={item.id}
-          className={`py-2 px-3  text-base rounded-[20px] ${isActive(item.id)}`}
+          className={`py-2 px-3  text-base rounded-20 ${isActive(item.id)}`}
           onClick={() => filterData(item.id)}
         />
       ))}

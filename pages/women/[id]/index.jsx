@@ -17,7 +17,6 @@ import Biography from '../../../src/components/pages/women/biography'
 import ErrorMessage from '../../../src/components/shared/ErrorMessage'
 import SuccessMessage from '../../../src/components/shared/SuccessMessage'
 import SelectDownload from '../../../src/components/shared/SelectDownload'
-// import WomenCardLayout from '../../../src/components/shared/WomenCardLayout'
 import WomanPageHeroBanner from '../../../src/components/shared/WomanPageHeroBaner'
 import RemarkableStories from '../../../src/components/pages/women/remarkableStories'
 import WomenSlider from "../../../src/components/shared/WomenSlider";
@@ -113,7 +112,7 @@ export default function PersonalPage({ woman, suggestWoman }) {
             'container mx-auto grid grid-cols-4 lg:grid-cols-12 gap-6 pt-4  '
           }
         >
-          <div className={'col-span-4 mt-[100px] hidden lg:block'}>
+          <div className={'col-span-4 mt-25 hidden lg:block'}>
             <ul>
               <li className={'font-semibold text-violet-950 text-xl'}>
                 Կենսագրություն
@@ -182,14 +181,11 @@ export default function PersonalPage({ woman, suggestWoman }) {
             <SelectDownload formik={formik} download={download} />
           </div>
         </div>
-        <div className={`container mx-auto mt-16  lg:mt-[120px] mb-[140px]`}>
-          {/*<WomenCardLayout*/}
-          {/*  womanPage={true}*/}
-          {/*  className={''}*/}
-          {/*  women={suggestWoman.slice(0, 3)}*/}
-          {/*  title={'Շարունակիր բացահայտել'}*/}
-          {/*/>*/}
-          <WomenSlider women={suggestWoman} womanPage={true} title={'Շարունակիր բացահայտել'}/>
+        <div className={`container mx-auto mt-16  lg:mt-30 mb-33`}>
+          <WomenSlider
+            women={suggestWoman.slice(0, 3)}
+            title={'Շարունակիր բացահայտել'}
+          />
         </div>
       </MainLayout>
       {loader ? <Loader /> : null}
