@@ -71,8 +71,8 @@ const Footer = () => (
     <div className={`mt-2`}>
       <Image
         src={'/img/footer_logo.png'}
-        width="260"
-        height="80"
+        width="252"
+        height="62"
         alt={'Footer logo'}
       />
     </div>

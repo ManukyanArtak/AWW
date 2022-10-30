@@ -21,7 +21,6 @@ import WomanPageHeroBanner from '../../../src/components/shared/WomanPageHeroBan
 import RemarkableStories from '../../../src/components/pages/women/remarkableStories'
 import WomenSlider from '../../../src/components/shared/WomenSlider'
 import SideMenuContent from '../../../src/components/shared/sideMenuContent'
-import { data } from 'autoprefixer'
 
 export async function getServerSideProps({ req, res, params: { id } }) {
   const strapi = new Strapi()

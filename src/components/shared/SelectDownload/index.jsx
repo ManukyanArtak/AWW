@@ -1,12 +1,5 @@
 import Button from '../Button'
 import styles from './styles/selectDownload.module.css'
-import { useFormik } from 'formik'
-import { handleRequest } from '../../../../services/frontend/request'
-import * as Yup from 'yup'
-import { useState } from 'react'
-import SuccessMessage from '../SuccessMessage'
-import ErrorMessage from '../ErrorMessage'
-import Loader from '../Loader'
 
 const SelectDownload = ({ formik, download }) => (
   <>

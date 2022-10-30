@@ -1,12 +1,12 @@
+import Dots from '../Dots'
 import WomanCard from '../WomanCard'
+import SectionTitle from '../SectionTitle'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
-import { lifeDuration } from '../../../../services/frontend/helpers'
-import SectionTitle from '../SectionTitle'
-import Dots from '../Dots'
 import useDeviceDetect from '../../../hooks/useDeviceDetect'
+import { lifeDuration } from '../../../../services/frontend/helpers'
 
-const WomenSlider = ({ women, title, className, womanPage }) => {
+const WomenSlider = ({ women, title, womanPage }) => {
   const { isMobile } = useDeviceDetect()
 
   const womenDataDesktop = women.map((woman) => {

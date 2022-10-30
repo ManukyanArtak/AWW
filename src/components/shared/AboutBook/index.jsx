@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import Button from '../Button'
-import styles from './aboutBook.module.css'
 import SectionTitle from '../SectionTitle'
 import PageConstants from '../../../const'
 

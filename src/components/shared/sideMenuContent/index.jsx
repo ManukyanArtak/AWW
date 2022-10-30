@@ -1,8 +1,4 @@
 const SideMenuContent = ({ data, className, onClick }) => {
-  const menuSelect = (element) => {
-    // handleOpen(false)
-    scrollToElement(element)
-  }
 
   // border-b border-yellow-450 pb-1
   const titleClassName = `font-semibold text-violet-950 text-xl ${className}`

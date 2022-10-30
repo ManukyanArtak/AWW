@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import SectionTitle from '../SectionTitle'
 import React from 'react'
 
