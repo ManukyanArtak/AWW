@@ -5,7 +5,6 @@ import useDeviceDetect from '../../../hooks/useDeviceDetect'
 import Dots from '../Dots'
 import SectionTitle from '../SectionTitle'
 import { lifeDuration } from '../../../../services/frontend/helpers'
-import Link from 'next/link'
 
 const WomenCardLayout = ({ className, women, womanPage, title }) => {
   const [current, setCurrent] = useState(0)

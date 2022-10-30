@@ -1,7 +1,8 @@
 import Image from 'next/image'
 
-const Dots = ({ active, className, onclick }) => (
-  <span onClick={onclick} className={`${className} block`}>
+const Dots = ({ active, onClick }) => (
+    <div className={`mt-6`}>
+  <span onClick={onClick} className={`block ml-2`}>
     <Image
       src={`/img/${active ? 'activeDot.svg' : 'deActiveDot.svg'}`}
       alt={'Dot'}
@@ -9,6 +10,7 @@ const Dots = ({ active, className, onclick }) => (
       height={12}
     />
   </span>
+    </div>
 )
 
 export default Dots
