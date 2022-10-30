@@ -28,7 +28,7 @@ export default function Home({ women }) {
       />
       <AboutBook className={`mt-[58px] lg:mt-[140px]`} />
 
-      <WomenSlider women={women} title={PageConstants.womenCard.title} />
+      <WomenSlider women={women} title={PageConstants.slider.homeTitle} />
 
       <div className={'text-center mb-24 mt-24'}>
         <Link href={'/women'}>

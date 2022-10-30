@@ -19,7 +19,7 @@ import SuccessMessage from '../../../src/components/shared/SuccessMessage'
 import SelectDownload from '../../../src/components/shared/SelectDownload'
 import WomanPageHeroBanner from '../../../src/components/shared/WomanPageHeroBaner'
 import RemarkableStories from '../../../src/components/pages/women/remarkableStories'
-import WomenSlider from "../../../src/components/shared/WomenSlider";
+import WomenSlider from '../../../src/components/shared/WomenSlider'
 
 export async function getServerSideProps({ req, res, params: { id } }) {
   const strapi = new Strapi()
@@ -184,7 +184,7 @@ export default function PersonalPage({ woman, suggestWoman }) {
         <div className={`container mx-auto mt-16  lg:mt-30 mb-33`}>
           <WomenSlider
             women={suggestWoman.slice(0, 3)}
-            title={'Շարունակիր բացահայտել'}
+            title={PageConstants.slider.title}
           />
         </div>
       </MainLayout>
