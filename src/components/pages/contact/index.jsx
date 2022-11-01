@@ -28,7 +28,7 @@ const ContactUs = () => {
         .email('Չի համապատասխանում ձևաչափին')
         .required('Պարտադիր լրացման դաշտ'),
       subject: Yup.string()
-        .required('Պարտադիր լրացման դաշտ')
+        .required('Պարտադիր լրացման դաշտ'),
         // .max(100, 'Letters must be less than 100'),
       message: Yup.string()
         .required('Պարտադիր լրացման դաշտ')
