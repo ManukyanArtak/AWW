@@ -22,17 +22,17 @@ const ContactUs = () => {
     },
     validationSchema: Yup.object({
       name: Yup.string()
-        .required('Field is required')
-        .matches(/^[aA-zZ\s]+$/, 'Only alphabets are allowed for this field '),
+        .required('Պարտադիր լրացման դաշտ')
+        .matches(/^[aA-zZ\s]+$/, ''),
       email: Yup.string()
-        .email('Please enter the valid email')
-        .required('Field is required'),
+        .email('Չի համապատասխանում ձևաչափին')
+        .required('Պարտադիր լրացման դաշտ'),
       subject: Yup.string()
-        .required('Field is required')
-        .max(100, 'Letters must be less than 100'),
+        .required('Պարտադիր լրացման դաշտ')
+        // .max(100, 'Letters must be less than 100'),
       message: Yup.string()
-        .required('Field is required')
-        .max(500, 'Letters must be less than 500'),
+        .required('Պարտադիր լրացման դաշտ')
+        // .max(500, 'Letters must be less than 500'),
     }),
     onSubmit: (values) => sendMessage(values),
   })
