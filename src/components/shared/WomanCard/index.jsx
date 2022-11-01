@@ -27,6 +27,8 @@ const WomanCard = ({
               width={334}
               height={PageConstants.imgSizes[avatarSize]}
               layout="fixed"
+              objectFit={'cover'}
+              objectPosition="top"
             />
             <div className="mt-3 pl-4">
               <h4 className="text-violet-950 text-lg font-semibold">{name}</h4>
