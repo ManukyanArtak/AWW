@@ -60,9 +60,6 @@ export default class Strapi {
         first_name,
         avatarSize,
         last_name,
-        childhood,
-        boyhood,
-        remarkable_stories,
         birthday,
         city,
         death_day,
@@ -74,7 +71,7 @@ export default class Strapi {
             }
           }
         },
-                images{
+        images{
           data{
             id
             attributes{
@@ -102,6 +99,14 @@ export default class Strapi {
             attributes{
               name,
               url
+            }
+          }
+        }
+        women_stories{
+          data{
+            attributes{
+              name,
+              text
             }
           }
         }

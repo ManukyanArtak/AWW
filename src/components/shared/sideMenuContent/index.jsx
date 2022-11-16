@@ -5,23 +5,20 @@ const SideMenuContent = ({ data, className, onClick }) => {
 
   return (
     <ul>
-      <li className={titleClassName}>Կենսագրություն</li>
-      {data.childhood ? (
-        <li className={`mt-6 ${subTitleClassName} `}>
-          <button onClick={() => onClick('childhood')}>Մանկություն</button>
-        </li>
-      ) : null}
-      {data.boyhood ? (
-        <li className={`mt-4 ${subTitleClassName} `}>
-          <button onClick={() => onClick('youth')}>Պատանեկություն</button>
-        </li>
-      ) : null}
-      {data.remarkable_stories ? (
-        <li className={`mt-4 ${subTitleClassName}`}>
-          <button onClick={() => onClick('remarkableStories')}>
-            Ուշագրավ պատմություններ
-          </button>
-        </li>
+      {data.womanStories.length ? (
+        <>
+          <li className={titleClassName}>Կենսագրություն</li>
+          {data.womanStories.map((story) => (
+            <li
+              className={`mt-6 ${subTitleClassName} `}
+              key={story.attributes.name}
+            >
+              <button onClick={() => onClick(story.attributes.name)}>
+                {story.attributes.name}
+              </button>
+            </li>
+          ))}
+        </>
       ) : null}
       {data.images?.length ? (
         <li className={`mt-10 ${titleClassName}`}>
