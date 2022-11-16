@@ -14,7 +14,7 @@ const AboutBook = ({ className }) => (
       </h2>
       <div className={`col-span-4 mt-8 lg:col-span-5 row-start-2 lg:mt-22`}>
         <Image
-          src="/img/book_2.png"
+          src="/img/book.png"
           width="468px"
           height="539px"
           alt={'Book'}
