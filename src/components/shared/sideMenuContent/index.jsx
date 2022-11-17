@@ -10,10 +10,10 @@ const SideMenuContent = ({ data, className, onClick }) => {
           <li className={titleClassName}>Կենսագրություն</li>
           {data.womanStories.map((story) => (
             <li
-              className={`mt-6 ${subTitleClassName} `}
+              className={`mt-6 ${subTitleClassName} break-all`}
               key={story.attributes.name}
             >
-              <button onClick={() => onClick(story.attributes.name)}>
+              <button  onClick={() => onClick(story.attributes.name)}>
                 {story.attributes.name}
               </button>
             </li>
