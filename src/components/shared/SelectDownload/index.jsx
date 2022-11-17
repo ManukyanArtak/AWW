@@ -8,7 +8,7 @@ const SelectDownload = ({ formik, download }) => (
         <h2
           className={`mb-12 text-violent-950 text-lg lg:text-3xl font-normal`}
         >
-          Ընտրիր և ներբեռնիր
+          Լրացուցիչ տեղեկություններ կարող եք ստանալ էլ. հասցեով
         </h2>
 
         <form onSubmit={formik.handleSubmit}>
@@ -28,7 +28,7 @@ const SelectDownload = ({ formik, download }) => (
           <div className={`flex justify-start`}>
             <Button
               className={`mt-12 text-white font-bold ${styles.btn}`}
-              label={'Submit'}
+              label={'Հաստատել'}
               type={'submit'}
             />
           </div>

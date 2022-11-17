@@ -7,7 +7,7 @@ export default class Strapi {
       all += `filters:{categories:{id: { in: [${filtersString}] }}}`
     }
     if (pageNumber) {
-      all += `pagination:{page:${pageNumber}, pageSize:5}`
+      all += `pagination:{page:${pageNumber}, pageSize:15}`
     }
     return await this.request(`query{
   women${all ? `(${all})` : ''}{
@@ -60,9 +60,6 @@ export default class Strapi {
         first_name,
         avatarSize,
         last_name,
-        childhood,
-        boyhood,
-        remarkable_stories,
         birthday,
         city,
         death_day,
@@ -74,7 +71,7 @@ export default class Strapi {
             }
           }
         },
-                images{
+        images{
           data{
             id
             attributes{
@@ -102,6 +99,14 @@ export default class Strapi {
             attributes{
               name,
               url
+            }
+          }
+        }
+        women_stories{
+          data{
+            attributes{
+              name,
+              text
             }
           }
         }

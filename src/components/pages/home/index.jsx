@@ -4,6 +4,7 @@ import AboutBook from '../../shared/AboutBook'
 import HeroBanner from '../../shared/HeroBanner'
 import WomenSlider from '../../shared/WomenSlider'
 import AboutProject from '../../shared/AboutProject'
+import styles from './home.module.css'
 
 export default function Home({ women }) {
   return (
@@ -33,7 +34,7 @@ export default function Home({ women }) {
       <div className={'text-center mb-24 mt-24'}>
         <Link href={'/women'}>
           <a
-            className={`text-white bg-transparent font-semibold py-4 px-6 border inline-block `}
+            className={`text-white bg-violet-1000 font-semibold py-4 px-6 border inline-block ${styles.seeAll} `}
           >
             Տեսնել բոլորին
           </a>

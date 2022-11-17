@@ -39,38 +39,36 @@ const Footer = () => (
     </ul>
 
     <ul className="flex flex-wrap  mt-3 pt-16">
-      {/*<li className={`pl-4 pr-4 h-15`}>*/}
-      {/*  <Image*/}
-      {/*    src="/img/linkdin.svg"*/}
-      {/*    width="50px"*/}
-      {/*    height="50px"*/}
-      {/*    alt={'Linkedin'}*/}
-      {/*  />*/}
-      {/*</li>*/}
       <li className={`pl-4 pr-4 h-15`}>
-        <Link href={'https://www.facebook.com/armenianwonderwomen'} >
-        <Image
-          src="/img/facebook.svg"
-          width="50px"
-          height="50px"
-          alt={'Facebook'}
-        />
+        <Link href={'https://www.facebook.com/armenianwonderwomen'}>
+          <a>
+            <Image
+              src="/img/facebook.svg"
+              width="50px"
+              height="50px"
+              alt={'Facebook'}
+            />
+          </a>
         </Link>
       </li>
       <li className={`pl-4 pr-4 h-15`}>
-        <Link href={'https://instagram.com/armenianwonderwomen?igshid=YmMyMTA2M2Y='}>
-        <Image
-          src="/img/instagram.svg"
-          width="50px"
-          height="50px"
-          alt={'Instagram'}
-        />
+        <Link
+          href={'https://instagram.com/armenianwonderwomen?igshid=YmMyMTA2M2Y='}
+        >
+          <a>
+            <Image
+              src="/img/instagram.svg"
+              width="50px"
+              height="50px"
+              alt={'Instagram'}
+            />
+          </a>
         </Link>
       </li>
     </ul>
 
     <div className={`text-white pt-12 hidden lg:block`}>
-      <span>info@armwonderwomens.co</span>
+      <span>femalepowerhousearm@gmail.com</span>
     </div>
     <div className={`mt-2`}>
       <Image

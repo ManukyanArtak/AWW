@@ -50,15 +50,11 @@ export default function PersonalPage({ woman, suggestWoman }) {
     country,
     death_day,
     avatar,
-    childhood,
-    boyhood,
-    remarkable_stories,
     images,
     videos,
     categories,
+    women_stories,
   } = woman?.attributes
-
-  console.log(woman, 'woman')
 
   const download = async (values) => {
     const body = document.querySelector('body')
@@ -92,11 +88,9 @@ export default function PersonalPage({ woman, suggestWoman }) {
   })
 
   const data = {
-    childhood,
-    boyhood,
     images: images?.data,
     video: videos.data,
-    remarkable_stories,
+    womanStories: women_stories.data,
   }
 
   return (
@@ -123,24 +117,15 @@ export default function PersonalPage({ woman, suggestWoman }) {
             />
           </div>
           <div className={'col-span-4 lg:col-span-8'}>
-            {childhood ? (
-              <Biography
-                title={'Մանկություն'}
-                text={childhood}
-                id={'childhood'}
-              />
-            ) : null}
+            {women_stories.data.length
+              ? women_stories?.data?.map((story) => {
+                  const { name, text } = story?.attributes
 
-            {boyhood ? (
-              <Biography title={'Պատանեկություն'} text={boyhood} id={'youth'} />
-            ) : null}
-
-            {remarkable_stories ? (
-              <RemarkableStories
-                title={'ՈՒշագրավ Պատմություններ'}
-                stories={remarkable_stories}
-              />
-            ) : null}
+                  return (
+                    <Biography title={name} text={text} id={name} key={name} />
+                  )
+                })
+              : null}
 
             {images?.data?.length ? <Images images={images.data} /> : null}
 

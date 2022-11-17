@@ -27,12 +27,10 @@ const ContactUs = () => {
       email: Yup.string()
         .email('Չի համապատասխանում ձևաչափին')
         .required('Պարտադիր լրացման դաշտ'),
-      subject: Yup.string()
-        .required('Պարտադիր լրացման դաշտ'),
-        // .max(100, 'Letters must be less than 100'),
-      message: Yup.string()
-        .required('Պարտադիր լրացման դաշտ')
-        // .max(500, 'Letters must be less than 500'),
+      subject: Yup.string().required('Պարտադիր լրացման դաշտ'),
+      // .max(100, 'Letters must be less than 100'),
+      message: Yup.string().required('Պարտադիր լրացման դաշտ'),
+      // .max(500, 'Letters must be less than 500'),
     }),
     onSubmit: (values) => sendMessage(values),
   })

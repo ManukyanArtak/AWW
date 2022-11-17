@@ -65,7 +65,7 @@ export default function Women({ women, pagination, categories }) {
       <WomanCard
         img={`${avatar.data.attributes.url}`}
         show={true}
-        className={`cursor-pointer`}
+        className={`cursor-pointer lg:pb-10`}
         name={`${first_name} ${last_name}`}
         address={`${country}, ${city}`}
         lifeDuration={lifeDuration(birthday, death_day)}
