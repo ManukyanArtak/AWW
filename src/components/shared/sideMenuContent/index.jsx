@@ -13,7 +13,7 @@ const SideMenuContent = ({ data, className, onClick }) => {
               className={`mt-6 ${subTitleClassName} break-all`}
               key={story.attributes.name}
             >
-              <button  onClick={() => onClick(story.attributes.name)}>
+              <button onClick={() => onClick(story.attributes.name)}>
                 {story.attributes.name}
               </button>
             </li>

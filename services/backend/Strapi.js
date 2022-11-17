@@ -6,9 +6,11 @@ export default class Strapi {
       let filtersString = ids.toString()
       all += `filters:{categories:{id: { in: [${filtersString}] }}}`
     }
+
     if (pageNumber) {
       all += `pagination:{page:${pageNumber}, pageSize:15}`
     }
+
     return await this.request(`query{
   women${all ? `(${all})` : ''}{
     data {
@@ -134,7 +136,10 @@ export default class Strapi {
 }`)
 
   getRandomWomen = async () => {
-    const response = await fetch(`http://127.0.0.1:1337/api/posts-report`)
+    console.log(process.env.STRAPI_BASE_URL,777777777)
+    const response = await fetch(
+      new URL('/api/posts-report', process.env.STRAPI_BASE_URL)
+    )
     const ids = await response.json()
 
     return await this.findWoman(ids)
@@ -156,7 +161,7 @@ export default class Strapi {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:1337/graphql`,
+        new URL('/graphql', process.env.STRAPI_BASE_URL),
         requestOptions
       )
 

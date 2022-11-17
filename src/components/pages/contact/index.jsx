@@ -1,7 +1,7 @@
 import * as Yup from 'yup'
 import Image from 'next/image'
 import { useFormik } from 'formik'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Input from '../../shared/Input'
 import Button from '../../shared/Button'
 import Loader from '../../shared/Loader'
@@ -9,6 +9,7 @@ import styles from './styles/contact.module.css'
 import ErrorMessage from '../../shared/ErrorMessage'
 import SuccessMessage from '../../shared/SuccessMessage'
 import { handleRequest } from '../../../../services/frontend/request'
+import Link from 'next/link'
 
 const ContactUs = () => {
   const [requestState, setRequestState] = useState('')
@@ -62,15 +63,13 @@ const ContactUs = () => {
     <>
       <div
         className={`container mx-auto grid grid-cols-4 mb-20 mt-10  lg:grid-cols-12 lg:gap-x-6 lg:mt-54 lg:mb-33`}
-        //watch mt-10
       >
         <div className={`col-start-1 col-end-5  lg:col-end-6`}>
           <h1 className={`text-violet-950 text-4xl lg:text-56`}>Կապ մեզ հետ</h1>
 
           <div className={`mt-14  lg:mt-16 `}>
             <div
-              className={`flex items-center w-53  border-b border-solid border-yellow-450 pb-6 mb-6 lg:w-67`}
-              //watch pb-6
+              className={`flex items-center border-b border-solid border-yellow-450 pb-6 mb-6`}
             >
               <Image
                 src={'/img/Letter.svg'}
@@ -79,40 +78,40 @@ const ContactUs = () => {
                 height={21}
               />
               <p className={`font-semibold text-lg text-violet-950 ml-5`}>
-                Info@mamble.co
+                femalepowerhousearm@gmail.com
               </p>
             </div>
 
             <div className={`flex items-baseline`}>
-              <span
-                className={
-                  `mr-8`
-                  //watch mr-8
-                }
-              >
-                <Image
-                  src={'/img/facebook-purple.svg'}
-                  alt={'Facebook'}
-                  width={13}
-                  height={24}
-                />
+              <span className={`mr-8`}>
+                <Link href={'https://www.facebook.com/armenianwonderwomen'}>
+                  <a target="_blank">
+                    <Image
+                      src={'/img/facebook-purple.svg'}
+                      alt={'Facebook'}
+                      width={13}
+                      height={24}
+                    />
+                  </a>
+                </Link>
               </span>
 
               <span className={`mr-6`}>
-                <Image
-                  src={'/img/instagram-purple.svg'}
-                  alt={'Instagram'}
-                  width={24}
-                  height={24}
-                />
+                <Link
+                  href={
+                    'https://instagram.com/armenianwonderwomen?igshid=YmMyMTA2M2Y='
+                  }
+                >
+                  <a target="_blank">
+                    <Image
+                      src={'/img/instagram-purple.svg'}
+                      alt={'Instagram'}
+                      width={24}
+                      height={24}
+                    />
+                  </a>
+                </Link>
               </span>
-
-              <Image
-                src={'/img/linkedin-purple.svg'}
-                alt={'Linkedin'}
-                width={24}
-                height={24}
-              />
             </div>
           </div>
         </div>

@@ -5,16 +5,14 @@ export default class Email {
 
   constructor() {
     this.client = sendGrid
-    this.client.setApiKey(
-      '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'
-    )
+    this.client.setApiKey(process.env.SENDGRID_API_KEY)
   }
 
   async send(subject, from, content) {
     return await this.client.send({
-      to: 'artakmanukyan17@gmail.com',
+      to: process.env.TO_EMAIL,
       subject,
-      from: 'artak.manukyan@mamble.co',
+      from: process.env.FROM_EMAIL,
       content,
     })
   }

@@ -25,6 +25,7 @@
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.3",
     "react-multi-carousel": "^2.8.2",
+    "sharp": "^0.31.2",
     "stylelint": "^14.10.0",
     "tailwindcss": "^3.1.8",
     "yup": "^0.32.11"
